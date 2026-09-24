@@ -182,7 +182,16 @@ export default function App() {
   // 3. GSAP Master Intro Timeline
   // ============================================================================
   const runIntroAnimation = () => {
-    if (currentPath !== '/' && currentPath !== '') return;
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+if (
+  currentPath !== '/' &&
+  currentPath !== '' &&
+  currentPath !== basePath &&
+  currentPath !== `${basePath}/`
+) {
+  return;
+}
 
     // Lock page scrolling while intro plays
     document.body.style.overflow = "hidden";
@@ -443,7 +452,14 @@ export default function App() {
 
   // Mount intro timeline on initial page load
   useEffect(() => {
-    if (currentPath === '/' || currentPath === '') {
+    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+if (
+  currentPath === '/' ||
+  currentPath === '' ||
+  currentPath === basePath ||
+  currentPath === `${basePath}/`
+) {
       if (!isIntroFinished) {
         runIntroAnimation();
       } else {
