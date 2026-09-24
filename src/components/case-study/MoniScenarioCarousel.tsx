@@ -310,3 +310,4 @@ export const MoniScenarioCarousel: React.FC = () => {
   );
 };
 
+

@@ -64,7 +64,7 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
         </div>
 
         <a
-          href="/resume/shreya-resume.pdf"
+          href={`${import.meta.env.BASE_URL}resume/shreya-resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full font-syne font-bold text-[10px] sm:text-xs uppercase tracking-wider bg-[#262529] hover:bg-[#D4F34A] text-white hover:text-black border border-white/20 hover:border-[#D4F34A] shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-200 cursor-pointer"
@@ -75,4 +75,5 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
     </header>
   );
 };
+
 

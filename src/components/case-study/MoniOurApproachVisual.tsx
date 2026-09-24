@@ -84,3 +84,4 @@ export const MoniOurApproachVisual: React.FC = () => {
   );
 };
 
+

@@ -545,3 +545,4 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
   );
 };
 
+

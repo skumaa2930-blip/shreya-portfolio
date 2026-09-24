@@ -165,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           <div className="flex items-center">
             <a
               id="nav-resume-btn"
-              href="/resume/shreya-resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume/shreya-resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center rounded-full font-syne font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer select-none whitespace-nowrap bg-white hover:bg-[#D1F047] text-black shadow-[0_4px_16px_rgba(0,0,0,0.4)] ${
@@ -182,6 +182,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     </>
   );
 };
+
 
 
 

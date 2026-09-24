@@ -52,3 +52,4 @@ export const CaseStudyStickyHeader: React.FC<CaseStudyStickyHeaderProps> = ({
   );
 };
 
+
