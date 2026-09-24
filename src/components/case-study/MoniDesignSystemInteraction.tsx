@@ -55,7 +55,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             {/* Center Upper Half: Enlarged Moni Logo Video with blended background */}
             <div className="flex-1 flex items-center justify-center pt-2 pb-2 relative overflow-hidden bg-[#141414]">
               <video
-                src="/assets/moni-logo.mp4"
+                src="/shreya-portfolio/assets/moni-logo.mp4"
                 autoPlay
                 loop
                 muted
@@ -103,7 +103,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
           >
             {/* Whole Rectangle Asset – No device mock-up frame */}
             <img
-              src="/assets/moni-thinking.png"
+              src="/shreya-portfolio/assets/moni-thinking.png"
               alt="Moni Active Thinking Layer"
               className="absolute inset-0 w-full h-full object-cover object-center select-none"
               referrerPolicy="no-referrer"
@@ -136,7 +136,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             {/* Center Area: Borderless video container for moni-icons.mp4 */}
             <div className="flex-1 w-full rounded-2xl overflow-hidden bg-transparent flex items-center justify-center relative mb-4 border-0">
               <video
-                src="/assets/moni-icons.mp4"
+                src="/shreya-portfolio/assets/moni-icons.mp4"
                 autoPlay
                 loop
                 muted
@@ -178,7 +178,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             {/* Thinking Interaction Video container with moni-active.mp4 */}
             <div className="flex-1 w-full rounded-2xl overflow-hidden bg-[#161618] border border-white/5 relative flex items-center justify-center mb-4">
               <video
-                src="/assets/moni-active.mp4"
+                src="/shreya-portfolio/assets/moni-active.mp4"
                 autoPlay
                 loop
                 muted
@@ -265,3 +265,4 @@ export const MoniDesignSystemInteraction: React.FC = () => {
     </section>
   );
 };
+

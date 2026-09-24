@@ -105,3 +105,4 @@ export const BloodBankCaseStudyPage: React.FC<BloodBankCaseStudyPageProps> = ({
     </motion.div>
   );
 };
+

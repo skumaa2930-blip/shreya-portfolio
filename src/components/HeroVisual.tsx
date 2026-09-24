@@ -72,7 +72,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="289.994"
                 preserveAspectRatio="xMidYMid slice"
                 transform="rotate(0.999999 409.636 302.225)"
-                href="/assets/hero-center.png"
+                href="/shreya-portfolio/assets/hero-center.png"
                 onError={(e) => {
                   const target = e.currentTarget as SVGImageElement;
                   if (!target.dataset.fallback) {
@@ -140,7 +140,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="230.005"
                 preserveAspectRatio="xMidYMid slice"
                 transform="rotate(-5.73884 207.234 481.233)"
-                href="/assets/hero-left.png"
+                href="/shreya-portfolio/assets/hero-left.png"
                 onError={(e) => {
                   const target = e.currentTarget as SVGImageElement;
                   if (!target.dataset.fallback) {
@@ -192,7 +192,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="269.329"
                 preserveAspectRatio="xMidYMid slice"
                 transform="rotate(6.47288 851.912 465.17)"
-                href="/assets/hero-right.png"
+                href="/shreya-portfolio/assets/hero-right.png"
                 onError={(e) => {
                   const target = e.currentTarget as SVGImageElement;
                   if (!target.dataset.fallback) {
@@ -544,3 +544,4 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
     </div>
   );
 };
+

@@ -79,7 +79,7 @@ export const CuriosityPlaygroundSection: React.FC = () => {
           {/* Video / Image Player Container */}
           <div className="relative rounded-lg overflow-hidden aspect-[4/3] bg-black transition-all">
             <img
-              src="/assets/card1.png"
+              src="/shreya-portfolio/assets/card1.png"
               alt="Semiotics and Semantics Game Design Preview"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -120,7 +120,7 @@ export const CuriosityPlaygroundSection: React.FC = () => {
           {/* Video / Image Player Container */}
           <div className="relative rounded-lg overflow-hidden aspect-[4/3] bg-black transition-all">
             <img
-              src="/assets/card2.png"
+              src="/shreya-portfolio/assets/card2.png"
               alt="Tangible Interaction Preview"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -163,7 +163,7 @@ export const CuriosityPlaygroundSection: React.FC = () => {
           {/* Image / Interactive Container */}
           <div className="relative rounded-lg overflow-hidden aspect-[4/3] bg-black transition-all">
             <img
-              src="/assets/card3.png"
+              src="/shreya-portfolio/assets/card3.png"
               alt="Solarify Website Coding Preview"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -204,7 +204,7 @@ export const CuriosityPlaygroundSection: React.FC = () => {
           {/* Video / Image Player Container */}
           <div className="relative rounded-lg overflow-hidden aspect-[4/3] bg-black transition-all">
             <img
-              src="/assets/card4.png"
+              src="/shreya-portfolio/assets/card4.png"
               alt="Vibe Coding Preview"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -239,4 +239,5 @@ export const CuriosityPlaygroundSection: React.FC = () => {
     </section>
   );
 };
+
 

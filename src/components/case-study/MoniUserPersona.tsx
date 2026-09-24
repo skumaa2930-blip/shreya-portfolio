@@ -135,7 +135,7 @@ export const MoniUserPersona: React.FC = () => {
           {/* DIV 2: Image Holder (No border, no glow, vertically centered with equal top/bottom spacing, touching extreme right) */}
           <div className="lg:col-span-4 flex items-center justify-center lg:justify-end relative lg:-mr-12 self-stretch overflow-visible py-2 lg:py-0">
             <img
-              src="/assets/moni-persona.png"
+              src="/shreya-portfolio/assets/moni-persona.png"
               alt="Moni User Persona - Rohan"
               className="w-full max-w-[290px] sm:max-w-[330px] lg:max-w-[380px] h-auto object-contain object-right select-none pointer-events-none"
               referrerPolicy="no-referrer"
@@ -147,3 +147,4 @@ export const MoniUserPersona: React.FC = () => {
     </motion.section>
   );
 };
+

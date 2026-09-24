@@ -118,3 +118,4 @@ export const MoniAdaptiveFramework: React.FC = () => {
     </div>
   );
 };
+

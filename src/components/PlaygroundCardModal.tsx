@@ -60,8 +60,8 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     title: 'Semiotics and Semantics Game Design',
     type: 'video',
     driveUrl: 'https://drive.google.com/file/d/14qSFp54KU0MQIgZipn1ExgomM7qgnYiO/preview',
-    mediaSrc: '/assets/tmm-video.mp4',
-    fallbackImage: '/assets/card1.png',
+    mediaSrc: '/shreya-portfolio/assets/tmm-video.mp4',
+    fallbackImage: '/shreya-portfolio/assets/card1.png',
     stickyText: 'the midnight mystery game. ☺',
     stickyRotation: '-rotate-2',
     tools: ['Figma', 'Runway AI', 'ChatGPT', 'Leonardo AI', 'ElevenLabs'],
@@ -71,8 +71,8 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     number: '02',
     title: 'Tangible Interaction Prototype',
     type: 'video',
-    mediaSrc: '/assets/tangible-game.mp4',
-    fallbackImage: '/assets/card2.png',
+    mediaSrc: '/shreya-portfolio/assets/tangible-game.mp4',
+    fallbackImage: '/shreya-portfolio/assets/card2.png',
     stickyText: 'tangible interaction gameplay test.',
     stickyRotation: 'rotate-2',
     tools: ['Figma', 'Android Studio', 'Arduino IDE', 'Tinkercad'],
@@ -83,7 +83,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     title: 'Solarify Website Coding',
     type: 'solarify',
     externalUrl: 'https://skumaa2930-blip.github.io/solarify-website/',
-    fallbackImage: '/assets/card3.png',
+    fallbackImage: '/shreya-portfolio/assets/card3.png',
     stickyText: 'solar physics in pure html & css ↗',
     stickyRotation: '-rotate-1',
     tools: ['HTML, CSS', 'VS Code', 'Framer', 'XAMPP'],
@@ -94,8 +94,8 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     title: 'Vibe Coding',
     type: 'video',
     driveUrl: 'https://drive.google.com/file/d/1CQjr9aplTjg3nn-MRdO74QQ7WwoIon7G/preview',
-    mediaSrc: '/assets/disha-video.mp4',
-    fallbackImage: '/assets/card4.png',
+    mediaSrc: '/shreya-portfolio/assets/disha-video.mp4',
+    fallbackImage: '/shreya-portfolio/assets/card4.png',
     stickyText: 'vibe coding exploration. ☺',
     stickyRotation: 'rotate-2',
     tools: ['Google AI Studio', 'ChatGPT'],
@@ -541,3 +541,4 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
 
   return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 };
+

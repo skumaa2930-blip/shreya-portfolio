@@ -47,3 +47,4 @@ export const StickyNote: React.FC<StickyNoteProps> = ({
     </motion.div>
   );
 };
+

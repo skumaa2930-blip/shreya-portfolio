@@ -83,3 +83,4 @@ export const MoniOurApproachVisual: React.FC = () => {
     </motion.div>
   );
 };
+

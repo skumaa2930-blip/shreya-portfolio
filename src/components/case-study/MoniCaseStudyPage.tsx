@@ -131,3 +131,4 @@ export const MoniCaseStudyPage: React.FC<MoniCaseStudyPageProps> = ({
     </motion.div>
   );
 };
+

@@ -169,3 +169,4 @@ export const BloodBankInterface: React.FC = () => {
     </section>
   );
 };
+

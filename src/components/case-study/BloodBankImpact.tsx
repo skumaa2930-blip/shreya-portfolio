@@ -129,3 +129,4 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
     </section>
   );
 };
+

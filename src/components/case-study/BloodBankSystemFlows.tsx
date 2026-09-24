@@ -162,3 +162,4 @@ export const BloodBankSystemFlows: React.FC = () => {
     </section>
   );
 };
+

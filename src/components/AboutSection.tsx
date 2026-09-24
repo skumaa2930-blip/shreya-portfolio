@@ -86,7 +86,7 @@ export const AboutSection: React.FC = () => {
               {/* Inner Photo Container */}
               <div className="relative aspect-[352/440] w-full bg-[#0E0E0E] rounded-[2px] overflow-hidden border border-white/5">
                 <img
-                  src="/assets/shreya-photo.png"
+                  src="/shreya-portfolio/assets/shreya-photo.png"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
                       'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop';
@@ -289,3 +289,4 @@ export const AboutSection: React.FC = () => {
     </section>
   );
 };
+

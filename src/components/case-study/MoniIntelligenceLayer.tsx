@@ -94,3 +94,4 @@ export const MoniIntelligenceLayer: React.FC = () => {
     </motion.section>
   );
 };
+

@@ -564,3 +564,4 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
     document.body
   );
 };
+

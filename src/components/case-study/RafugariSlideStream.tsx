@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-// Exact slide PNGs f1 through f34 in /public/assets/
+// Exact slide PNGs f1 through f34 in /public/shreya-portfolio/assets/
 const RAFUGARI_SLIDES = Array.from({ length: 34 }, (_, i) => {
   const num = i + 1;
   return {
     id: num,
-    src: `/assets/f${num}.png`,
+    src: `/shreya-portfolio/assets/f${num}.png`,
     alt: `Rafugari case study slide ${num}`,
   };
 });
@@ -35,3 +35,4 @@ export const RafugariSlideStream: React.FC = () => {
     </section>
   );
 };
+
