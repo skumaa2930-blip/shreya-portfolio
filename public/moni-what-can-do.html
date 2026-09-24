@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MONI – What MONI can do</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Syne:wght@500;600&family=JetBrains+Mono:wght@400;500;700&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --page: #ffffff;
+    --card: #141414;
+    --card-deep: #0d0d0d;
+    --card-hover: #1c1c1c;
+    --card-border: rgba(0, 0, 0, 0.06);
+    --card-border-hover: rgba(0, 0, 0, 0.12);
+    --lime: #c9f14a;
+    --heading-light: #f5f5ef;
+    --mono-text: #a3a29b;
+    --body-text: #8a8a86;
+    --olive-bg: #26291a;
+    --olive-border: #3d4426;
+    --special-card-bg: #151a11;
+    --special-card-border: rgba(201, 241, 74, 0.4);
+    --special-card-hover: rgba(201, 241, 74, 0.7);
+    --cream: #f4f2ea;
+    --low: #2fd6a3;
+    --medium: #5b9cf5;
+    --high: #f5c542;
+    --critical: #ff5a7a;
+    --radius: 26px;
+    --pad-x: clamp(20px, 3.75vw, 54px);
+  }
+
+  [data-theme="dark"] {
+    --page: #0c0c0e;
+    --card: #131315;
+    --card-deep: #0a0a0c;
+    --card-hover: #171719;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-border-hover: rgba(255, 255, 255, 0.22);
+    --lime: #c9f24a;
+    --heading-light: #f5f5f0;
+    --mono-text: #a3a29b;
+    --body-text: #8e8e8a;
+    --olive-bg: #26291a;
+    --olive-border: #3d4426;
+    --special-card-bg: #151a11;
+    --special-card-border: rgba(201, 242, 74, 0.4);
+    --special-card-hover: rgba(201, 242, 74, 0.7);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--page);
+    color: #ededed;
+    font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Subtle background grid matching case study */
+  .grid-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px);
+    background-size: 48px 48px;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 2016px;
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+
+  /* Top Navigation / Status Header */
+  .system-header {
+    padding-top: clamp(24px, 2.5vw, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 16px;
+  }
+  .system-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lime);
+    font-weight: 600;
+  }
+  .system-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--lime);
+    box-shadow: 0 0 10px var(--lime);
+  }
+  .theme-toggle {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--mono-text);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+
+  /* ---------- Section 1 : What MONI can do ---------- */
+  .can-do {
+    padding-top: clamp(50px, 6vw, 120px);
+  }
+
+  .eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 16px;
+  }
+
+  .display {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 600;
+    color: var(--heading-light);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    font-size: clamp(38px, 4.2vw, 84px);
+  }
+  .display .lime {
+    color: var(--lime);
+  }
+
+  .subheading {
+    margin-top: 16px;
+    font-size: clamp(15px, 1.1vw, 20px);
+    color: var(--body-text);
+    font-weight: 300;
+    max-width: 48ch;
+    line-height: 1.6;
+  }
+
+  .cap-grid {
+    margin-top: clamp(40px, 5.5vw, 90px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(24px, 2.5vw, 40px) clamp(16px, 1.4vw, 28px);
+  }
+
+  .cap-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: clamp(24px, 2vw, 36px);
+    min-height: clamp(160px, 9vw, 185px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background 0.25s ease;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  }
+  .cap-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--card-border-hover);
+    background: var(--card-hover);
+  }
+
+  .cap-card h3 {
+    font-family: "Syne", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: clamp(17px, 1.15vw, 22px);
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+  .cap-card p {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 300;
+    color: var(--body-text);
+    font-size: clamp(13.5px, 0.95vw, 16px);
+    line-height: 1.55;
+  }
+
+  /* ---------- Section 2 : Agent shifts roles ---------- */
+  .roles {
+    margin-top: clamp(100px, 14vw, 260px);
+    padding-bottom: clamp(60px, 6vw, 140px);
+    padding-top: clamp(40px, 5vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: clamp(30px, 4vw, 80px);
+    align-items: start;
+  }
+
+  .roles-copy .display {
+    line-height: 1.08;
+  }
+  .roles-copy p {
+    margin-top: clamp(18px, 1.6vw, 32px);
+    max-width: 32ch;
+    color: var(--body-text);
+    font-weight: 300;
+    font-size: clamp(18px, 1.4vw, 26px);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 1.4vw, 26px);
+  }
+
+  .role-card {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: clamp(24px, 2vw, 36px);
+    min-height: clamp(180px, 10vw, 210px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background 0.25s ease;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  }
+  .role-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--card-border-hover);
+    background: var(--card-hover);
+  }
+
+  .role-card .label {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    color: var(--lime);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: clamp(12px, 0.85vw, 15px);
+    margin-bottom: clamp(14px, 1.4vw, 24px);
+  }
+  .role-card p {
+    font-family: "Hanken Grotesk", sans-serif;
+    color: var(--mono-text);
+    font-weight: 300;
+    font-size: clamp(15px, 1.05vw, 19px);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+  .role-card .role-status {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* 5th card: Distinct protector card */
+  .role-card.special {
+    background: var(--special-card-bg);
+    border: 2px solid var(--special-card-border);
+    box-shadow: 0 0 35px rgba(201, 242, 74, 0.08);
+  }
+  .role-card.special:hover {
+    border-color: var(--special-card-hover);
+  }
+  .role-card.special p {
+    color: #e0e5d5;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .cap-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .roles {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .cap-grid,
+    .role-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* =========================================================================
+     NEW SECTIONS: BLOCK 1 (5 Questions), BLOCK 2 (Levels), BLOCK 3 (System)
+     ========================================================================= */
+
+  /* ---------- Block 1: 5 Questions ---------- */
+  .questions-section {
+    padding-top: clamp(80px, 9vw, 130px);
+  }
+  .q-list {
+    margin-top: clamp(32px, 3.6vw, 52px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .q-row {
+    background: var(--card);
+    border-radius: 24px;
+    height: 77px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .q-row:hover {
+    background: #181818;
+    transform: translateY(-2px);
+  }
+  .q-badge {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--lime);
+    background: #23291a;
+    border: 1px solid #3a4520;
+    border-radius: 8px;
+    width: 42px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+  .q-row p {
+    color: #f1f1ec;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: clamp(15px, 1.25vw, 18px);
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Block 2: When to appear / When to disappear ---------- */
+  .levels-section {
+    padding-top: clamp(80px, 9vw, 130px);
+  }
+  .levels {
+    margin-top: clamp(32px, 3.6vw, 52px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 1.9vw, 27px);
+  }
+  .level {
+    background: var(--card);
+    border-radius: 24px;
+    padding: 28px;
+    min-height: 179px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .level:hover {
+    transform: translateY(-3px);
+  }
+  .level .lv {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--mono-text);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .level h3 {
+    font-family: "Syne", sans-serif;
+    font-weight: 600;
+    font-size: clamp(20px, 1.6vw, 23px);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+  .level p {
+    color: var(--mono-text);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .level.active {
+    border: 1px solid var(--olive-border);
+    box-shadow: 0 0 28px rgba(61, 68, 38, 0.35);
+  }
+  .level.active .lv {
+    color: var(--lime);
+    font-weight: 700;
+  }
+
+  /* ---------- Block 3: A continuous system of agents ---------- */
+  .system-section {
+    padding-top: clamp(80px, 9vw, 130px);
+    padding-bottom: clamp(60px, 8vw, 120px);
+  }
+  .system-intro {
+    margin-top: 18px;
+    max-width: 52ch;
+    color: var(--body-text);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 300;
+    font-size: clamp(17px, 1.45vw, 22px);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+  }
+
+  .system {
+    margin-top: clamp(36px, 4vw, 60px);
+    background: var(--card);
+    border-radius: 42px;
+    padding: clamp(18px, 2.6vw, 38px);
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: clamp(16px, 2vw, 38px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .agent-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .agent {
+    background: var(--card-deep);
+    border-radius: 18px;
+    padding: 16px 14px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .agent:hover {
+    background: #121212;
+    transform: translateX(2px);
+  }
+  .agent .n {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--lime);
+    font-size: 13px;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .agent .t {
+    font-family: "Syne", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .agent .d {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    color: var(--mono-text);
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+  .agent.active {
+    background: var(--olive-bg);
+    border-color: var(--olive-border);
+    box-shadow: 0 0 20px rgba(61, 68, 38, 0.25);
+  }
+
+  .viewer {
+    display: flex;
+    flex-direction: column;
+  }
+  .viewer-title {
+    font-family: "Syne", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    font-size: clamp(18px, 1.6vw, 23px);
+    margin: 10px 0 24px;
+    letter-spacing: 0.02em;
+  }
+  .viewer-box {
+    flex: 1;
+    min-height: 480px;
+    background: #050505;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: zoom-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: clamp(14px, 1.8vw, 24px);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .viewer-box:hover {
+    border-color: rgba(201, 241, 74, 0.35);
+    box-shadow: 0 0 30px rgba(201, 241, 74, 0.08);
+  }
+  .viewer-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Agent Architecture Interactive Diagram */
+  .diagram {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+  .diagram-node {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #e5e5e0;
+    font-size: 11px;
+    position: relative;
+  }
+  .diagram-node-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .diagram-node-title {
+    font-family: "Syne", sans-serif;
+    font-weight: 600;
+    font-size: 12.5px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+  }
+  .diagram-node-badge {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9.5px;
+    color: var(--lime);
+    background: #191f13;
+    border: 1px solid #2f3a1d;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+  .diagram-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .diagram-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .diagram-cell {
+    background: #050505;
+    border: 1px solid #181818;
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  .diagram-cell-name {
+    font-family: "Syne", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #c9f14a;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .diagram-cell-text {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 9px;
+    color: #8a8a86;
+    line-height: 1.3;
+  }
+  .diagram-pills-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .diagram-pill {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.5px;
+    background: #141414;
+    border: 1px solid #282828;
+    color: #a3a29b;
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+  .diagram-pill.trigger {
+    color: var(--lime);
+    border-color: #3a4520;
+    background: #192013;
+  }
+  .diagram-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lime);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    line-height: 1;
+    opacity: 0.8;
+  }
+  .diagram-split-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .diagram-node.mint {
+    background: linear-gradient(180deg, #a5ffc9, #6de3c0);
+    color: #0b2b22;
+    border-color: #6de3c0;
+    box-shadow: 0 4px 18px rgba(109, 227, 192, 0.25);
+  }
+  .diagram-node.mint .diagram-node-title {
+    color: #06231b;
+  }
+  .diagram-node.mint .diagram-cell-text {
+    color: #11362b;
+  }
+  .diagram-node.mint .diagram-pill {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(6, 35, 27, 0.2);
+    color: #06231b;
+    font-weight: 500;
+  }
+
+  /* Responsive Rules for New Sections */
+  @media (max-width: 1000px) {
+    .levels { grid-template-columns: repeat(2, 1fr); }
+    .system { grid-template-columns: 1fr; }
+    .diagram-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .levels { grid-template-columns: 1fr; }
+    .q-row { height: auto; min-height: 70px; padding: 14px 18px; }
+    .diagram-split-row { grid-template-columns: 1fr; }
+    .diagram-grid-3 { grid-template-columns: 1fr; }
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: clamp(14px, 3vw, 32px);
+    backdrop-filter: blur(8px);
+  }
+  .lightbox.open {
+    display: flex;
+  }
+  .lightbox-inner {
+    max-width: 1080px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #090909;
+    border: 1px solid rgba(201, 241, 74, 0.35);
+    border-radius: 24px;
+    padding: clamp(16px, 2.8vw, 32px);
+    position: relative;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9);
+  }
+  .lightbox-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .lightbox-title {
+    font-family: "Syne", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+  }
+  .lightbox-close-btn {
+    background: #23291a;
+    border: 1px solid #3a4520;
+    color: var(--lime);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lightbox-close-btn:hover {
+    background: #333d24;
+  }
+
+  /* =========================================================================
+     NEW SECTIONS: Scenario Carousel & Adaptive Intervention Framework
+     ========================================================================= */
+
+  /* ================= SCENARIO CAROUSEL ================= */
+  .scenario {
+    background: var(--card);
+    border-radius: clamp(28px, 4vw, 64px);
+    padding: clamp(22px, 3.8vw, 66px);
+    position: relative;
+    margin-top: clamp(80px, 10vw, 180px);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--card-border);
+  }
+  .s-top {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: clamp(20px, 4vw, 80px);
+    align-items: start;
+    min-height: clamp(140px, 14vw, 220px);
+  }
+  .s-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(24px, 2.8vw, 40px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+  }
+  .s-title .l1 {
+    display: block;
+    color: var(--lime);
+  }
+  .s-title .l2 {
+    display: block;
+  }
+  .s-desc {
+    color: var(--mono-text);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 300;
+    font-size: clamp(15px, 1.25vw, 20px);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+
+  .s-stage {
+    position: relative;
+    margin-top: clamp(24px, 3.4vw, 60px);
+  }
+  .s-media {
+    background: #000000;
+    aspect-ratio: 1457 / 1026;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border-radius: clamp(16px, 2vw, 32px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .s-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    padding: clamp(16px, 2vw, 40px);
+  }
+  .s-slide.on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .s-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* CSS placeholder phone (shown until/if the image loads) */
+  .ph-phone {
+    height: 90%;
+    aspect-ratio: 9 / 19;
+    border-radius: clamp(24px, 3.2vw, 44px);
+    background: #0d0d10;
+    border: 5px solid #28282e;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    color: #ededed;
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    padding: clamp(14px, 1.6vw, 22px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    user-select: none;
+  }
+  .ph-phone::before {
+    content: "";
+    position: absolute;
+    top: 2.2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28%;
+    height: 3.2%;
+    background: #000000;
+    border-radius: 99px;
+    z-index: 10;
+  }
+  .ph-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(9px, 0.8vw, 11px);
+    color: #8a8a86;
+    margin-top: 4px;
+    padding: 0 4px;
+  }
+  .ph-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .ph-badge {
+    align-self: flex-start;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(9px, 0.75vw, 11px);
+    font-weight: 600;
+    color: var(--lime);
+    background: #192112;
+    border: 1px solid #303e1e;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ph-card {
+    background: #16161a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: clamp(10px, 1.2vw, 16px);
+  }
+  .ph-card-title {
+    font-family: "Syne", sans-serif;
+    font-size: clamp(13px, 1.1vw, 16px);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  .ph-card-desc {
+    font-size: clamp(11px, 0.9vw, 13px);
+    color: var(--mono-text);
+    line-height: 1.4;
+  }
+  .ph-pill-val {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(10px, 0.85vw, 12px);
+    color: var(--lime);
+    margin-top: 8px;
+  }
+  .ph-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(9px, 0.75vw, 11px);
+    color: #6e6e6b;
+  }
+
+  /* arrows beside the scenarios */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(42px, 4vw, 60px);
+    height: clamp(42px, 4vw, 60px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    z-index: 5;
+  }
+  .arrow:hover {
+    background: var(--lime);
+    color: #141414;
+    border-color: var(--lime);
+    transform: translateY(-50%) scale(1.05);
+  }
+  .arrow:focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 3px;
+  }
+  .arrow svg {
+    width: 46%;
+    height: 46%;
+  }
+  .arrow.prev {
+    left: clamp(-24px, -1.8vw, -12px);
+  }
+  .arrow.next {
+    right: clamp(-24px, -1.8vw, -12px);
+  }
+  @media (max-width: 700px) {
+    .arrow.prev { left: 8px; }
+    .arrow.next { right: 8px; }
+  }
+
+  .s-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: clamp(16px, 1.8vw, 26px);
+  }
+  .count {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    color: var(--mono-text);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  .count b {
+    color: var(--lime);
+    font-weight: 700;
+  }
+  .dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    border: 0;
+    background: #4a4a47;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  .dots button.on {
+    width: 28px;
+    background: var(--lime);
+  }
+
+  /* text swap animation */
+  .swap {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .swap.out {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* ================= ADAPTIVE INTERVENTION FRAMEWORK ================= */
+  .fw {
+    margin-top: clamp(90px, 11vw, 200px);
+    margin-bottom: clamp(60px, 8vw, 140px);
+  }
+  .fw h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    color: var(--heading-light);
+    font-size: clamp(34px, 4vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .fw p.sub {
+    margin-top: clamp(10px, 1.2vw, 18px);
+    color: var(--body-text);
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 300;
+    font-size: clamp(16px, 1.5vw, 26px);
+    letter-spacing: -0.01em;
+    max-width: 65ch;
+  }
+  .risks {
+    margin-top: clamp(36px, 4.6vw, 80px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 1.9vw, 32px);
+  }
+  .risk {
+    background: var(--card);
+    border-radius: clamp(20px, 2vw, 32px);
+    padding: clamp(22px, 2.3vw, 40px);
+    min-height: clamp(200px, 17vw, 290px);
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  }
+  .risk:hover {
+    transform: translateY(-4px);
+  }
+  .risk .lv {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: clamp(12px, 0.95vw, 16px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: clamp(18px, 1.9vw, 32px);
+  }
+  .risk h3 {
+    font-family: "Syne", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: clamp(20px, 1.75vw, 30px);
+    letter-spacing: 0.005em;
+    margin-bottom: clamp(12px, 1.2vw, 20px);
+    line-height: 1.2;
+  }
+  .risk p {
+    font-family: "Hanken Grotesk", sans-serif;
+    color: var(--mono-text);
+    font-weight: 300;
+    font-size: clamp(13px, 1.05vw, 17.5px);
+    line-height: 1.45;
+  }
+  .risk.low .lv {
+    color: var(--low);
+  }
+  .risk.medium .lv {
+    color: var(--medium);
+  }
+  .risk.high .lv {
+    color: var(--high);
+  }
+  .risk.critical {
+    border-color: #7a2038;
+  }
+  .risk.critical .lv {
+    color: var(--critical);
+  }
+
+  @media (max-width: 1000px) {
+    .risks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .s-top {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .risks {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ================= HERO IMAGE (NO OPAQUE BACKGROUND, NON-INTERACTIVE) ================= */
+  .hero-img-wrap{max-width:1456px;margin:clamp(40px,5vw,80px) auto 0;padding:0 clamp(18px,3.75vw,54px)}
+  .hero-img{width:100%;aspect-ratio:1456/700;position:relative;display:grid;place-items:center;overflow:hidden;background:transparent;border:none;box-shadow:none}
+  .hero-img img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+
+  /* ================= TRUST & TRANSPARENCY ================= */
+  .wrap-closing{max-width:1456px;margin:0 auto;padding:0 clamp(18px,3.75vw,54px)}
+  .trust{margin-top:clamp(40px,4.4vw,64px);display:grid;grid-template-columns:.85fr 1.6fr;gap:clamp(20px,3.4vw,50px);align-items:start}
+  .trust .copy h2.display{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--heading-light,#f5f5ef);line-height:1.05;letter-spacing:-.01em;font-size:clamp(36px,4.1vw,60px)}
+  .trust .copy p{margin-top:clamp(20px,2vw,30px);color:var(--body-text,#8a8a86);font-weight:300;font-size:clamp(16px,1.5vw,22px);line-height:1.45;letter-spacing:-.01em;max-width:24em}
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.9vw,28px)}
+  .pr{background:var(--card,#141414);border-radius:22px;padding:clamp(20px,1.9vw,28px);min-height:clamp(140px,11.7vw,170px);border:1px solid rgba(255,255,255,0.05)}
+  .pr .k{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:clamp(11px,.9vw,13px);letter-spacing:.05em;text-transform:uppercase;color:var(--lime,#c9f14a);margin-bottom:clamp(12px,1.1vw,16px)}
+  .pr h3{font-family:"Syne",sans-serif;font-weight:500;color:#fff;font-size:clamp(17px,1.5vw,21px);letter-spacing:.005em;margin-bottom:clamp(8px,.8vw,12px)}
+  .pr p{color:var(--mono-text,#a3a29b);font-weight:300;font-size:clamp(12.5px,1vw,14.5px);line-height:1.3}
+
+  /* ================= LEARNING CYCLE ================= */
+  .cycle-sec{margin-top:clamp(90px,11vw,160px)}
+  .cycle-sec h2.display{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--heading-light,#f5f5ef);line-height:1.05;letter-spacing:-.01em;font-size:clamp(36px,4.1vw,60px)}
+  .cycle{margin-top:clamp(30px,4.4vw,64px);background:var(--card,#141414);border-radius:clamp(26px,3vw,44px);padding:clamp(18px,2.7vw,40px);display:flex;align-items:center;gap:clamp(6px,1vw,14px);border:1px solid rgba(255,255,255,0.05)}
+  .step{flex:1;background:#0a0a0a;border-radius:16px;min-height:clamp(64px,5.7vw,82px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid transparent;transition:transform .35s ease,border-color .35s ease}
+  .step:hover{transform:translateY(-3px);border-color:#4a5226}
+  .step .n{font-family:"JetBrains Mono",monospace;font-weight:500;color:var(--lime,#c9f14a);font-size:clamp(11px,.9vw,13px)}
+  .step .t{font-family:"Syne",sans-serif;font-weight:500;color:#fff;font-size:clamp(14px,1.25vw,18px)}
+  .step.last{background:#26291a;border-color:#4a5226}
+  .step.last .t{color:var(--lime,#c9f14a)}
+  .arr{color:var(--lime,#c9f14a);font-size:clamp(12px,1vw,15px);flex:none;width:clamp(18px,2.6vw,38px);text-align:center}
+
+  /* ================= GOAL + THANK YOU ================= */
+  .goal{margin-top:clamp(110px,14vw,210px);text-align:center;padding-bottom:clamp(90px,10vw,150px)}
+  .goal .eyebrow{font-family:"JetBrains Mono",monospace;font-size:clamp(11px,.9vw,13px);letter-spacing:.24em;color:#8f8f8a;text-transform:uppercase}
+  .goal blockquote{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;color:var(--heading-light,#f5f5ef);font-size:clamp(26px,3.2vw,46px);line-height:1.18;max-width:20em;margin:clamp(20px,2.4vw,34px) auto 0}
+  .thanks{font-family:"Playfair Display",Georgia,serif;font-weight:700;color:var(--lime,#c9f14a);font-size:clamp(48px,6vw,86px);letter-spacing:.005em;margin-top:clamp(50px,6.6vw,96px);line-height:1}
+
+  /* ================= MOTION ================= */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:900px){
+    .trust{grid-template-columns:1fr}
+    .cycle{flex-direction:column;align-items:stretch}
+    .arr{transform:rotate(90deg);width:auto;padding:2px 0}
+    .step{min-height:70px}
+  }
+  @media (max-width:560px){
+    .principles{grid-template-columns:1fr}
+    .hero-img{aspect-ratio:1/1}
+  }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+
+  <div class="page" id="moni-what-can-do-page">
+
+    <!-- SYSTEM HEADER -->
+    <header class="system-header">
+      <div class="system-badge">
+        <span class="dot"></span>
+        <span>MONI Autonomous Core Spec</span>
+      </div>
+      <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">
+        Switch Mode
+      </button>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="can-do" id="what-moni-can-do">
+      <h2 class="display">What MONI <span class="lime">can do</span></h2>
+      <p class="subheading">Eight deterministic autonomous primitives driving continuous financial harmony across your daily life.</p>
+
+      <div class="cap-grid">
+        <article class="cap-card" id="card-tracks-categorises">
+          <h3>Tracks &amp; Categorises</h3>
+          <p>Decodes messy transaction strings into verified clear ledger items.</p>
+        </article>
+        <article class="cap-card" id="card-plans">
+          <h3>Plans</h3>
+          <p>Dynamically maps upcoming fixed commitments and liquid buffers.</p>
+        </article>
+        <article class="cap-card" id="card-predicts">
+          <h3>Predicts</h3>
+          <p>Simulates month-end cash flow trajectory curves in real time.</p>
+        </article>
+        <article class="cap-card" id="card-pays">
+          <h3>Pays</h3>
+          <p>Handles consenting recurring bills and auto-sweeps quietly.</p>
+        </article>
+
+        <article class="cap-card" id="card-suggests">
+          <h3>Suggests</h3>
+          <p>Surfaces timely guidance tailored to real-world context and intent.</p>
+        </article>
+        <article class="cap-card" id="card-prevents">
+          <h3>Prevents</h3>
+          <p>Halts overdraft cascades, sneaky subscription renewals and fees.</p>
+        </article>
+        <article class="cap-card" id="card-compares">
+          <h3>Compares</h3>
+          <p>Articulates tangible trade-offs before high-spend decisions.</p>
+        </article>
+        <article class="cap-card" id="card-coordinates">
+          <h3>Coordinates</h3>
+          <p>Syncs roommate bills, group trips, and split settlements seamlessly.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="roles" id="agent-shifts-roles">
+      <div class="roles-copy">
+        <h2 class="display">Agent <span class="lime">shifts roles</span> based on context</h2>
+        <p>A context-aware financial intelligence system that continuously adapts its role based on user needs and situations.</p>
+      </div>
+
+      <div class="role-grid">
+        <article class="role-card" id="role-01-observer">
+          <div>
+            <div class="label">01 OBSERVER</div>
+            <p>Tracks signals, routines and activity quietly.</p>
+          </div>
+          <div class="role-status">
+            <span>STATE // OBSERVE</span>
+            <span>ACTIVE</span>
+          </div>
+        </article>
+        <article class="role-card" id="role-02-advisor">
+          <div>
+            <div class="label">02 ADVISOR</div>
+            <p>Interprets context and surfaces timely guidance.</p>
+          </div>
+          <div class="role-status">
+            <span>STATE // ADVISE</span>
+            <span>STANDBY</span>
+          </div>
+        </article>
+        <article class="role-card" id="role-03-planner">
+          <div>
+            <div class="label">03 PLANNER</div>
+            <p>Builds adaptive financial plans.</p>
+          </div>
+          <div class="role-status">
+            <span>STATE // PLAN</span>
+            <span>SYNCHRONIZED</span>
+          </div>
+        </article>
+        <article class="role-card" id="role-04-executor">
+          <div>
+            <div class="label">04 EXECUTOR</div>
+            <p>Handles payments and recurring financial actions.</p>
+          </div>
+          <div class="role-status">
+            <span>STATE // EXECUTE</span>
+            <span>VERIFIED</span>
+          </div>
+        </article>
+        <article class="role-card special" id="role-05-protector">
+          <div>
+            <div class="label">05 PROTECTOR</div>
+            <p>Anticipates risks before they impact goals.</p>
+          </div>
+          <div class="role-status">
+            <span>STATE // SHIELD</span>
+            <span>MONITORING</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BLOCK 1: Before any action, the agent asks these 5 questions
+         ========================================================================= -->
+    <section class="questions-section" id="agent-5-questions">
+      <h2 class="display">Before any action,<br />the agent <span class="lime">asks these 5 questions</span></h2>
+      <div class="q-list">
+        <div class="q-row" id="moni-q1">
+          <span class="q-badge">Q1</span>
+          <p>1. Is something actually happening?</p>
+        </div>
+        <div class="q-row" id="moni-q2">
+          <span class="q-badge">Q2</span>
+          <p>2. Does the user need to know, or can I handle it?</p>
+        </div>
+        <div class="q-row" id="moni-q3">
+          <span class="q-badge">Q3</span>
+          <p>3. How recently was the user nudged?</p>
+        </div>
+        <div class="q-row" id="moni-q4">
+          <span class="q-badge">Q4</span>
+          <p>4. What is the risk level of acting vs not acting?</p>
+        </div>
+        <div class="q-row" id="moni-q5">
+          <span class="q-badge">Q5</span>
+          <p>5. Does this align with the user's stated and revealed preferences?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BLOCK 2: When to appear. When to disappear.
+         ========================================================================= -->
+    <section class="levels-section" id="when-to-appear-disappear">
+      <h2 class="display">When to <span class="lime">appear.</span><br />When to <span class="lime">disappear.</span></h2>
+      <div class="levels">
+        <article class="level" id="moni-level-01">
+          <div class="lv">LEVEL 01</div>
+          <h3>SILENT</h3>
+          <p>Everything within pattern. State updates. No user contact.</p>
+        </article>
+        <article class="level" id="moni-level-02">
+          <div class="lv">LEVEL 02</div>
+          <h3>NUDGE</h3>
+          <p>Something worth knowing, but not deciding.</p>
+        </article>
+        <article class="level" id="moni-level-03">
+          <div class="lv">LEVEL 03</div>
+          <h3>CONFIRM</h3>
+          <p>System has a plan ready. User approves.</p>
+        </article>
+        <article class="level active" id="moni-level-04">
+          <div class="lv">LEVEL 04</div>
+          <h3>CHOICE</h3>
+          <p>Two valid paths. The user's values matter.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BLOCK 3: A continuous system of agents
+         ========================================================================= -->
+    <section class="system-section" id="continuous-system-of-agents">
+      <h2 class="display">A continuous <span class="lime">system of agents</span></h2>
+      <p class="system-intro">That observe, predict, decide, and act in real time all working together in the background.</p>
+
+      <div class="system" id="agents-system-container">
+        <!-- LEFT (~40% width): 7 centred cards on slightly darker bg (#0d0d0d) -->
+        <div class="agent-list" id="agents-breakdown-list">
+          <div class="agent" id="agent-01-perception">
+            <div class="n">01</div>
+            <div class="t">Perception Agent</div>
+            <div class="d">Ingests raw SMS, webhooks &amp; cards</div>
+          </div>
+          <div class="agent" id="agent-02-orchestrator">
+            <div class="n">02</div>
+            <div class="t">Orchestrator Agent</div>
+            <div class="d">Directs agent queues &amp; priorities</div>
+          </div>
+          <div class="agent" id="agent-03-planner">
+            <div class="n">03</div>
+            <div class="t">Planner + Prediction Agent</div>
+            <div class="d">Runs daily 30-day survival models</div>
+          </div>
+          <div class="agent" id="agent-04-negotiator">
+            <div class="n">04</div>
+            <div class="t">Negotiator + Coordinator Agent</div>
+            <div class="d">Reconciles shared flat splits</div>
+          </div>
+          <div class="agent" id="agent-05-execution">
+            <div class="n">05</div>
+            <div class="t">Execution Agent</div>
+            <div class="d">Consented SIP &amp; auto-sweeps</div>
+          </div>
+          <div class="agent" id="agent-06-communication">
+            <div class="n">06</div>
+            <div class="t">Communication Layer</div>
+            <div class="d">Conversational UI &amp; glance cards</div>
+          </div>
+          <div class="agent active" id="agent-07-learning">
+            <div class="n">07</div>
+            <div class="t">Learning Agent</div>
+            <div class="d">Refines heuristic weights across every cycle</div>
+          </div>
+        </div>
+
+        <!-- RIGHT (~60%): Centred Syne title + viewer box with lightbox click -->
+        <div class="viewer" id="agents-viewer-panel">
+          <div class="viewer-title">Tap to open the image</div>
+          <div class="viewer-box" id="viewer" title="Tap to open full-screen lightbox">
+            <!-- ================================================================= -->
+            <!-- TO USE YOUR OWN IMAGE:                                            -->
+            <!-- Replace the <div class="diagram">...</div> below with:            -->
+            <!-- <img src="YOUR_IMAGE_PATH" alt="Agent Architecture Diagram" />    -->
+            <!-- ================================================================= -->
+            <div class="diagram" id="agent-architecture-diagram">
+              
+              <!-- 01 Perception Node -->
+              <div class="diagram-node" id="diag-perception">
+                <div class="diagram-node-header">
+                  <span class="diagram-node-title">Perception Agent</span>
+                  <span class="diagram-node-badge">Always active, combines all awareness signals</span>
+                </div>
+                <div class="diagram-grid-4">
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Screen Context</div>
+                    <div class="diagram-cell-text">Current app, screen text, forms, alerts, cart</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Financial Tracker</div>
+                    <div class="diagram-cell-text">Recent transactions, categorized balances, accounts</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">External Signals</div>
+                    <div class="diagram-cell-text">Merchant pricing, market context, location, time</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">State Synthesis</div>
+                    <div class="diagram-cell-text">Combines everything into unified system state</div>
+                  </div>
+                </div>
+                <div class="diagram-grid-3">
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">User Data Context</div>
+                    <div class="diagram-cell-text">Goals, rules, budgets, risk preferences</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Session Profiler</div>
+                    <div class="diagram-cell-text">Temporal patterns, activity velocity</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Trigger Detection</div>
+                    <div class="diagram-cell-text">Detected anomalies, spending triggers, alerts</div>
+                  </div>
+                </div>
+                <div class="diagram-pills-row">
+                  <span class="diagram-pill trigger">⚡ Ex: KOKO Bill on Zomato</span>
+                  <span class="diagram-pill">Ex: Order Active, 41m wait</span>
+                  <span class="diagram-pill trigger">To: Orchestrator Agent →</span>
+                </div>
+              </div>
+
+              <!-- Connector Arrow -->
+              <div class="diagram-arrow">↓</div>
+
+              <!-- 02 Orchestrator Node -->
+              <div class="diagram-node" id="diag-orchestrator">
+                <div class="diagram-node-header">
+                  <span class="diagram-node-title">Orchestrator Agent</span>
+                  <span class="diagram-node-badge">Queue &amp; Execution Coordinator</span>
+                </div>
+                <div class="diagram-grid-3">
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">INPUTS</div>
+                    <div class="diagram-cell-text">Trigger, System State, Priority weights</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">DECIDES</div>
+                    <div class="diagram-cell-text">Call Predictor? Channel Execution? Split group?</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">OUTPUT</div>
+                    <div class="diagram-cell-text">Execution Plan &amp; Multi-agent routing</div>
+                  </div>
+                </div>
+                <div class="diagram-pills-row">
+                  <span class="diagram-pill trigger">To: Activate Planner / Negotiator</span>
+                </div>
+              </div>
+
+              <!-- Connector Split Arrow -->
+              <div class="diagram-arrow">↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘</div>
+
+              <!-- 03 & 04 Parallel Agents -->
+              <div class="diagram-split-row">
+                <!-- 03 Planner + Prediction -->
+                <div class="diagram-node" id="diag-planner">
+                  <div class="diagram-node-header">
+                    <span class="diagram-node-title">Planner + Prediction Agent</span>
+                  </div>
+                  <div class="diagram-cell" style="margin-bottom: 6px;">
+                    <div class="diagram-cell-name">BEHAVIORS</div>
+                    <div class="diagram-cell-text">Runs daily 30-day survival models. Forecasts cash flow trajectory &amp; flag risks.</div>
+                  </div>
+                  <span class="diagram-pill trigger" style="display:inline-block;">Ex: Recalculate 30-day forecast</span>
+                </div>
+
+                <!-- 04 Negotiator + Coordinator -->
+                <div class="diagram-node" id="diag-negotiator">
+                  <div class="diagram-node-header">
+                    <span class="diagram-node-title">Negotiator + Coordinator Agent</span>
+                  </div>
+                  <div class="diagram-cell" style="margin-bottom: 6px;">
+                    <div class="diagram-cell-name">BEHAVIORS</div>
+                    <div class="diagram-cell-text">Reconciles shared flat splits, balance fairness &amp; auto-settle options.</div>
+                  </div>
+                  <span class="diagram-pill trigger" style="display:inline-block;">Ex: Split calculation, flatmate logic</span>
+                </div>
+              </div>
+
+              <!-- Connector Converge Arrow -->
+              <div class="diagram-arrow">↘ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↙</div>
+
+              <!-- 05 Execution Node -->
+              <div class="diagram-node" id="diag-execution">
+                <div class="diagram-node-header">
+                  <span class="diagram-node-title">Execution Agent</span>
+                  <span class="diagram-node-badge">Consented &amp; Verified</span>
+                </div>
+                <div class="diagram-grid-3">
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Commerce Executor</div>
+                    <div class="diagram-cell-text">Auto-pay, instant sweep, merchant order</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Social Executor</div>
+                    <div class="diagram-cell-text">Splits sent to flatmates, notification nudges</div>
+                  </div>
+                  <div class="diagram-cell">
+                    <div class="diagram-cell-name">Communication</div>
+                    <div class="diagram-cell-text">Inter-agent state sync, push glance alerts</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Connector Arrow -->
+              <div class="diagram-arrow">↓</div>
+
+              <!-- 07 Learning Node (Mint Gradient) -->
+              <div class="diagram-node mint" id="diag-learning">
+                <div class="diagram-node-header" style="border-bottom-color: rgba(6, 35, 27, 0.15);">
+                  <span class="diagram-node-title">Learning Agent (Continuous Adaptation)</span>
+                  <span class="diagram-pill" style="background:#06231b; color:#a5ffc9; border:none;">Cycle Heuristics</span>
+                </div>
+                <div class="diagram-cell" style="background: rgba(255,255,255,0.4); border-color: rgba(6,35,27,0.15); margin-bottom: 6px;">
+                  <div class="diagram-cell-name" style="color: #06231b;">Inputs &amp; Outputs</div>
+                  <div class="diagram-cell-text">Predicted vs actual spend, user overrides → Refined decision rules &amp; improved prediction models across every cycle.</div>
+                </div>
+                <div class="diagram-pill" style="font-size: 8.5px;">
+                  ✨ Ex: User approved order despite budget warning → Learn: User prioritizes food quality over budget on weekends
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCENARIO CAROUSEL ================= -->
+    <section class="scenario" aria-roledescription="carousel" aria-label="MONI scenarios" id="scenario-carousel">
+      <div class="s-top">
+        <h2 class="s-title swap" id="s-title">
+          <span class="l1" id="s-l1">Salary hits.</span>
+          <span class="l2" id="s-l2">The agent takes over.</span>
+        </h2>
+        <p class="s-desc swap" id="s-desc">
+          As soon as Rohan’s salary is credited, the agent understands his financial patterns using salary signals, recurring expenses, and spending behavior. In the background, it automatically structures budgets across essentials, lifestyle, and savings, then surfaces a simple monthly snapshot ready to lock in.
+        </p>
+      </div>
+
+      <div class="s-stage">
+        <div class="s-media" id="s-media">
+          <div class="s-slide on" id="s-slide"></div>
+        </div>
+
+        <button class="arrow prev" id="s-prev" aria-label="Previous scenario">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button class="arrow next" id="s-next" aria-label="Next scenario">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="s-foot">
+        <div class="count" id="s-count"><b id="s-curr">01</b> / <span id="s-tot">05</span></div>
+        <div class="dots" id="s-dots"></div>
+      </div>
+    </section>
+
+    <!-- ================= ADAPTIVE INTERVENTION FRAMEWORK ================= -->
+    <section class="fw" id="adaptive-intervention-framework">
+      <h2>Adaptive Intervention Framework</h2>
+      <p class="sub">How the system decides when to stay silent, when to inform, and when to intervene.</p>
+
+      <div class="risks">
+        <article class="risk low" id="risk-low">
+          <div class="lv">LOW RISK</div>
+          <h3>Passive Logging</h3>
+          <p>Reversible micro-transactions. Silent ledger reconciliations with no notification ping.</p>
+        </article>
+
+        <article class="risk medium" id="risk-medium">
+          <div class="lv">MEDIUM RISK</div>
+          <h3>Glanceable Nudge</h3>
+          <p>Elevated category burn rate. Ambient lock-screen badge when phone is next unlocked.</p>
+        </article>
+
+        <article class="risk high" id="risk-high">
+          <div class="lv">HIGH RISK</div>
+          <h3>Mandated Consent</h3>
+          <p>Discretionary capital transfer or subscription lock. Requires deliberate single tap.</p>
+        </article>
+
+        <article class="risk critical" id="risk-critical">
+          <div class="lv">CRITICAL RISK</div>
+          <h3>Instant Halt</h3>
+          <p>Immediate interrupt for rent threshold breach or suspected fraudulent debit.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= HERO IMAGE (NO OPAQUE BACKGROUND, NON-INTERACTIVE) ================= -->
+    <div class="hero-img-wrap">
+      <div class="hero-img" id="heroImg">
+        <img src="assets/hands-moni-card.png" alt="Two hands passing the Moni card" />
+      </div>
+    </div>
+
+    <div class="wrap-closing">
+      <!-- ================= TRUST & TRANSPARENCY ================= -->
+      <section class="trust">
+        <div class="copy rv">
+          <h2 class="display">Trust &amp;<br/>Transparency</h2>
+          <p>Trust is the most critical part of a financial agent. It is built gradually through consistent, transparent behaviour not assumed upfront. If an agent can't say no, it wouldn't be an effective one.</p>
+        </div>
+        <div class="principles">
+          <article class="pr rv"><div class="k">Principle 01</div><h3>User stays in control</h3><p>Every automation retains a single zero-friction kill switch.</p></article>
+          <article class="pr rv"><div class="k">Principle 02</div><h3>Clear financial context</h3><p>Surfaces transparent deterministic formulas behind every decision.</p></article>
+          <article class="pr rv"><div class="k">Principle 03</div><h3>Non-judgemental guidance</h3><p>No shaming badges, red warnings, or guilt-tripping notifications.</p></article>
+          <article class="pr rv"><div class="k">Principle 04</div><h3>Invisible reliability</h3><p>Operates silently under the hood without asking for constant logging praise.</p></article>
+          <article class="pr rv"><div class="k">Principle 05</div><h3>Automation builds gradually</h3><p>Starts with pure observation before asking for autonomous execution keys.</p></article>
+          <article class="pr rv"><div class="k">Principle 06</div><h3>Interrupts only when needed</h3><p>Treats human focus as sacred, batching non-urgent context into calm recaps.</p></article>
+        </div>
+      </section>
+
+      <!-- ================= LEARNING CYCLE ================= -->
+      <section class="cycle-sec">
+        <h2 class="display rv">Agent that gets smarter<br/>with every cycle</h2>
+        <div class="cycle rv">
+          <div class="step"><span class="n">01</span><span class="t">Observes</span></div><span class="arr">→</span>
+          <div class="step"><span class="n">02</span><span class="t">Interprets</span></div><span class="arr">→</span>
+          <div class="step"><span class="n">03</span><span class="t">Acts</span></div><span class="arr">→</span>
+          <div class="step"><span class="n">04</span><span class="t">Predicts</span></div><span class="arr">→</span>
+          <div class="step last"><span class="n">05</span><span class="t">Learns</span></div>
+        </div>
+      </section>
+
+      <!-- ================= GOAL + THANK YOU ================= -->
+      <section class="goal">
+        <p class="eyebrow rv">Our goal</p>
+        <blockquote class="rv">"The goal is not to build a better finance tool, but to make financial decisions fade into the background so people can focus on living their lives instead of constantly thinking about money."</blockquote>
+        <p class="thanks rv">THANK YOU.</p>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- FULLSCREEN LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Agent architecture diagram full screen">
+    <div class="lightbox-inner" id="lightbox-inner">
+      <div class="lightbox-header">
+        <div class="lightbox-title">Agent System Architecture Diagram</div>
+        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">ESC / Close ✕</button>
+      </div>
+      <div id="lightbox-body"></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      document.getElementById('theme-toggle-btn').innerText = next === 'dark' ? 'Switch to Light' : 'Switch to Dark';
+    }
+
+    // Lightbox Logic
+    const viewer = document.getElementById('viewer');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxBody = document.getElementById('lightbox-body');
+
+    function openLightbox() {
+      const img = viewer.querySelector('img');
+      if (img) {
+        lightboxBody.innerHTML = '<img src="' + img.src + '" alt="System of Agents Diagram" style="width:100%; height:auto; max-height:80vh; object-fit:contain; border-radius:12px;" />';
+      } else {
+        const clone = document.getElementById('agent-architecture-diagram').cloneNode(true);
+        clone.id = 'agent-architecture-diagram-lightbox';
+        lightboxBody.innerHTML = '';
+        lightboxBody.appendChild(clone);
+      }
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    if (viewer) {
+      viewer.addEventListener('click', openLightbox);
+    }
+    if (lightbox) {
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.id === 'lightbox-close' || e.target.closest('#lightbox-close')) {
+          closeLightbox();
+        }
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ================= SCENARIO CAROUSEL LOGIC ================= */
+    (function initScenarioCarousel() {
+      const scenarios = [
+        {
+          l1: "Salary hits.",
+          l2: "The agent takes over.",
+          text: "As soon as Rohan’s salary is credited, the agent understands his financial patterns using salary signals, recurring expenses, and spending behavior. In the background, it automatically structures budgets across essentials, lifestyle, and savings, then surfaces a simple monthly snapshot ready to lock in.",
+          img: "assets/scenario-1-salary.png",
+          label: "Salary credited · lock-screen notification",
+          badge: "SIGNAL // SALARY_CREDIT",
+          title: "Salary Credited · ₹1,42,000",
+          desc: "Autonomously structured ₹45k Essentials • ₹32k Lifestyle • ₹65k Investments & Emergency.",
+          val: "Ready to lock in snapshot"
+        },
+        {
+          l1: "Going Out, Without",
+          l2: "Overthinking Money",
+          text: "When Rohan plans to go out for dinner, the agent understands his budget, spending patterns, location, and offers in real time. It suggests places, manages payments, tracks spending automatically, and quietly helps him stay financially balanced.",
+          img: "assets/scenario-2-dinner.png",
+          label: "Going out · dinner suggestion",
+          badge: "CONTEXT // DINING_OUT",
+          title: "Indiranagar · ₹3,200 Safe Envelope",
+          desc: "Burma Burma suggested. 15% card dining discount applied automatically.",
+          val: "Quiet balance guard active"
+        },
+        {
+          l1: "Eat In Instead Of",
+          l2: "Spending Another Night Out",
+          text: "After eating out multiple times, Rohan decides to cook at home instead. The agent understands his grocery list, compares prices across apps, manages payments automatically, and places optimized orders with minimal effort.",
+          img: "assets/scenario-3-groceries.png",
+          label: "Cooking at home · grocery orders",
+          badge: "OPTIMIZATION // GROCERIES",
+          title: "Cook at Home · Optimized Basket",
+          desc: "Cross-compared Blinkit vs Instamart vs Zepto. Saved ₹340 on fresh staples.",
+          val: "1-Tap consent auto-placed"
+        },
+        {
+          l1: "Splitting Bills Should Not",
+          l2: "Feel Like Managing Them",
+          text: "When Rohan pays for shared expenses like rent, the agent automatically handles splits, tracks repayments, and updates only his actual share in the budget while quietly managing reminders and pending balances in the background.",
+          img: "assets/scenario-4-split.png",
+          label: "Shared rent · split & reminders",
+          badge: "COORDINATION // FLAT_RENT",
+          title: "Flat Rent · ₹45,000 Reconciled",
+          desc: "Your share ₹15,000 locked in ledger. 2 flatmate split reminders scheduled.",
+          val: "Zero awkward manual texts"
+        },
+        {
+          l1: "We also thought about",
+          l2: "a Bali trip.",
+          text: "How Rohan could plan a Bali trip while the agent quietly builds a savings plan around his lifestyle, tracks the best flight prices, and adapts to unexpected expenses or emergencies in real time, helping him stay financially stable while still keeping his travel goal on track.",
+          img: "assets/scenario-5-bali.png",
+          label: "Bonus · Bali trip plan",
+          badge: "GOAL // BALI_GETAWAY",
+          title: "Bali Flight Alert · ₹24,800 (-12%)",
+          desc: "Lifestyle envelope auto-saved ₹8,000/mo without touching emergency reserves.",
+          val: "Trip goal trajectory on track"
+        }
+      ];
+
+      let idx = 0;
+      let busy = false;
+
+      const titleEl = document.getElementById('s-title');
+      const l1El = document.getElementById('s-l1');
+      const l2El = document.getElementById('s-l2');
+      const descEl = document.getElementById('s-desc');
+      const slideEl = document.getElementById('s-slide');
+      const currEl = document.getElementById('s-curr');
+      const totEl = document.getElementById('s-tot');
+      const dotsEl = document.getElementById('s-dots');
+      const prevBtn = document.getElementById('s-prev');
+      const nextBtn = document.getElementById('s-next');
+      const mediaEl = document.getElementById('s-media');
+
+      if (!slideEl) return;
+
+      totEl.textContent = String(scenarios.length).padStart(2, '0');
+
+      // Generate clickable pill dots
+      dotsEl.innerHTML = '';
+      scenarios.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to scenario ' + (i + 1));
+        if (i === 0) b.classList.add('on');
+        b.addEventListener('click', () => {
+          if (busy || i === idx) return;
+          renderScenario(i);
+        });
+        dotsEl.appendChild(b);
+      });
+
+      function createPlaceholder(s, n) {
+        return `
+          <div class="ph-phone" aria-label="${s.label}">
+            <div class="ph-status-bar">
+              <span>09:41</span>
+              <span>5G · 100%</span>
+            </div>
+            <div class="ph-content">
+              <div class="ph-badge">${s.badge}</div>
+              <div class="ph-card">
+                <div class="ph-card-title">${s.title}</div>
+                <div class="ph-card-desc">${s.desc}</div>
+                <div class="ph-pill-val">
+                  <span>●</span> ${s.val}
+                </div>
+              </div>
+            </div>
+            <div class="ph-bottom-bar">
+              <span>MONI SCENARIO ${String(n + 1).padStart(2, '0')}</span>
+              <span style="color: var(--lime);">ACTIVE</span>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderScenario(nextIdx) {
+        busy = true;
+        idx = nextIdx;
+
+        // Fade out
+        titleEl.classList.add('out');
+        descEl.classList.add('out');
+        slideEl.classList.remove('on');
+
+        setTimeout(() => {
+          const s = scenarios[idx];
+          l1El.textContent = s.l1;
+          l2El.textContent = s.l2;
+          descEl.textContent = s.text;
+          currEl.textContent = String(idx + 1).padStart(2, '0');
+
+          // Update dots
+          const buttons = dotsEl.querySelectorAll('button');
+          buttons.forEach((btn, i) => {
+            btn.classList.toggle('on', i === idx);
+          });
+
+          // Render phone placeholder immediately
+          slideEl.innerHTML = createPlaceholder(s, idx);
+
+          // Try preloading user asset if provided
+          const img = new Image();
+          img.alt = s.label;
+          img.onload = () => {
+            slideEl.innerHTML = '';
+            slideEl.appendChild(img);
+          };
+          img.src = s.img;
+
+          // Fade back in
+          titleEl.classList.remove('out');
+          descEl.classList.remove('out');
+          slideEl.classList.add('on');
+
+          setTimeout(() => {
+            busy = false;
+          }, 300);
+        }, 180);
+      }
+
+      // Initial render
+      renderScenario(0);
+
+      // Arrow navigation (wrap around)
+      prevBtn.addEventListener('click', () => {
+        if (busy) return;
+        renderScenario((idx - 1 + scenarios.length) % scenarios.length);
+      });
+      nextBtn.addEventListener('click', () => {
+        if (busy) return;
+        renderScenario((idx + 1) % scenarios.length);
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+          nextBtn.click();
+        }
+      });
+
+      // Touch swipe
+      let startX = 0;
+      let startY = 0;
+      if (mediaEl) {
+        mediaEl.addEventListener('touchstart', (e) => {
+          if (e.touches && e.touches[0]) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+          }
+        }, { passive: true });
+
+        mediaEl.addEventListener('touchend', (e) => {
+          if (e.changedTouches && e.changedTouches[0]) {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const diffX = endX - startX;
+            const diffY = endY - startY;
+
+            // Horizontal swipe threshold
+            if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+              if (diffX < 0) {
+                nextBtn.click();
+              } else {
+                prevBtn.click();
+              }
+            }
+          }
+        }, { passive: true });
+      }
+    })();
+
+    /* hero image loader */
+    (function(){
+      const img = document.querySelector('#heroImg img');
+      if (!img) return;
+
+      try {
+        const cached = localStorage.getItem('moni_hands_card_image');
+        if (cached) {
+          img.src = cached;
+          return;
+        }
+      } catch(e) {}
+
+      const candidates = [
+        'assets/hands-moni-card.png',
+        '/assets/hands-moni-card.png',
+        'assets/hands-moni-card.PNG',
+        'assets/hands-moni-card.webp',
+        'assets/hands-moni-card.jpg',
+        'assets/hands-moni-card.jpeg',
+        'assets/hands-card.png',
+        'assets/moni-card.png',
+        'hands-moni-card.png'
+      ];
+
+      function probe(idx) {
+        if (idx >= candidates.length) return;
+        const testImg = new Image();
+        testImg.onload = () => { img.src = candidates[idx]; };
+        testImg.onerror = () => probe(idx + 1);
+        testImg.src = candidates[idx];
+      }
+      probe(0);
+    })();
+
+    /* gentle reveal for .rv elements */
+    (function(){
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
+        document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+      } else {
+        document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+      }
+    })();
+  </script>
+</body>
+</html>
