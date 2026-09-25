@@ -103,7 +103,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
             </div>
 
             <video
-              src="/shreya-portfolio/assets/moni-video.mp4"
+              src="/assets/moni-video.mp4"
               autoPlay
               loop
               muted
@@ -135,5 +135,6 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
     </section>
   );
 };
+
 
 

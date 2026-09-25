@@ -35,7 +35,7 @@ const PROJECTS_DATA: Project[] = [
       { label: 'ENGINE', value: 'Multi-Agent Adaptive UI' },
       { label: 'HONOR', value: 'Samsung Prism Runner Up' },
     ],
-    imageSrc: '/shreya-portfolio/assets/project-moni.png',
+    imageSrc: '/assets/project-moni.png',
     imageAlt: 'MONI - AI Financial Agent Interface',
     caption: 'context-aware financial intelligence & dynamic views ↗',
     route: '/moni',
@@ -55,7 +55,7 @@ const PROJECTS_DATA: Project[] = [
       { label: 'METHOD', value: 'Object-Oriented UX (OOUX)' },
       { label: 'SPEED', value: 'Zero-Latency Matching' },
     ],
-    imageSrc: '/shreya-portfolio/assets/project-bb.png',
+    imageSrc: '/assets/project-bb.png',
     imageAlt: 'Blood Bank System - OOUX Healthcare Platform',
     caption: 'clarity and calm empathy in critical emergencies ↗',
     route: '/blood-bank',
@@ -75,7 +75,7 @@ const PROJECTS_DATA: Project[] = [
       { label: 'FIELDWORK', value: 'Najibabad Artisan Guild' },
       { label: 'MEDIUM', value: 'Living Interactive Archive' },
     ],
-    imageSrc: '/shreya-portfolio/assets/project-rafu.png',
+    imageSrc: '/assets/project-rafu.png',
     imageAlt: 'Rafooghar - Traditional Textile Craft Preservation',
     caption: 'the quiet art of invisible mending and living memory ↗',
     route: '/rafugari',
@@ -649,7 +649,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         if (!target.src.includes('project-bb-1.png')) {
-                          target.src = '/shreya-portfolio/assets/project-bb-1.png';
+                          target.src = '/assets/project-bb-1.png';
                         } else {
                           target.src =
                             'https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=800&auto=format&fit=crop';
@@ -794,7 +794,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         if (!target.src.includes('project-rafu-1.png')) {
-                          target.src = '/shreya-portfolio/assets/project-rafu-1.png';
+                          target.src = '/assets/project-rafu-1.png';
                         } else {
                           target.src =
                             'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop';
@@ -1036,5 +1036,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     </section>
   );
 };
+
 
 

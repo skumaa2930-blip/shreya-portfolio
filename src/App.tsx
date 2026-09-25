@@ -34,11 +34,11 @@ type Fragment = {
   idName: string;
 };
 
-// Fragment images 1 through 8 in /public/shreya-portfolio/assets/
+// Fragment images 1 through 8 in /public/assets/
 const fragments: Fragment[] = [
   {
     idName: "fragment1",
-    src: "/shreya-portfolio/assets/fragment1.png",
+    src: "/assets/fragment1.png",
     fallbackSrc: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop",
     label: "PHOTO",
     type: "photo",
@@ -46,7 +46,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment2",
-    src: "/shreya-portfolio/assets/fragment2.png",
+    src: "/assets/fragment2.png",
     fallbackSrc: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
     label: "UX",
     type: "ui",
@@ -54,7 +54,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment3",
-    src: "/shreya-portfolio/assets/fragment3.png",
+    src: "/assets/fragment3.png",
     fallbackSrc: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=800&auto=format&fit=crop",
     label: "VIDEO",
     type: "video",
@@ -62,7 +62,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment4",
-    src: "/shreya-portfolio/assets/fragment4.png",
+    src: "/assets/fragment4.png",
     fallbackSrc: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
     label: "SKETCH",
     type: "sketch",
@@ -70,7 +70,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment5",
-    src: "/shreya-portfolio/assets/fragment5.png",
+    src: "/assets/fragment5.png",
     fallbackSrc: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=800&auto=format&fit=crop",
     label: "OBJECT",
     type: "object",
@@ -78,7 +78,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment6",
-    src: "/shreya-portfolio/assets/fragment6.png",
+    src: "/assets/fragment6.png",
     fallbackSrc: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
     label: "EXPERIMENT",
     type: "experiment",
@@ -86,7 +86,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment7",
-    src: "/shreya-portfolio/assets/fragment7.png",
+    src: "/assets/fragment7.png",
     fallbackSrc: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=800&auto=format&fit=crop",
     label: "DETAIL",
     type: "detail",
@@ -94,7 +94,7 @@ const fragments: Fragment[] = [
   },
   {
     idName: "fragment8",
-    src: "/shreya-portfolio/assets/fragment8.png",
+    src: "/assets/fragment8.png",
     fallbackSrc: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=800&auto=format&fit=crop",
     label: "PORTFOLIO",
     type: "portfolio",
@@ -766,6 +766,9 @@ if (
     </>
   );
 }
+
+
+
 
 
 

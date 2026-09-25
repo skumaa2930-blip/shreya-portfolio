@@ -43,7 +43,7 @@ const CYCLE_STEPS = [
 ];
 
 export const MoniClosingSection: React.FC = () => {
-  const [heroImageSrc, setHeroImageSrc] = useState<string>('/shreya-portfolio/assets/hands-moni-card.png');
+  const [heroImageSrc, setHeroImageSrc] = useState<string>('/assets/hands-moni-card.png');
 
   useEffect(() => {
     // Check client-side cached image first if user previously provided it
@@ -59,15 +59,15 @@ export const MoniClosingSection: React.FC = () => {
 
     // Candidate paths in case the user named or saved the file with another extension
     const candidatePaths = [
-      '/shreya-portfolio/assets/hands-moni-card.png',
-      '/shreya-portfolio/assets/hands-moni-card.PNG',
-      '/shreya-portfolio/assets/hands-moni-card.webp',
-      '/shreya-portfolio/assets/hands-moni-card.jpg',
-      '/shreya-portfolio/assets/hands-moni-card.jpeg',
-      '/shreya-portfolio/assets/hands-card.png',
-      '/shreya-portfolio/assets/moni-card.png',
-      '/shreya-portfolio/assets/hands.png',
-      '/shreya-portfolio/assets/card.png',
+      '/assets/hands-moni-card.png',
+      '/assets/hands-moni-card.PNG',
+      '/assets/hands-moni-card.webp',
+      '/assets/hands-moni-card.jpg',
+      '/assets/hands-moni-card.jpeg',
+      '/assets/hands-card.png',
+      '/assets/moni-card.png',
+      '/assets/hands.png',
+      '/assets/card.png',
       '/hands-moni-card.png',
       'assets/hands-moni-card.png',
     ];
@@ -261,5 +261,6 @@ export const MoniClosingSection: React.FC = () => {
     </div>
   );
 };
+
 
 

@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/shreya-portfolio/assets/:path*",
+      "destination": "/assets/:path*"
+    }
+  ]
+}

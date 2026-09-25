@@ -21,7 +21,7 @@ const STAGE_CARDS: StageCard[] = [
     title: 'IDEA DUMP',
     subtitle: 'Modular Kiosk Blueprint & Spatial Geometry',
     badgeType: 'dark',
-    image: '/shreya-portfolio/assets/process-01.png',
+    image: '/assets/process-01.png',
     rotation: 'rotate-0',
     notes: 'Rough architectural wireframe, customer flow & volumetric study.',
   },
@@ -31,7 +31,7 @@ const STAGE_CARDS: StageCard[] = [
     title: 'TRY THINGS OUT',
     subtitle: 'Street Scene | Charcoal Draft | Rough Wireframe Notes',
     badgeType: 'dark',
-    image: '/shreya-portfolio/assets/process-02.png',
+    image: '/assets/process-02.png',
     rotation: 'rotate-[2.2deg]',
     notes: 'Testing atmosphere, user flow, and vendor ergonomics in dark environments. #UXResearch #FieldStudy',
   },
@@ -41,7 +41,7 @@ const STAGE_CARDS: StageCard[] = [
     title: 'GETTING THERE',
     subtitle: 'Night Market Eats & Atmosphere Synthesis',
     badgeType: 'dark',
-    image: '/shreya-portfolio/assets/process-03.png',
+    image: '/assets/process-03.png',
     rotation: '-rotate-[2.4deg]',
     notes: 'Noodles & dumplings, late night signage, rain reflections, and density tuning.',
   },
@@ -51,7 +51,7 @@ const STAGE_CARDS: StageCard[] = [
     title: 'MAKE IT REAL',
     subtitle: 'NEON CHAI / ネオン茶屋 — Live Environment',
     badgeType: 'dark',
-    image: '/shreya-portfolio/assets/process-04.png',
+    image: '/assets/process-04.png',
     rotation: 'rotate-0',
     notes: 'Production-ready atmospheric stall with glowing paper lanterns, steam, tactile materiality, and crafted lighting.',
   },
@@ -454,6 +454,7 @@ export const ProcessLoopSection: React.FC = () => {
     </section>
   );
 };
+
 
 
 

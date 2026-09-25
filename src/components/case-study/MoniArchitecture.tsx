@@ -204,3 +204,4 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
 };
 
 
+

@@ -5,7 +5,9 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: process.env.VERCEL ? '/' : '/shreya-portfolio/',
+    base: process.env.GITHUB_ACTIONS === 'true'
+      ? '/shreya-portfolio/'
+      : '/',
 
     plugins: [react(), tailwindcss()],
 

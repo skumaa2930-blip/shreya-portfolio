@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'motion/react';
 
-// Exact slide PNGs provided in /public/shreya-portfolio/assets/ (5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+// Exact slide PNGs provided in /public/assets/ (5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
 const SLIDES = [
-  { id: 5, src: '/shreya-portfolio/assets/5.png', alt: 'Blood bank case study slide 5' },
-  { id: 6, src: '/shreya-portfolio/assets/6.png', alt: 'Blood bank case study slide 6' },
-  { id: 7, src: '/shreya-portfolio/assets/7.png', alt: 'Blood bank case study slide 7' },
-  { id: 8, src: '/shreya-portfolio/assets/8.png', alt: 'Blood bank case study slide 8' },
-  { id: 9, src: '/shreya-portfolio/assets/9.png', alt: 'Blood bank case study slide 9' },
-  { id: 10, src: '/shreya-portfolio/assets/10.png', alt: 'Blood bank case study slide 10' },
-  { id: 11, src: '/shreya-portfolio/assets/11.png', alt: 'Blood bank case study slide 11' },
-  { id: 12, src: '/shreya-portfolio/assets/12.png', alt: 'Blood bank case study slide 12' },
-  { id: 13, src: '/shreya-portfolio/assets/13.png', alt: 'Blood bank case study slide 13' },
-  { id: 14, src: '/shreya-portfolio/assets/14.png', alt: 'Blood bank case study slide 14' },
-  { id: 15, src: '/shreya-portfolio/assets/15.png', alt: 'Blood bank case study slide 15' },
+  { id: 5, src: '/assets/5.png', alt: 'Blood bank case study slide 5' },
+  { id: 6, src: '/assets/6.png', alt: 'Blood bank case study slide 6' },
+  { id: 7, src: '/assets/7.png', alt: 'Blood bank case study slide 7' },
+  { id: 8, src: '/assets/8.png', alt: 'Blood bank case study slide 8' },
+  { id: 9, src: '/assets/9.png', alt: 'Blood bank case study slide 9' },
+  { id: 10, src: '/assets/10.png', alt: 'Blood bank case study slide 10' },
+  { id: 11, src: '/assets/11.png', alt: 'Blood bank case study slide 11' },
+  { id: 12, src: '/assets/12.png', alt: 'Blood bank case study slide 12' },
+  { id: 13, src: '/assets/13.png', alt: 'Blood bank case study slide 13' },
+  { id: 14, src: '/assets/14.png', alt: 'Blood bank case study slide 14' },
+  { id: 15, src: '/assets/15.png', alt: 'Blood bank case study slide 15' },
 ];
 
 export const BloodBankSlideStream: React.FC = () => {
@@ -40,5 +40,6 @@ export const BloodBankSlideStream: React.FC = () => {
     </section>
   );
 };
+
 
 

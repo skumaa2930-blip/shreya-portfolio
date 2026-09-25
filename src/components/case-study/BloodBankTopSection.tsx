@@ -102,14 +102,14 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
           >
             <div className="relative w-full max-w-[640px] lg:max-w-none flex items-center justify-center lg:justify-end py-2 sm:py-4">
               <img
-                src="/shreya-portfolio/assets/bb-laptop.png"
+                src="/assets/bb-laptop.png"
                 alt="Blood Bank Management Dashboard on Laptop"
                 className="w-full sm:w-[110%] lg:w-[124%] max-w-none h-auto object-contain block drop-shadow-[0_30px_70px_rgba(0,0,0,0.9)] select-none transform scale-105 sm:scale-115 lg:scale-125 origin-center lg:origin-right hover:scale-[1.28] transition-transform duration-300"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (!target.src.includes('project-bb')) {
-                    target.src = '/shreya-portfolio/assets/project-bb.png';
+                    target.src = '/assets/project-bb.png';
                   }
                 }}
               />
@@ -283,5 +283,6 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
     </div>
   );
 };
+
 
 

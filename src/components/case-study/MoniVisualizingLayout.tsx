@@ -253,7 +253,7 @@ export const MoniVisualizingLayout: React.FC = () => {
             <div
               className="rounded-[44px] overflow-hidden pt-[44px] px-2 pb-[10px] min-h-[620px] flex flex-col gap-3 relative bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url('/shreya-portfolio/assets/moni-mobile-bg.png'), radial-gradient(circle at 30% 55%, #dcdb9a 0, #b7b48a 28%, transparent 55%), linear-gradient(180deg, #bdbdbd 0%, #9d9da0 55%, #a5a8c8 88%, #7ad0b4 100%)`,
+                backgroundImage: `url('/assets/moni-mobile-bg.png'), radial-gradient(circle at 30% 55%, #dcdb9a 0, #b7b48a 28%, transparent 55%), linear-gradient(180deg, #bdbdbd 0%, #9d9da0 55%, #a5a8c8 88%, #7ad0b4 100%)`,
               }}
             >
               {/* Layer 2: Reasoning Layer (Widget Card + Suggestions Pill) */}
@@ -441,5 +441,6 @@ export const MoniVisualizingLayout: React.FC = () => {
     </section>
   );
 };
+
 
 

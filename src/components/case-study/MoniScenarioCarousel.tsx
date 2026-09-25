@@ -19,7 +19,7 @@ const SCENARIOS: Scenario[] = [
     l1: 'Salary hits.',
     l2: 'The agent takes over.',
     text: 'As soon as Rohan’s salary is credited, the agent understands his financial patterns using salary signals, recurring expenses, and spending behavior. In the background, it automatically structures budgets across essentials, lifestyle, and savings, then surfaces a simple monthly snapshot ready to lock in.',
-    img: '/shreya-portfolio/assets/s1.png',
+    img: '/assets/s1.png',
     label: 'Salary credited · lock-screen notification',
     badge: 'SIGNAL // SALARY_CREDIT',
     title: 'Salary Credited · ₹1,42,000',
@@ -30,7 +30,7 @@ const SCENARIOS: Scenario[] = [
     l1: 'Going Out, Without',
     l2: 'Overthinking Money',
     text: 'When Rohan plans to go out for dinner, the agent understands his budget, spending patterns, location, and offers in real time. It suggests places, manages payments, tracks spending automatically, and quietly helps him stay financially balanced.',
-    img: '/shreya-portfolio/assets/s2.png',
+    img: '/assets/s2.png',
     label: 'Going out · dinner suggestion',
     badge: 'CONTEXT // DINING_OUT',
     title: 'Indiranagar · ₹3,200 Safe Envelope',
@@ -41,7 +41,7 @@ const SCENARIOS: Scenario[] = [
     l1: 'Eat In Instead Of',
     l2: 'Spending Another Night Out',
     text: 'After eating out multiple times, Rohan decides to cook at home instead. The agent understands his grocery list, compares prices across apps, manages payments automatically, and places optimized orders with minimal effort.',
-    img: '/shreya-portfolio/assets/s3.png',
+    img: '/assets/s3.png',
     label: 'Cooking at home · grocery orders',
     badge: 'OPTIMIZATION // GROCERIES',
     title: 'Cook at Home · Optimized Basket',
@@ -52,7 +52,7 @@ const SCENARIOS: Scenario[] = [
     l1: 'Splitting Bills Should Not',
     l2: 'Feel Like Managing Them',
     text: 'When Rohan pays for shared expenses like rent, the agent automatically handles splits, tracks repayments, and updates only his actual share in the budget while quietly managing reminders and pending balances in the background.',
-    img: '/shreya-portfolio/assets/s4.png',
+    img: '/assets/s4.png',
     label: 'Shared rent · split & reminders',
     badge: 'COORDINATION // FLAT_RENT',
     title: 'Flat Rent · ₹45,000 Reconciled',
@@ -63,7 +63,7 @@ const SCENARIOS: Scenario[] = [
     l1: 'We also thought about',
     l2: 'a Bali trip.',
     text: 'How Rohan could plan a Bali trip while the agent quietly builds a savings plan around his lifestyle, tracks the best flight prices, and adapts to unexpected expenses or emergencies in real time, helping him stay financially stable while still keeping his travel goal on track.',
-    img: '/shreya-portfolio/assets/s5.png',
+    img: '/assets/s5.png',
     label: 'Bonus · Bali trip plan',
     badge: 'GOAL // BALI_GETAWAY',
     title: 'Bali Flight Alert · ₹24,800 (-12%)',
@@ -309,5 +309,6 @@ export const MoniScenarioCarousel: React.FC = () => {
     </div>
   );
 };
+
 
 
