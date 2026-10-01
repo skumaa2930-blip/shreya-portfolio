@@ -21,7 +21,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
         {/* Left Column: Tag, Title, Subtitle, Handwritten Note, Metadata */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           {/* Tag Pill: AI · FINANCE · AGENT */}
-          <div className="inline-flex items-center px-3 py-1 rounded bg-[#C9F24A]/10 border border-[#C9F24A]/20 text-[#C9F24A] text-[11px] font-mono tracking-widest uppercase mb-6 sm:mb-8">
+          <div className="inline-flex items-center px-3 py-1 rounded bg-[#B6D63A]/10 border border-[#B6D63A]/20 text-[#B6D63A] text-[11px] font-syne font-semibold tracking-widest uppercase mb-6 sm:mb-8">
             AI · FINANCE · AGENT
           </div>
 
@@ -30,7 +30,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
             <span className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#F5F5F0] tracking-tight">
               MONI{' '}
             </span>
-            <span className="font-playfair italic text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal text-[#C9F24A] tracking-tight">
+            <span className="font-playfair italic text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal text-[#B6D63A] tracking-tight">
               Finance Agent
             </span>
           </h1>
@@ -43,7 +43,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
 
           {/* Handwritten Quote */}
           <div className="mt-8 sm:mt-10">
-            <span className="font-caveat text-2xl sm:text-[28px] text-[#C9F24A] tracking-wide inline-block">
+            <span className="font-caveat text-2xl sm:text-[28px] text-[#B6D63A] tracking-wide inline-block">
               "this one got a little serious. but finance always is."
             </span>
           </div>
@@ -54,7 +54,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
           {/* 4 Metadata Columns */}
           <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
             <div>
-              <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+              <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                 MY ROLE
               </div>
               <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -63,7 +63,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
             </div>
 
             <div>
-              <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+              <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                 TIMELINE
               </div>
               <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -72,7 +72,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
             </div>
 
             <div>
-              <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+              <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                 TEAM
               </div>
               <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -81,7 +81,7 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
             </div>
 
             <div>
-              <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+              <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                 TOOLS
               </div>
               <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -117,9 +117,9 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
                   const fallback = document.createElement('div');
                   fallback.className = 'moni-hero-fallback w-full h-full rounded-[48px] bg-[#141416] border-0 flex flex-col justify-between p-6 pt-10 text-center';
                   fallback.innerHTML = `
-                    <div class="text-[10px] font-mono tracking-widest text-[#C9F24A] uppercase">MONI · MOBILE HERO</div>
+                    <div class="text-[10px] font-mono tracking-widest text-[#B6D63A] uppercase">MONI · MOBILE HERO</div>
                     <div class="my-auto flex flex-col items-center gap-3">
-                      <div class="w-14 h-14 rounded-2xl bg-[#C9F24A]/10 border border-[#C9F24A]/30 flex items-center justify-center text-[#C9F24A] font-bold text-xl">▶</div>
+                      <div class="w-14 h-14 rounded-2xl bg-[#B6D63A]/10 border border-[#B6D63A]/30 flex items-center justify-center text-[#B6D63A] font-bold text-xl">▶</div>
                       <div class="text-xs font-mono text-neutral-300 font-semibold">moni-video.mp4</div>
                       <div class="text-[10px] font-mono text-neutral-500">Standard Mobile Device Viewport</div>
                     </div>
@@ -135,6 +135,3 @@ export const MoniHero: React.FC<MoniHeroProps> = ({ onBack }) => {
     </section>
   );
 };
-
-
-

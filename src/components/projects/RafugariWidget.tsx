@@ -59,40 +59,40 @@ export const RafugariWidget: React.FC = () => {
   ];
 
   return (
-    <div className="w-full rounded-xl bg-[#131215] border border-[#3d3326]/60 overflow-hidden shadow-2xl text-white font-sans text-xs">
+    <div className="w-full rounded-xl bg-[#161614] border border-[rgba(239,233,219,0.14)] overflow-hidden shadow-2xl text-[#efe9db] font-sans text-xs">
       {/* Top Browser Bar */}
-      <div className="px-4 py-2.5 bg-[#1a171d] border-b border-white/10 flex items-center justify-between font-mono-tech text-[11px] text-neutral-400">
+      <div className="px-4 py-2.5 bg-[#1d1d1a] border-b border-[rgba(239,233,219,0.14)] flex items-center justify-between font-syne text-[11px] text-[#a29d90]">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-            <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-            <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
           </div>
-          <span className="text-[#E5C17C] font-serif font-bold ml-2 tracking-wide">रफ़ूगारी</span>
-          <span className="text-neutral-500">|</span>
-          <span className="text-[10px] text-neutral-300 uppercase tracking-wider">
+          <span className="text-[#c9f14a] font-dm-serif font-bold ml-2 tracking-wide">रफ़ूगारी</span>
+          <span className="text-[#a29d90]">•</span>
+          <span className="text-[11px] text-[#efe9db] uppercase tracking-[0.14em]">
             LIVING TEXTILE RESTORATION ARCHIVE
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[#E5C17C] text-[10px] font-mono">RAFUGARI.ARCHIVE_V1</span>
+          <span className="text-[#c9f14a] text-[11px] font-syne font-semibold uppercase tracking-[0.14em]">RAFUGARI.ARCHIVE</span>
         </div>
       </div>
 
       <div className="p-4 sm:p-5 flex flex-col gap-4">
         {/* Navigation & Search */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-white/[0.08]">
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[rgba(239,233,219,0.14)]">
           <div className="relative flex-1 max-w-xs">
-            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
+            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#a29d90]" />
             <input
               type="text"
               readOnly
               value="Search heirloom fabrics, weaves & master rafugars..."
-              className="w-full pl-8 pr-3 py-1.5 rounded-full bg-black/40 border border-white/10 text-neutral-400 text-xs cursor-default truncate"
+              className="w-full pl-8 pr-3 py-1.5 rounded-full bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] text-[#a29d90] text-xs cursor-default truncate font-sans"
             />
           </div>
 
-          <div className="flex items-center gap-2 font-mono-tech text-[11px]">
+          <div className="flex items-center gap-2 font-syne text-[11px]">
             {[
               { id: 'weave', label: 'Micro-Weave Diagnostic' },
               { id: 'artisans', label: 'Master Rafugars' },
@@ -101,10 +101,10 @@ export const RafugariWidget: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-2.5 py-1 rounded transition-colors cursor-pointer ${
+                className={`px-2.5 py-1 rounded uppercase tracking-[0.14em] font-semibold transition-colors cursor-pointer ${
                   activeTab === tab.id
-                    ? 'text-[#E5C17C] font-bold bg-[#E5C17C]/10 border border-[#E5C17C]/30'
-                    : 'text-neutral-400 hover:text-white'
+                    ? 'text-[#c9f14a] font-bold bg-[#c9f14a]/10 border border-[#c9f14a]/30'
+                    : 'text-[#a29d90] hover:text-[#efe9db]'
                 }`}
               >
                 {tab.label}
@@ -116,30 +116,30 @@ export const RafugariWidget: React.FC = () => {
         {/* Hero Interactive Weave Diagnostic Visualizer */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
           {/* Left 8 Cols: Interactive Restoration Simulator */}
-          <div className="md:col-span-8 p-5 rounded-lg bg-gradient-to-br from-[#1a181e] via-[#151419] to-[#0e0d11] border border-[#4a3e2a]/50 flex flex-col justify-between relative overflow-hidden">
+          <div className="md:col-span-8 p-5 rounded-lg bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] flex flex-col justify-between relative overflow-hidden">
             <div className="relative z-10">
               <div className="flex items-center justify-between gap-2">
-                <span className="font-mono-tech text-[10px] text-[#E5C17C] uppercase tracking-wider flex items-center gap-1.5">
+                <span className="font-syne text-[11px] text-[#c9f14a] uppercase tracking-[0.14em] font-semibold flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3" />
                   OPTICAL WEAVE RECONSTRUCTION
                 </span>
-                <span className="text-[10px] font-mono-tech text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                <span className="text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                   99.6% INVISIBLE BLEND
                 </span>
               </div>
 
-              <h4 className="font-editorial text-2xl sm:text-3xl font-bold text-white mt-2 leading-tight">
+              <h4 className="font-dm-serif text-[clamp(19px,1.8vw,24px)] font-normal text-[#efe9db] mt-2 leading-[1.2]">
                 Mending threads, reviving histories.
               </h4>
-              <p className="text-neutral-300 text-xs mt-1.5 max-w-md leading-relaxed">
+              <p className="text-[#a29d90] font-sans text-[14px] mt-1.5 max-w-md leading-relaxed">
                 Rafugars map the original warp and weft density with hand-matched vintage yarn, inserting microscopic loop knots that seamlessly mirror the historic weave structure.
               </p>
 
               {/* Interactive Weave Slider */}
-              <div className="mt-4 p-3 rounded-lg bg-black/50 border border-white/10">
-                <div className="flex items-center justify-between text-[11px] font-mono-tech mb-2">
-                  <span className="text-neutral-400">REPAIR STAGE: {mendingProgress}%</span>
-                  <span className="text-[#E5C17C] font-semibold">
+              <div className="mt-4 p-3 rounded-lg bg-[#161614] border border-[rgba(239,233,219,0.14)]">
+                <div className="flex items-center justify-between text-[11px] font-syne uppercase tracking-[0.14em] mb-2">
+                  <span className="text-[#a29d90]">REPAIR STAGE: {mendingProgress}%</span>
+                  <span className="text-[#c9f14a] font-semibold">
                     {mendingProgress < 35
                       ? 'Warp Tension Mapping'
                       : mendingProgress < 75
@@ -153,47 +153,47 @@ export const RafugariWidget: React.FC = () => {
                   max="100"
                   value={mendingProgress}
                   onChange={(e) => setMendingProgress(Number(e.target.value))}
-                  className="w-full h-1.5 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-[#E5C17C]"
+                  className="w-full h-1.5 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-[#c9f14a]"
                 />
               </div>
             </div>
 
             {/* Micro Badges */}
-            <div className="relative z-10 grid grid-cols-3 gap-2 pt-4 mt-4 border-t border-white/10 text-[10px] font-mono-tech text-neutral-400">
+            <div className="relative z-10 grid grid-cols-3 gap-2 pt-4 mt-4 border-t border-[rgba(239,233,219,0.14)] text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#a29d90]">
               <span className="flex items-center gap-1">
-                <Check className="w-3 h-3 text-[#E5C17C]" /> AUTHENTIC THREAD MATCH
+                <Check className="w-3 h-3 text-[#c9f14a]" /> AUTHENTIC THREAD MATCH
               </span>
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-[#E5C17C]" /> ARCHIVAL CONSERVATION
+                <ShieldCheck className="w-3 h-3 text-[#c9f14a]" /> ARCHIVAL CONSERVATION
               </span>
               <span className="flex items-center gap-1">
-                <Feather className="w-3 h-3 text-[#E5C17C]" /> ZERO WEIGHT ADDITION
+                <Feather className="w-3 h-3 text-[#c9f14a]" /> ZERO WEIGHT ADDITION
               </span>
             </div>
           </div>
 
           {/* Right 4 Cols: Artisan Spotlight */}
-          <div className="md:col-span-4 p-3.5 rounded-lg bg-black/60 border border-white/10 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-[10px] font-mono-tech text-neutral-400">
+          <div className="md:col-span-4 p-3.5 rounded-lg bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-2 border-b border-[rgba(239,233,219,0.14)] text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#a29d90]">
               <span>MASTER GUILD</span>
-              <span className="text-[#E5C17C]">NAJIBABAD & KASHMIR</span>
+              <span className="text-[#c9f14a]">NAJIBABAD &amp; KASHMIR</span>
             </div>
 
-            <div className="my-2 p-2.5 rounded bg-neutral-900/90 border border-[#4a3e2a]/40 space-y-2">
-              <div className="flex items-center justify-between text-[10px]">
-                <span className="font-bold text-white">Ustad Mohammad Rafiq</span>
-                <span className="text-[#E5C17C] font-mono">4th Gen</span>
+            <div className="my-2 p-2.5 rounded bg-[#161614] border border-[rgba(239,233,219,0.14)] space-y-2">
+              <div className="flex items-center justify-between text-[11px]">
+                <span className="font-syne font-semibold text-[#efe9db]">Ustad Mohammad Rafiq</span>
+                <span className="text-[#c9f14a] font-syne font-bold">4th Gen</span>
               </div>
-              <div className="text-[11px] text-neutral-300">
+              <div className="text-[13px] text-[#a29d90] font-sans leading-relaxed">
                 Specialist in 19th-century Kani shawls and reversible double-sided Jamawar restoration.
               </div>
-              <div className="flex items-center justify-between text-[10px] font-mono-tech pt-1 border-t border-white/5">
-                <span className="text-neutral-400">Active Restorations</span>
-                <span className="text-[#E5C17C] font-bold">18 Pieces</span>
+              <div className="flex items-center justify-between text-[11px] font-syne uppercase tracking-[0.14em] pt-1 border-t border-[rgba(239,233,219,0.14)]">
+                <span className="text-[#a29d90]">Active Restorations</span>
+                <span className="text-[#c9f14a] font-bold">18 Pieces</span>
               </div>
             </div>
 
-            <div className="text-[10px] font-mono-tech text-neutral-400 text-center">
+            <div className="text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#a29d90] text-center">
               PRESERVING LIVING CULTURAL MEMORY
             </div>
           </div>
@@ -204,39 +204,36 @@ export const RafugariWidget: React.FC = () => {
           {restorationArtifacts.map((item) => (
             <div
               key={item.id}
-              className="p-2.5 rounded-lg bg-neutral-900/60 border border-white/5 flex flex-col justify-between hover:border-[#E5C17C]/40 transition-all group"
+              className="p-2.5 rounded-lg bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] flex flex-col justify-between hover:border-[#c9f14a]/40 transition-all group"
             >
-              <div className="rounded overflow-hidden aspect-square bg-black/40 mb-2 relative">
+              <div className="rounded overflow-hidden aspect-square bg-[#161614] mb-2 relative">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[8px] font-mono-tech font-bold uppercase bg-black/70 text-[#E5C17C] border border-[#E5C17C]/30">
+                <span className="absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded text-[10px] font-syne font-semibold uppercase tracking-[0.14em] bg-black/80 text-[#c9f14a] border border-[#c9f14a]/30">
                   {item.status}
                 </span>
               </div>
               <div>
-                <div className="font-bold text-white text-xs truncate">{item.title}</div>
-                <div className="text-[10px] text-neutral-400 truncate">{item.period}</div>
+                <div className="font-sans font-medium text-[#efe9db] text-xs truncate">{item.title}</div>
+                <div className="text-[11px] font-sans text-[#a29d90] truncate">{item.period}</div>
               </div>
-              <div className="mt-2 flex items-center justify-between pt-2 border-t border-white/5 font-mono-tech text-[10px]">
-                <span className="text-[#E5C17C] truncate">{item.technique}</span>
+              <div className="mt-2 flex items-center justify-between pt-2 border-t border-[rgba(239,233,219,0.14)] font-syne text-[11px]">
+                <span className="text-[#c9f14a] uppercase tracking-[0.14em] truncate">{item.technique}</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Footer specs */}
-        <div className="flex items-center justify-between text-[10px] font-mono-tech text-neutral-400 pt-2 border-t border-white/5">
-          <span>CIRCULAR CRAFT & SUSTAINABLE HERITAGE</span>
+        <div className="flex items-center justify-between text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#a29d90] pt-2 border-t border-[rgba(239,233,219,0.14)]">
+          <span>CIRCULAR CRAFT &amp; SUSTAINABLE HERITAGE</span>
           <span>WEAVE RESOLUTION: SUB-MILLIMETER</span>
         </div>
       </div>
     </div>
   );
 };
-
-
-

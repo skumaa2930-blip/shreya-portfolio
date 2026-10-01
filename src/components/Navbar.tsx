@@ -5,30 +5,72 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = () => {
-  const [activeSection, setActiveSection] = useState<'explore' | 'make' | 'experiment' | 'me'>('explore');
+  const [activeSection, setActiveSection] = useState<'explore' | 'make' | 'experiment' | 'me' | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateScroll = () => {
       const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
       setIsScrolled(currentScrollY > 40);
 
-      // Section intersection detection based on viewport scroll
-      const sections: ('explore' | 'make' | 'experiment' | 'me')[] = ['me', 'experiment', 'make', 'explore'];
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 260) {
-            setActiveSection(section);
-            break;
-          }
-        }
+      const navThreshold = 240;
+
+      const exploreEl = document.getElementById('explore');
+      const makeEl = document.getElementById('make');
+      const experimentEl = document.getElementById('experiment');
+      const meEl = document.getElementById('me');
+      const contactEl = document.getElementById('contact');
+
+      // 1. While on Hero (before 'explore' / I Notice section), do not highlight anything
+      if (!exploreEl || exploreEl.getBoundingClientRect().top > navThreshold) {
+        setActiveSection(null);
+        return;
+      }
+
+      // 2. ME section ends in About section only: if scrolled past About into Footer, clear active section
+      const contactTop = contactEl ? contactEl.getBoundingClientRect().top : Infinity;
+      const meBottom = meEl ? meEl.getBoundingClientRect().bottom : -Infinity;
+      if (contactTop <= navThreshold || meBottom <= navThreshold) {
+        setActiveSection(null);
+        return;
+      }
+
+      // 3. ME (About section)
+      if (meEl && meEl.getBoundingClientRect().top <= navThreshold) {
+        setActiveSection('me');
+        return;
+      }
+
+      // 4. EXPLORED (Curiosity Playground / Experiments)
+      if (experimentEl && experimentEl.getBoundingClientRect().top <= navThreshold) {
+        setActiveSection('experiment');
+        return;
+      }
+
+      // 5. MADE (Projects)
+      if (makeEl && makeEl.getBoundingClientRect().top <= navThreshold) {
+        setActiveSection('make');
+        return;
+      }
+
+      // 6. PROCESS (I Notice / Process Loop section)
+      setActiveSection('explore');
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    updateScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -73,27 +115,27 @@ export const Navbar: React.FC<NavbarProps> = () => {
             title="Back to top"
           >
             <span
-              className={`font-display font-medium text-white group-hover:text-[#D1F047] tracking-tight transition-all duration-300 ${
-                isScrolled ? 'text-xs sm:text-sm font-semibold' : 'text-sm sm:text-base tracking-wide font-semibold'
+              className={`font-playfair font-semibold text-white group-hover:text-[#B6D63A] tracking-tight transition-all duration-300 ${
+                isScrolled ? 'text-xs sm:text-sm' : 'text-sm sm:text-base'
               }`}
             >
               SHREYA
             </span>
             <span
-              className={`rounded-full bg-[#D1F047] inline-block transition-all duration-300 ${
+              className={`rounded-full bg-[#B6D63A] inline-block transition-all duration-300 ${
                 isScrolled ? 'w-1.5 h-1.5 mb-0.5' : 'w-1.5 h-1.5 mb-1'
               } group-hover:scale-125`}
             />
           </button>
 
-          {/* Center: Global Navigation Links (Order: PROCESS -> MADE -> TRIED -> ME) */}
+          {/* Center: Global Navigation Links (Order: PROCESS -> MADE -> EXPLORED -> ME) */}
           <nav
             id="floating-pill-nav"
             aria-label="Global Navigation"
-            className={`flex items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs font-syne font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 ${
+            className={`flex items-center gap-1 text-xs sm:text-[13px] font-syne font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 border-none outline-none ${
               isScrolled
                 ? 'bg-transparent p-0'
-                : 'bg-[#151417]/92 border border-white/[0.12] p-1 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.6)] backdrop-blur-md'
+                : 'bg-[#151417]/92 p-1 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.6)] backdrop-blur-md'
             }`}
           >
             <button
@@ -101,11 +143,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => scrollTo('explore')}
               className={`rounded-full transition-all duration-200 cursor-pointer select-none whitespace-nowrap ${
                 isScrolled
-                  ? 'px-2.5 sm:px-3 py-1 sm:py-1.5'
-                  : 'px-3 sm:px-3.5 py-1.5'
+                  ? 'px-3 sm:px-4 py-1.5'
+                  : 'px-4 sm:px-5 py-2'
               } ${
                 activeSection === 'explore'
-                  ? 'bg-[#D1F047] text-black shadow-[0_0_16px_rgba(209,240,71,0.35)]'
+                  ? 'bg-[#B6D63A] text-black shadow-[0_0_16px_rgba(182,214,58,0.35)]'
                   : 'hover:text-white hover:bg-white/5'
               }`}
             >
@@ -117,11 +159,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => scrollTo('make')}
               className={`rounded-full transition-all duration-200 cursor-pointer select-none whitespace-nowrap ${
                 isScrolled
-                  ? 'px-2.5 sm:px-3 py-1 sm:py-1.5'
-                  : 'px-3 sm:px-3.5 py-1.5'
+                  ? 'px-3 sm:px-4 py-1.5'
+                  : 'px-4 sm:px-5 py-2'
               } ${
                 activeSection === 'make'
-                  ? 'bg-[#D1F047] text-black shadow-[0_0_16px_rgba(209,240,71,0.35)]'
+                  ? 'bg-[#B6D63A] text-black shadow-[0_0_16px_rgba(182,214,58,0.35)]'
                   : 'hover:text-white hover:bg-white/5'
               }`}
             >
@@ -133,11 +175,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => scrollTo('experiment')}
               className={`rounded-full transition-all duration-200 cursor-pointer select-none whitespace-nowrap ${
                 isScrolled
-                  ? 'px-2.5 sm:px-3 py-1 sm:py-1.5'
-                  : 'px-3 sm:px-3.5 py-1.5'
+                  ? 'px-3 sm:px-4 py-1.5'
+                  : 'px-4 sm:px-5 py-2'
               } ${
                 activeSection === 'experiment'
-                  ? 'bg-[#D1F047] text-black shadow-[0_0_16px_rgba(209,240,71,0.35)]'
+                  ? 'bg-[#B6D63A] text-black shadow-[0_0_16px_rgba(182,214,58,0.35)]'
                   : 'hover:text-white hover:bg-white/5'
               }`}
             >
@@ -149,11 +191,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               onClick={() => scrollTo('me')}
               className={`rounded-full transition-all duration-200 cursor-pointer select-none whitespace-nowrap ${
                 isScrolled
-                  ? 'px-2.5 sm:px-3 py-1 sm:py-1.5'
-                  : 'px-3 sm:px-3.5 py-1.5'
+                  ? 'px-3 sm:px-4 py-1.5'
+                  : 'px-4 sm:px-5 py-2'
               } ${
                 activeSection === 'me'
-                  ? 'bg-[#D1F047] text-black shadow-[0_0_16px_rgba(209,240,71,0.35)]'
+                  ? 'bg-[#B6D63A] text-black shadow-[0_0_16px_rgba(182,214,58,0.35)]'
                   : 'hover:text-white hover:bg-white/5'
               }`}
             >
@@ -161,17 +203,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </button>
           </nav>
 
-          {/* Right: Crisp White Resume Pill Button (Maintained in both states) */}
+          {/* Right: Crisp White Resume Pill Button (Standardized padding & typography) */}
           <div className="flex items-center">
             <a
               id="nav-resume-btn"
-              href={`${import.meta.env.BASE_URL}resume/shreya-resume.pdf`}
+              href="/resume/shreya-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center justify-center rounded-full font-syne font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer select-none whitespace-nowrap bg-white hover:bg-[#D1F047] text-black shadow-[0_4px_16px_rgba(0,0,0,0.4)] ${
+              className={`inline-flex items-center justify-center rounded-full font-syne font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer select-none whitespace-nowrap bg-white hover:bg-[#B6D63A] text-black shadow-[0_4px_16px_rgba(0,0,0,0.4)] ${
                 isScrolled
-                  ? 'px-3 sm:px-3.5 py-1 sm:py-1.5 text-[10px] sm:text-xs'
-                  : 'px-3.5 sm:px-4 py-1.5 text-[10px] sm:text-xs'
+                  ? 'px-4 sm:px-5 py-1.5 sm:py-2 text-xs'
+                  : 'px-5 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-[13px]'
               }`}
             >
               RESUME
@@ -182,9 +224,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
     </>
   );
 };
-
-
-
 
 
 

@@ -25,7 +25,7 @@ export const MoniDesignIntention: React.FC = () => {
             className="relative w-full max-w-[460px] aspect-[493/423] flex items-center justify-center group"
           >
             {/* Ambient soft luminous glow */}
-            <div className="absolute inset-0 bg-[#C9F24A]/[0.08] blur-[60px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-[#B6D63A]/[0.08] blur-[60px] rounded-full pointer-events-none" />
             <div className="absolute inset-0 bg-white/[0.08] blur-[45px] rounded-full pointer-events-none" />
             <div className="absolute -bottom-6 w-[85%] h-14 bg-black/70 blur-2xl rounded-full pointer-events-none" />
 
@@ -65,7 +65,7 @@ export const MoniDesignIntention: React.FC = () => {
                 </div>
 
                 {/* Card Footer Detail */}
-                <div className="flex items-center justify-between text-[9px] font-mono tracking-widest text-white/60 uppercase">
+                <div className="flex items-center justify-between text-[9px] font-syne tracking-widest text-white/60 uppercase">
                   <span>WORLD DEBIT</span>
                   <span>•••• 8492</span>
                 </div>
@@ -105,7 +105,7 @@ export const MoniDesignIntention: React.FC = () => {
                 </div>
 
                 {/* Card Footer Detail */}
-                <div className="flex items-center justify-between text-[9px] font-mono tracking-widest text-neutral-700 uppercase font-semibold">
+                <div className="flex items-center justify-between text-[9px] font-syne tracking-widest text-neutral-700 uppercase font-semibold">
                   <span>METAL PREMIUM</span>
                   <span>•••• 3108</span>
                 </div>
@@ -185,7 +185,7 @@ export const MoniDesignIntention: React.FC = () => {
                 {/* Top Lip Inset Glow */}
                 <div className="absolute top-0 inset-x-0 h-4 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 inset-x-0 flex justify-center items-center pointer-events-none opacity-60">
-                  <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-white/80 font-medium">
+                  <span className="font-syne text-[9px] tracking-[0.3em] uppercase text-white/80 font-medium">
                     MONI HARDWARE × TACTILE FINTECH
                   </span>
                 </div>
@@ -223,7 +223,7 @@ export const MoniDesignIntention: React.FC = () => {
           >
             {/* Header: DESIGN INTENTION */}
             <div className="mb-4">
-              <span className="text-[11px] font-mono font-medium tracking-[0.24em] uppercase text-[#8E8E8A]">
+              <span className="text-[11px] font-syne font-medium tracking-[0.24em] uppercase text-[#8E8E8A]">
                 DESIGN INTENTION
               </span>
             </div>
@@ -255,6 +255,3 @@ export const MoniDesignIntention: React.FC = () => {
     </section>
   );
 };
-
-
-

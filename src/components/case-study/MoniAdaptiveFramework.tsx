@@ -65,7 +65,7 @@ export const MoniAdaptiveFramework: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-hanken font-light text-[#8a8a86] text-base sm:text-xl lg:text-[24px] mt-3 sm:mt-4 leading-relaxed max-w-3xl"
+          className="font-sans font-light text-[#8a8a86] text-base sm:text-xl lg:text-[24px] mt-3 sm:mt-4 leading-relaxed max-w-3xl"
         >
           How the system decides when to stay silent, when to inform, and when to intervene.
         </motion.p>
@@ -95,7 +95,7 @@ export const MoniAdaptiveFramework: React.FC = () => {
             <div>
               {/* JetBrains Mono Uppercase Bold Label */}
               <div
-                className="font-mono font-bold text-xs sm:text-sm lg:text-[15px] uppercase tracking-wider mb-5 sm:mb-7 lg:mb-8"
+                className="font-syne font-bold text-xs sm:text-sm lg:text-[15px] uppercase tracking-wider mb-5 sm:mb-7 lg:mb-8"
                 style={{ color: item.color }}
               >
                 {item.level}
@@ -108,7 +108,7 @@ export const MoniAdaptiveFramework: React.FC = () => {
             </div>
 
             {/* Grey Hanken Grotesk Light Description */}
-            <p className="font-hanken font-light text-[#a3a29b] text-sm sm:text-[15px] lg:text-[16.5px] leading-relaxed">
+            <p className="font-sans font-light text-[#a3a29b] text-sm sm:text-[15px] lg:text-[16.5px] leading-relaxed">
               {item.desc}
             </p>
           </motion.article>
@@ -118,6 +118,3 @@ export const MoniAdaptiveFramework: React.FC = () => {
     </div>
   );
 };
-
-
-

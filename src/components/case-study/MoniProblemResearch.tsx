@@ -8,7 +8,7 @@ export const MoniProblemResearch: React.FC = () => {
     >
       {/* 1. Tag: THE PROBLEM */}
       <div className="text-center mb-6">
-        <span className="text-[11px] font-mono font-semibold tracking-[0.24em] uppercase text-[#C9F24A]">
+        <span className="text-[11px] font-syne font-semibold tracking-[0.24em] uppercase text-[#C9F24A]">
           THE PROBLEM
         </span>
       </div>
@@ -43,7 +43,7 @@ export const MoniProblemResearch: React.FC = () => {
 
           <div>
             <div className="w-full h-[1px] bg-white/5 my-4" />
-            <div className="text-[10px] font-mono tracking-widest text-[#949490] uppercase">
+            <div className="text-[10px] font-syne tracking-widest text-[#949490] uppercase">
               SOURCE: Ipsos World Mental Health Survey 2024
             </div>
           </div>
@@ -62,7 +62,7 @@ export const MoniProblemResearch: React.FC = () => {
 
           <div>
             <div className="w-full h-[1px] bg-white/5 my-4" />
-            <div className="text-[10px] font-mono tracking-widest text-[#949490] uppercase">
+            <div className="text-[10px] font-syne tracking-widest text-[#949490] uppercase">
               SOURCE: arXiv Study 2024 × NPCI Data
             </div>
           </div>
@@ -81,7 +81,7 @@ export const MoniProblemResearch: React.FC = () => {
 
           <div>
             <div className="w-full h-[1px] bg-white/5 my-4" />
-            <div className="text-[10px] font-mono tracking-widest text-[#949490] uppercase">
+            <div className="text-[10px] font-syne tracking-widest text-[#949490] uppercase">
               SOURCE: NCFE-Financial Literacy and Inclusion Survey (NCFE-FLIS), 2019
             </div>
           </div>
@@ -99,6 +99,3 @@ export const MoniProblemResearch: React.FC = () => {
     </section>
   );
 };
-
-
-

@@ -207,6 +207,3 @@ export const MoniScenarios: React.FC = () => {
     </section>
   );
 };
-
-
-

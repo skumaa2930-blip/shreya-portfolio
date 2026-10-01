@@ -120,7 +120,7 @@ export const BloodBankSystemFlows: React.FC = () => {
       <div className="p-6 sm:p-8 rounded-2xl bg-[#12141c] border border-white/10 shadow-2xl">
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10 mb-8">
           <div>
-            <span className="font-mono-tech text-xs text-[#F43F5E] uppercase font-bold">
+            <span className="font-syne text-xs text-[#F43F5E] uppercase font-bold">
               SCENARIO ARCHITECTURE
             </span>
             <h3 className="font-display text-2xl sm:text-3xl text-white uppercase mt-0.5">
@@ -139,7 +139,7 @@ export const BloodBankSystemFlows: React.FC = () => {
               className="p-5 rounded-xl bg-[#171b26] border border-white/5 flex flex-col justify-between relative group hover:border-[#F43F5E]/40 transition-colors"
             >
               <div>
-                <div className="flex items-center justify-between font-mono-tech text-xs mb-3">
+                <div className="flex items-center justify-between font-syne text-xs mb-3">
                   <span className="text-[#F43F5E] font-bold">{step.stage}</span>
                   <span className="text-neutral-500">STEP 0{idx + 1}</span>
                 </div>
@@ -151,7 +151,7 @@ export const BloodBankSystemFlows: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-mono-tech text-amber-300">
+              <div className="mt-5 pt-3 border-t border-white/10 text-[11px] font-syne text-amber-300">
                 <span className="text-neutral-400 block text-[9px] uppercase">SAFETY GUARDRAIL:</span>
                 {step.rule}
               </div>
@@ -162,6 +162,3 @@ export const BloodBankSystemFlows: React.FC = () => {
     </section>
   );
 };
-
-
-

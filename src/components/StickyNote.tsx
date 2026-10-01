@@ -13,7 +13,7 @@ export const StickyNote: React.FC<StickyNoteProps> = ({
 }) => {
   const bgStyles = {
     yellow: 'bg-gradient-to-b from-[#fff799] to-[#fef08a] text-[#1c1917] border border-[#fde047]/60 shadow-[0_8px_20px_rgba(0,0,0,0.35)]',
-    lime: 'bg-gradient-to-b from-[#e5ff66] to-[#ccff00] text-[#0a0a0a] border border-[#b8e600] shadow-[0_8px_20px_rgba(0,0,0,0.35)]',
+    lime: 'bg-gradient-to-b from-[#e5ff66] to-[#B6D63A] text-[#0a0a0a] border border-[#b8e600] shadow-[0_8px_20px_rgba(0,0,0,0.35)]',
     paper: 'bg-gradient-to-b from-[#f5f5f4] to-[#e7e5e4] text-[#1c1917] border border-[#d6d3d1] shadow-[0_8px_20px_rgba(0,0,0,0.35)]',
   }[variant];
 
@@ -47,6 +47,3 @@ export const StickyNote: React.FC<StickyNoteProps> = ({
     </motion.div>
   );
 };
-
-
-

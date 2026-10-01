@@ -1,46 +1,16 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import {
   MapPin,
-  GraduationCap,
-  Briefcase,
-  Camera,
-  Clapperboard,
-  Headphones,
-  FlaskConical,
-  Wrench,
+  ArrowUpRight,
+  Smartphone,
 } from 'lucide-react';
-
-const HABITS = [
-  {
-    icon: Camera,
-    text: 'photographing random things',
-    detail: 'Golden hour street lights, rusted iron textures, brutalist concrete corners, and shadows cast through blinds.',
-  },
-  {
-    icon: Clapperboard,
-    text: 'making things cinematic',
-    detail: 'Color grading daily video snippets in DaVinci Resolve and finding melancholic 24fps rhythm in ordinary mundane moments.',
-  },
-  {
-    icon: Headphones,
-    text: 'finding the right song',
-    detail: 'Hunting for ambient modular synth loops and analog synthwave that syncs at 110bpm to deep work sessions.',
-  },
-  {
-    icon: FlaskConical,
-    text: "trying tools i don't know yet",
-    detail: 'Diving headfirst into Rive state machines, Three.js shaders, TouchDesigner noodles, and generative canvases.',
-  },
-  {
-    icon: Wrench,
-    text: 'making random things work',
-    detail: 'MacGyvering custom CSS hacks, physics spring parameters, tactile haptic feedback, and untangling messy UX logic.',
-  },
-];
+import { CylinderMediaWall } from './CylinderMediaWall';
+import { InteractivePhoneAbout } from './InteractivePhoneAbout';
 
 export const AboutSection: React.FC = () => {
-  const [expandedHabitIndex, setExpandedHabitIndex] = useState<number | null>(null);
+  const [isPhoneOpen, setIsPhoneOpen] = useState<boolean>(false);
+  const [isCylinderOpen, setIsCylinderOpen] = useState<boolean>(false);
 
   return (
     <section id="me" className="relative py-20 md:py-28 px-4 sm:px-8 md:px-12 bg-transparent text-[#ededed] overflow-hidden">
@@ -84,7 +54,11 @@ export const AboutSection: React.FC = () => {
               />
 
               {/* Inner Photo Container */}
-              <div className="relative aspect-[352/440] w-full bg-[#0E0E0E] rounded-[2px] overflow-hidden border border-white/5">
+              <div
+                onClick={() => setIsPhoneOpen(true)}
+                className="relative aspect-[352/440] w-full bg-[#0E0E0E] rounded-[2px] overflow-hidden border border-white/5 cursor-pointer group/polaroid"
+                title="Click to explore Shreya's mobile screen"
+              >
                 <img
                   src="/assets/shreya-photo.png"
                   onError={(e) => {
@@ -92,29 +66,53 @@ export const AboutSection: React.FC = () => {
                       'https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop';
                   }}
                   alt="Shreya Kumavat"
-                  className="w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.04]"
+                  className="w-full h-full object-cover object-center filter saturate-[0.95] contrast-[1.04] group-hover/polaroid:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
               </div>
 
-              {/* Subtle Polaroid Bottom Lip / Frame */}
-              <div className="h-6 sm:h-8" />
+              {/* Polaroid Bottom Lip / Frame */}
+              <div className="pt-3 pb-1 px-1 flex items-end justify-between text-xs font-syne text-white/80 border-t border-white/5 mt-2">
+                <div className="flex items-center gap-1.5 text-white/90 font-syne font-bold text-xs sm:text-[13px] tracking-wider uppercase">
+                  <MapPin className="w-3.5 h-3.5 text-[#B6D63A] shrink-0" />
+                  <span>PUNE</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <span className="font-syne font-bold text-xs sm:text-[13px] text-[#F5F5F0] tracking-wider uppercase">
+                    UX/UI DESIGNER
+                  </span>
+                  <span className="font-syne text-[10px] sm:text-[11px] text-[#A3A3A3] tracking-wider uppercase mt-0.5">
+                    BACHELOR OF DESIGNER
+                  </span>
+                </div>
+              </div>
             </motion.div>
           </div>
 
           {/* ========================================================= */}
-          {/* RIGHT COLUMN: Heading, Bio Cards, Notes, Habits           */}
+          {/* RIGHT COLUMN: Heading, Bio Card, Habits                   */}
           {/* ========================================================= */}
           <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-7">
             
             {/* Main Editorial Serif Heading */}
             <div>
-              <h2 className="font-editorial text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal tracking-tight text-white uppercase leading-[0.96] select-none">
+              <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white uppercase leading-[1.05] select-none">
                 OH.
                 <br />
                 THAT’S WHO
                 <br />
-                MADE THIS.
+                <span className="relative inline-block mt-1">
+                  MADE THIS.
+                  <svg
+                    viewBox="0 0 240 16"
+                    className="absolute -bottom-2 left-0 w-full h-auto drop-shadow-[0_0_8px_rgba(182,214,58,0.3)] pointer-events-none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M2 9.5C35 5 110 3 238 7" stroke="#B6D63A" strokeWidth="2.8" strokeLinecap="round" />
+                    <path d="M10 14C50 10 130 8.5 225 12.5" stroke="#B6D63A" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </span>
               </h2>
             </div>
 
@@ -131,11 +129,11 @@ export const AboutSection: React.FC = () => {
                 className="absolute -top-3 right-2 sm:right-6 z-20 w-36 sm:w-44 bg-[#2E261A] border border-[#4E402C] p-3 sm:p-3.5 rounded-[2px] shadow-[0_12px_28px_rgba(0,0,0,0.6)] cursor-pointer select-none"
               >
                 {/* Glowing Lime Pushpin Badge */}
-                <div className="w-3.5 h-3.5 rounded-full bg-[#131313] border border-[#D4F34A]/80 flex items-center justify-center shadow-[0_0_8px_rgba(212,243,74,0.7)] mx-auto -mt-1.5 mb-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#D4F34A]" />
+                <div className="w-3.5 h-3.5 rounded-full bg-[#131313] border border-[#B6D63A]/80 flex items-center justify-center shadow-[0_0_8px_rgba(182,214,58,0.7)] mx-auto -mt-1.5 mb-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#B6D63A]" />
                 </div>
 
-                <p className="font-handwriting text-[#F1EBE1] text-base sm:text-lg text-center leading-tight font-medium">
+                <p className="font-caveat text-[#F5F5F0] text-base sm:text-lg text-center leading-tight font-medium">
                   still figuring
                   <br />
                   things out.
@@ -146,149 +144,58 @@ export const AboutSection: React.FC = () => {
 
               {/* Bio Card Container */}
               <div className="bg-[#1C1B1B]/70 border border-[#353534]/40 rounded-[2px] p-6 sm:p-7 md:p-8 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.35)] relative z-10">
-                <h3 className="font-handwriting text-2xl sm:text-3xl text-white italic mb-4 font-normal">
+                <h3 className="font-caveat text-2xl sm:text-3xl text-white italic mb-4 font-normal">
                   Hello, I’m Shreya Kumavat.
                 </h3>
-                <div className="space-y-3.5 text-[#E5E2E1] text-[15px] sm:text-base font-sans leading-relaxed">
+                <div className="space-y-3.5 text-[#F5F5F0] text-[15px] sm:text-base font-sans leading-relaxed">
                   <p>
                     I like making things, figuring things out, and occasionally getting way too curious about something that was supposed to take five minutes.
                   </p>
                   <p>
                     I’m a UX designer who enjoys turning messy problems into simple, useful experiences. I care about details, storytelling, and making things feel human.
                   </p>
-                  <p className="text-[#C6C9AF] text-sm sm:text-[15px]">
+                  <p className="text-[#A3A3A3] text-sm sm:text-[15px]">
                     When i’m not designing, i’m probably behind a camera, editing a video, listening to music, or learning something new.
                   </p>
                 </div>
-              </div>
-            </div>
 
-            {/* Info Card with Location/Education/Role & Overlapping Sticky Note 2 */}
-            <div className="relative">
-              
-              {/* Sticky Note 2: "most of my best ideas come when i'm not trying to have ideas." */}
-              <motion.div
-                initial={{ opacity: 0, rotate: 4, scale: 0.95 }}
-                whileInView={{ opacity: 1, rotate: 2, scale: 1 }}
-                viewport={{ once: true }}
-                whileHover={{ rotate: 0, scale: 1.04 }}
-                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                className="absolute -top-5 right-[-10px] sm:right-[-16px] md:right-[-24px] z-20 w-60 sm:w-72 bg-[#2A241B] border border-[#483C2D] px-4 py-4 sm:px-5 sm:py-4.5 rounded-[2px] shadow-[0_16px_36px_rgba(0,0,0,0.7)] cursor-pointer select-none"
-              >
-                {/* Horizontal Scotch Tape at top center */}
-                <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-5 bg-white/20 backdrop-blur-[2px] border-t border-b border-white/25 shadow-sm"
-                  style={{
-                    clipPath: 'polygon(2% 0%, 98% 3%, 97% 97%, 0% 100%)',
-                  }}
-                />
-
-                <p className="font-handwriting text-[#F7F2EA] text-lg sm:text-xl leading-snug font-medium">
-                  most of my best ideas come
-                  <br />
-                  when i&apos;m not trying to have
-                  <br />
-                  ideas.
-                </p>
-
-                {/* Bottom Lime Accent Line */}
-                <div className="w-full h-[1.5px] bg-[#D4F34A]/80 rounded-full mt-3 shadow-[0_0_6px_rgba(212,243,74,0.4)]" />
-              </motion.div>
-
-              {/* Info Card Left Box */}
-              <div className="bg-[#1C1B1B]/70 border border-[#353534]/40 rounded-[2px] p-6 sm:p-7 backdrop-blur-sm min-h-[130px] flex flex-col justify-center shadow-[0_4px_24px_rgba(0,0,0,0.35)]">
-                <div className="space-y-3 max-w-[260px] sm:max-w-xs text-[#E5E2E1] text-sm sm:text-[15px] font-sans">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="w-4 h-4 text-[#D4F34A] shrink-0" />
-                    <span>Pune, India</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <GraduationCap className="w-4 h-4 text-[#D4F34A] shrink-0" />
-                    <span>Bachelor Of Design</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Briefcase className="w-4 h-4 text-[#D4F34A] shrink-0" />
-                    <span>UX / UI Designer</span>
-                  </div>
+                {/* Inline Written CTA: get to know me with single underline & arrow */}
+                <div className="pt-5 mt-4 border-t border-white/10 flex items-center justify-start">
+                  <button
+                    type="button"
+                    onClick={() => setIsPhoneOpen(true)}
+                    className="inline-flex items-center gap-1.5 text-[#B6D63A] hover:text-[#B6D63A] font-caveat text-2xl sm:text-3xl underline underline-offset-4 decoration-[#B6D63A]/70 hover:decoration-[#B6D63A] transition-all cursor-pointer group"
+                  >
+                    <span>get to know me</span>
+                    <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#B6D63A] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
                 </div>
               </div>
-            </div>
-
-            {/* Section Subheading: THINGS I CAN'T STOP DOING */}
-            <div className="pt-5 pb-1">
-              <div className="inline-block relative">
-                <h4 className="font-display italic text-lg sm:text-xl tracking-wide text-[#E5E2E1] font-normal">
-                  THINGS I CAN’T STOP DOING
-                </h4>
-
-                {/* Authentic Sketchy Wavy Lime Underline from Figma SVG */}
-                <div className="mt-1 w-full max-w-[260px] sm:max-w-[290px]">
-                  <svg
-                    viewBox="0 0 232 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-full h-auto text-[#D1F047] drop-shadow-[0_0_4px_rgba(209,240,71,0.5)]"
-                  >
-                    <path
-                      d="M2 5C15 4.5 35 6 50 5.5C70 4.8 90 5.2 110 5C135 4.7 160 5.4 185 5C200 4.8 215 5.2 230 5"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* 5 Habit Pill Cards (Without Arrows) */}
-            <div className="space-y-2.5">
-              {HABITS.map((habit, idx) => {
-                const IconComponent = habit.icon;
-                const isExpanded = expandedHabitIndex === idx;
-
-                return (
-                  <div
-                    key={habit.text}
-                    className="rounded-[2px] bg-[#1C1B1B]/80 hover:bg-[#222222] border border-[#353534]/40 hover:border-white/20 transition-all duration-200 overflow-hidden group shadow-sm"
-                  >
-                    <button
-                      onClick={() => setExpandedHabitIndex(isExpanded ? null : idx)}
-                      className="w-full h-[46px] sm:h-[48px] px-4 sm:px-5 flex items-center text-left cursor-pointer"
-                    >
-                      <div className="flex items-center gap-3.5">
-                        <IconComponent className="w-4 h-4 text-[#D4F34A] shrink-0 transition-transform group-hover:scale-110" />
-                        <span className="text-[#E5E2E1] group-hover:text-white font-sans text-sm sm:text-[15px] lowercase tracking-wide transition-colors">
-                          {habit.text}
-                        </span>
-                      </div>
-                    </button>
-
-                    {/* Expandable note detail */}
-                    <AnimatePresence>
-                      {isExpanded && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="px-5 pb-3.5 pt-1 text-xs sm:text-sm text-[#C6C9AF] font-sans border-t border-white/5 bg-black/20"
-                        >
-                          {habit.detail}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
             </div>
 
           </div>
 
         </div>
       </div>
+
+      {/* Interactive Samsung S21 FE Phone Modal */}
+      <InteractivePhoneAbout
+        isOpen={isPhoneOpen}
+        onClose={() => setIsPhoneOpen(false)}
+        onOpenPhotoWall={() => {
+          setIsPhoneOpen(false);
+          setIsCylinderOpen(true);
+        }}
+      />
+
+      {/* 3D Cylinder Photo Wall Screen Component */}
+      <CylinderMediaWall
+        isOpen={isCylinderOpen}
+        onClose={() => {
+          setIsCylinderOpen(false);
+          setIsPhoneOpen(true);
+        }}
+      />
     </section>
   );
 };
-
-
-

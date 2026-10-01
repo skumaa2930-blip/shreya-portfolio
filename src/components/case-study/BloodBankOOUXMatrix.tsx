@@ -100,7 +100,7 @@ export const BloodBankOOUXMatrix: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Object Selector List */}
         <div className="lg:col-span-4 flex flex-col gap-2.5">
-          <div className="font-mono-tech text-xs text-neutral-400 uppercase tracking-wider mb-1">
+          <div className="font-syne text-xs text-neutral-400 uppercase tracking-wider mb-1">
             CORE SYSTEM ENTITIES (ORCA MODEL)
           </div>
           {objects.map((obj) => {
@@ -132,28 +132,28 @@ export const BloodBankOOUXMatrix: React.FC = () => {
           <div>
             <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10">
               <div>
-                <span className="font-mono-tech text-xs text-[#F43F5E] uppercase tracking-wider">
+                <span className="font-syne text-xs text-[#F43F5E] uppercase tracking-wider">
                   OBJECT DEFINITION SPEC
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl text-white uppercase mt-0.5">
                   {current.name}
                 </h3>
               </div>
-              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono-tech text-neutral-300">
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-syne text-neutral-300">
                 ROLE: {current.role}
               </span>
             </div>
 
             {/* Core Attributes */}
             <div className="mt-6">
-              <div className="text-xs font-mono-tech text-neutral-400 uppercase tracking-wider mb-2.5">
+              <div className="text-xs font-syne text-neutral-400 uppercase tracking-wider mb-2.5">
                 INTRINSIC ATTRIBUTES & METADATA
               </div>
               <div className="flex flex-wrap gap-2">
                 {current.coreAttributes.map((attr, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-md bg-black/40 border border-white/10 text-xs font-mono-tech text-neutral-200"
+                    className="px-2.5 py-1 rounded-md bg-black/40 border border-white/10 text-xs font-syne text-neutral-200"
                   >
                     {attr}
                   </span>
@@ -163,7 +163,7 @@ export const BloodBankOOUXMatrix: React.FC = () => {
 
             {/* Relationships */}
             <div className="mt-6">
-              <div className="text-xs font-mono-tech text-neutral-400 uppercase tracking-wider mb-2.5">
+              <div className="text-xs font-syne text-neutral-400 uppercase tracking-wider mb-2.5">
                 CROSS-OBJECT RELATIONSHIPS (CARDINALITY)
               </div>
               <div className="flex flex-col gap-2">
@@ -173,7 +173,7 @@ export const BloodBankOOUXMatrix: React.FC = () => {
                     className="p-3 rounded-lg bg-[#181d28] border border-white/5 flex items-start sm:items-center gap-3 text-xs"
                   >
                     <GitBranch className="w-4 h-4 text-[#F43F5E] shrink-0 mt-0.5 sm:mt-0" />
-                    <span className="font-bold text-white font-mono-tech">{rel.target}:</span>
+                    <span className="font-bold text-white font-syne">{rel.target}:</span>
                     <span className="text-neutral-300 font-sans">{rel.rel}</span>
                   </div>
                 ))}
@@ -183,10 +183,10 @@ export const BloodBankOOUXMatrix: React.FC = () => {
 
           {/* Primary Affordance Callout */}
           <div className="mt-8 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-            <div className="text-xs font-mono-tech text-neutral-400">
+            <div className="text-xs font-syne text-neutral-400">
               <span className="text-white font-bold uppercase">PRIMARY AFFORDANCE:</span> {current.ctaAction}
             </div>
-            <div className="text-[11px] font-mono-tech text-emerald-400">
+            <div className="text-[11px] font-syne text-emerald-400">
               ✓ ZERO-NESTED NAVIGATION RULE
             </div>
           </div>
@@ -195,6 +195,3 @@ export const BloodBankOOUXMatrix: React.FC = () => {
     </section>
   );
 };
-
-
-

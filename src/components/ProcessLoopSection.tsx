@@ -77,10 +77,10 @@ export const ProcessLoopSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center px-3.5 py-1.5 rounded-sm bg-[#38352D] mb-6 sm:mb-8 shadow-sm"
+                className="inline-flex items-center px-3.5 py-1.5 rounded-sm bg-[#1C1B1B] border border-white/10 mb-6 sm:mb-8 shadow-sm"
               >
                 <span 
-                  className="text-[#EAE5D8] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase font-syne"
+                  className="text-[#A3A3A3] text-[11px] sm:text-xs font-bold tracking-[0.2em] uppercase font-syne"
                 >
                   MY PROCESS (AKA MY LOOP)
                 </span>
@@ -94,19 +94,25 @@ export const ProcessLoopSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h2 
-                  className="font-dm-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-white leading-[1.08] uppercase"
+                  className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.08] uppercase"
                 >
                   I NOTICE.
                   <br />
-                  I GET CURIOUS.
+                  <span>
+                    I GET CURIOUS.
+                  </span>
                   <br />
-                  <span 
-                    className="text-[#D1F047] inline-block mt-1"
-                    style={{
-                      filter: 'drop-shadow(0 0 20px rgba(209,240,71,0.35))',
-                    }}
-                  >
+                  <span className="text-white relative inline-block mt-2">
                     I TRY IT.
+                    <svg
+                      viewBox="0 0 180 16"
+                      className="absolute -bottom-2 left-0 w-full h-auto drop-shadow-[0_0_8px_rgba(182,214,58,0.3)] pointer-events-none"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M2 9C25 5.5 80 3.2 178 7" stroke="#B6D63A" strokeWidth="2.8" strokeLinecap="round" />
+                      <path d="M8 13.5C40 9.8 100 8.2 170 12" stroke="#B6D63A" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
                   </span>
                 </h2>
               </motion.div>
@@ -119,7 +125,7 @@ export const ProcessLoopSection: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="mt-2.5 sm:mt-3.5 text-neutral-300 text-xl sm:text-2xl md:text-3xl font-light leading-relaxed max-w-xl font-caveat"
               >
-                <p>
+                <p className="opacity-60">
                   I&rsquo;m the kind of person who notices things.
                   <br />
                   Gets curious. And can&rsquo;t stop until I figure it out.
@@ -135,19 +141,17 @@ export const ProcessLoopSection: React.FC = () => {
                 className="mt-14 sm:mt-18 md:mt-20 flex items-start gap-3 sm:gap-3.5 max-w-xl"
               >
                 {/* Enlarged 8-point lime asterisk icon */}
-                <div className="shrink-0 text-5xl sm:text-6xl md:text-7xl text-[#D1F047] font-black leading-none select-none -mt-1 sm:-mt-2">
+                <div className="shrink-0 text-5xl sm:text-6xl md:text-7xl text-[#B6D63A] font-black leading-none select-none -mt-1 sm:-mt-2">
                   ✱
                 </div>
                 <div className="flex flex-col gap-1 pt-0.5">
                   <span 
-                    className="text-[#9FA288] text-xs sm:text-sm font-bold tracking-[0.22em] uppercase"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#F5F5F0] text-xs sm:text-sm font-bold tracking-[0.22em] uppercase font-sans"
                   >
                     WHAT DRIVES THIS LOOP?
                   </span>
                   <p 
-                    className="text-[#E8E2D7] text-lg sm:text-xl md:text-2xl font-light leading-snug"
-                    style={{ fontFamily: "'Caveat', cursive, sans-serif" }}
+                    className="text-[#F5F5F0] text-sm sm:text-base md:text-lg font-normal leading-relaxed font-sans"
                   >
                     Curiosity to start.&nbsp;&nbsp;&nbsp;Obsession to continue.&nbsp;&nbsp;&nbsp;Purpose to finish.
                   </p>
@@ -165,22 +169,19 @@ export const ProcessLoopSection: React.FC = () => {
                 {/* Card Body */}
                 <div className="w-full bg-[#DFD9CE] text-[#131313] p-5 sm:p-6 rounded-[2px] shadow-xl relative z-10 flex flex-col justify-center">
                   <span 
-                    className="text-[#525252] text-[10px] sm:text-[11px] font-bold tracking-[0.22em] uppercase mb-1.5"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#707070] text-[10px] sm:text-[11px] font-bold tracking-[0.22em] uppercase mb-1.5 font-syne"
                   >
                     REMINDER
                   </span>
                   <div className="flex flex-wrap items-center gap-2">
                     <span 
-                      className="text-[#131313] text-sm sm:text-base md:text-lg font-black tracking-[0.06em] uppercase"
-                      style={{ fontFamily: "'General Sans', system-ui, sans-serif" }}
+                      className="text-[#131313] text-sm sm:text-base md:text-lg font-black tracking-[0.06em] uppercase font-sans"
                     >
                       NEVER SETTLE. MAKE IT BETTER.
                     </span>
                     {/* Lime Highlight Pill */}
                     <span 
-                      className="bg-[#D1F047] text-[#5A6B00] px-2.5 py-1 text-sm sm:text-base md:text-lg font-black tracking-wider uppercase inline-block shadow-sm"
-                      style={{ fontFamily: "'General Sans', system-ui, sans-serif" }}
+                      className="bg-[#B6D63A] text-[#1A2000] px-2.5 py-1 text-sm sm:text-base md:text-lg font-black tracking-wider uppercase inline-block shadow-sm font-sans"
                     >
                       REPEAT
                     </span>
@@ -194,33 +195,33 @@ export const ProcessLoopSection: React.FC = () => {
           <div className="lg:col-span-6 relative w-full pt-4">
             
             {/* Ambient grid placement layout for the 4 pinned boards */}
-            <div className="relative w-full min-h-[660px] sm:min-h-[760px] md:min-h-[820px] lg:min-h-[860px]">
+            <div className="relative w-full min-h-[660px] sm:min-h-[740px] md:min-h-[820px] lg:min-h-[880px]">
               
-              {/* ------------ STAGE 01: 01 IDEA DUMP (Top Left) ------------ */}
+              {/* ------------ STAGE 01: 01 IDEA DUMP (Top Left, Tilted Left) ------------ */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="absolute left-0 top-0 w-[62%] sm:w-[52%] z-10 group"
+                className="absolute left-0 top-0 w-[64%] sm:w-[56%] z-10 group"
+                style={{ transform: 'rotate(-5.5deg)' }}
               >
-                {/* Badge Tag: 01 IDEA DUMP - Space increased above image */}
-                <div className="flex items-center gap-2 mb-3.5 sm:mb-4">
+                {/* Badge Tag: 01 IDEA DUMP */}
+                <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2A2A2A] border border-white/10 flex items-center justify-center text-[10px] sm:text-[11px] font-syne text-white font-bold">
                     01
                   </div>
                   <span 
-                    className="text-[#CBC6BB] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#A3A3A3] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase font-syne"
                   >
                     IDEA DUMP
                   </span>
                 </div>
 
-                {/* Polaroid Frame */}
-                <div className="relative bg-[#1C1B1B] p-2 sm:p-2.5 pb-2.5 rounded-[2px] border border-[#353534]/80 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
+                {/* Polaroid Frame (Reduced Border) */}
+                <div className="relative bg-[#1C1B1B] p-1.5 sm:p-2 pb-2 rounded-[2px] border border-white/10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
                   {/* Top center tape */}
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-3.5 sm:h-4 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-3 sm:h-3.5 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
                   
                   {/* Image container */}
                   <div className="relative overflow-hidden aspect-[4/3] bg-black">
@@ -230,7 +231,7 @@ export const ProcessLoopSection: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=900&auto=format&fit=crop';
                       }}
-                      className="w-full h-full object-cover filter contrast-125 brightness-95"
+                      className="w-full h-full object-cover filter contrast-125 brightness-95 scale-[1.18] transition-transform duration-500 group-hover:scale-[1.24]"
                       referrerPolicy="no-referrer"
                     />
                     <button
@@ -244,32 +245,31 @@ export const ProcessLoopSection: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* ------------ STAGE 02: 02 TRY THINGS OUT (Top Right, Rotated) ------------ */}
+              {/* ------------ STAGE 02: 02 TRY THINGS OUT (Top Right, Tilted Right) ------------ */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="absolute right-0 top-[16%] w-[62%] sm:w-[54%] z-20 group"
-                style={{ transform: 'rotate(2.2deg)' }}
+                className="absolute right-0 top-[21%] w-[64%] sm:w-[56%] z-20 group"
+                style={{ transform: 'rotate(6.2deg)' }}
               >
-                {/* Badge Tag: 02 TRY THINGS OUT - Space increased above image */}
-                <div className="flex items-center gap-2 mb-3.5 sm:mb-4 justify-end pr-2">
+                {/* Badge Tag: 02 TRY THINGS OUT */}
+                <div className="flex items-center gap-2 mb-2 sm:mb-2.5 justify-end pr-1">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2A2A2A] border border-white/10 flex items-center justify-center text-[10px] sm:text-[11px] font-syne text-white font-bold">
                     02
                   </div>
                   <span 
-                    className="text-[#CBC6BB] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#A3A3A3] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase font-syne"
                   >
                     TRY THINGS OUT
                   </span>
                 </div>
 
-                {/* Polaroid Frame */}
-                <div className="relative bg-[#1C1B1B] p-2 sm:p-2.5 pb-2.5 rounded-[2px] border border-[#353534]/80 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
+                {/* Polaroid Frame (Reduced Border) */}
+                <div className="relative bg-[#1C1B1B] p-1.5 sm:p-2 pb-2 rounded-[2px] border border-white/10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
                   {/* Top center tape */}
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-3.5 sm:h-4 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-3 sm:h-3.5 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
 
                   {/* Image container */}
                   <div className="relative overflow-hidden aspect-[4/3] bg-black">
@@ -279,7 +279,7 @@ export const ProcessLoopSection: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=900&auto=format&fit=crop';
                       }}
-                      className="w-full h-full object-cover filter contrast-125 brightness-90"
+                      className="w-full h-full object-cover filter contrast-125 brightness-90 scale-[1.18] transition-transform duration-500 group-hover:scale-[1.24]"
                       referrerPolicy="no-referrer"
                     />
                     <button
@@ -293,32 +293,31 @@ export const ProcessLoopSection: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* ------------ STAGE 03: 03 GETTING THERE (Middle Left, Tilted) ------------ */}
+              {/* ------------ STAGE 03: 03 GETTING THERE (Middle Left, Tilted Left) ------------ */}
               <motion.div
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="absolute left-[-1%] sm:left-0 top-[47%] w-[62%] sm:w-[54%] z-30 group"
-                style={{ transform: 'rotate(-2.4deg)' }}
+                className="absolute left-0 top-[42%] w-[64%] sm:w-[56%] z-30 group"
+                style={{ transform: 'rotate(-5.8deg)' }}
               >
-                {/* Badge Tag: 03 GETTING THERE - Space increased above image */}
-                <div className="flex items-center gap-2 mb-3.5 sm:mb-4">
+                {/* Badge Tag: 03 GETTING THERE */}
+                <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2A2A2A] border border-white/10 flex items-center justify-center text-[10px] sm:text-[11px] font-syne text-white font-bold">
                     03
                   </div>
                   <span 
-                    className="text-[#CBC6BB] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#A3A3A3] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase font-syne"
                   >
                     GETTING THERE
                   </span>
                 </div>
 
-                {/* Polaroid Frame */}
-                <div className="relative bg-[#1C1B1B] p-2 sm:p-2.5 pb-2.5 rounded-[2px] border border-[#353534]/80 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
+                {/* Polaroid Frame (Reduced Border) */}
+                <div className="relative bg-[#1C1B1B] p-1.5 sm:p-2 pb-2 rounded-[2px] border border-white/10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]">
                   {/* Top center tape */}
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-3.5 sm:h-4 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-3 sm:h-3.5 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
 
                   {/* Image container */}
                   <div className="relative overflow-hidden aspect-[4/3] bg-black">
@@ -328,7 +327,7 @@ export const ProcessLoopSection: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=900&auto=format&fit=crop';
                       }}
-                      className="w-full h-full object-cover filter contrast-125 brightness-90 grayscale"
+                      className="w-full h-full object-cover filter contrast-125 brightness-90 grayscale scale-[1.18] transition-transform duration-500 group-hover:scale-[1.24]"
                       referrerPolicy="no-referrer"
                     />
                     <button
@@ -342,35 +341,35 @@ export const ProcessLoopSection: React.FC = () => {
                 </div>
               </motion.div>
 
-              {/* ------------ STAGE 04: 04 MAKE IT REAL (Bottom Right - Glow Removed, Clean & Sleek) ------------ */}
+              {/* ------------ STAGE 04: 04 MAKE IT REAL (Bottom Right, Tilted Right) ------------ */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.35 }}
-                className="absolute right-0 bottom-0 w-[64%] sm:w-[56%] z-40 group"
+                className="absolute right-0 top-[63%] w-[64%] sm:w-[56%] z-40 group"
+                style={{ transform: 'rotate(6.0deg)' }}
               >
-                {/* Badge Tag: 04 MAKE IT REAL - Space increased above image */}
-                <div className="flex items-center gap-2 mb-3.5 sm:mb-4 justify-end pr-2">
+                {/* Badge Tag: 04 MAKE IT REAL */}
+                <div className="flex items-center gap-2 mb-2 sm:mb-2.5 justify-end pr-1">
                   <div 
                     className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#2A2A2A] border border-white/10 flex items-center justify-center text-[10px] sm:text-[11px] font-syne text-white font-bold"
                   >
                     04
                   </div>
                   <span 
-                    className="text-[#CBC6BB] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase"
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className="text-[#A3A3A3] text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase font-syne"
                   >
                     MAKE IT REAL
                   </span>
                 </div>
 
-                {/* Clean Polaroid Frame (Glow removed) */}
+                {/* Clean Polaroid Frame (Reduced Border) */}
                 <div 
-                  className="relative bg-[#1C1B1B] p-2 sm:p-2.5 pb-2.5 rounded-[2px] border border-[#353534]/80 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                  className="relative bg-[#1C1B1B] p-1.5 sm:p-2 pb-2 rounded-[2px] border border-white/10 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
                 >
                   {/* Top center neutral tape */}
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-12 sm:w-16 h-3.5 sm:h-4 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-3 sm:h-3.5 bg-white/20 backdrop-blur-sm z-20 border border-white/20" />
 
                   {/* Image container */}
                   <div className="relative overflow-hidden aspect-[4/3] bg-black">
@@ -380,7 +379,7 @@ export const ProcessLoopSection: React.FC = () => {
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=900&auto=format&fit=crop';
                       }}
-                      className="w-full h-full object-cover filter contrast-115 brightness-100"
+                      className="w-full h-full object-cover filter contrast-115 brightness-100 scale-[1.18] transition-transform duration-500 group-hover:scale-[1.24]"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -428,7 +427,7 @@ export const ProcessLoopSection: React.FC = () => {
               </button>
 
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-syne font-bold text-[#D1F047] bg-[#D1F047]/10 px-2.5 py-1 rounded border border-[#D1F047]/30">
+                <span className="text-xs font-syne font-bold text-[#B6D63A] bg-[#B6D63A]/10 px-2.5 py-1 rounded border border-[#B6D63A]/30">
                   PHASE {selectedCard.stepNumber}
                 </span>
                 <h3 className="text-lg sm:text-xl font-bold font-syne tracking-wider text-white uppercase">
@@ -454,7 +453,4 @@ export const ProcessLoopSection: React.FC = () => {
     </section>
   );
 };
-
-
-
 

@@ -83,7 +83,7 @@ export const MoniVisualizingLayout: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="font-playfair font-bold text-[#c9f14a] text-4xl sm:text-5xl md:text-[64px] leading-[1.02] tracking-[-0.01em]"
+            className="font-playfair font-bold text-[#B6D63A] text-4xl sm:text-5xl md:text-[64px] leading-[1.02] tracking-[-0.01em]"
             style={{
               textShadow: '0 0 24px rgba(201, 241, 74, 0.15)',
             }}
@@ -98,7 +98,7 @@ export const MoniVisualizingLayout: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 sm:mt-6 text-[#8a8a86] font-hanken font-light text-base sm:text-lg md:text-[20px] leading-[1.5] max-w-[920px] mx-auto"
+            className="mt-5 sm:mt-6 text-[#8a8a86] font-sans font-light text-base sm:text-lg md:text-[20px] leading-[1.5] max-w-[920px] mx-auto"
           >
             Four layers work together on one screen, so Moni can think, suggest and talk without getting in the way.
           </motion.p>
@@ -108,7 +108,7 @@ export const MoniVisualizingLayout: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-3.5 text-xs sm:text-sm text-[#b1b1ac] font-hanken font-normal tracking-wide"
+            className="mt-3.5 text-xs sm:text-sm text-[#b1b1ac] font-sans font-normal tracking-wide"
           >
             Hover over a number to see what each layer does.
           </motion.p>
@@ -132,17 +132,17 @@ export const MoniVisualizingLayout: React.FC = () => {
             onFocus={() => setHoveredId('1')}
             onBlur={() => setHoveredId(null)}
             onClick={(e) => handleMarkerClick('1', e)}
-            className={`absolute -left-[54px] sm:-left-[74px] top-[6px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-hanken text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
+            className={`absolute -left-[54px] sm:-left-[74px] top-[6px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-sans text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
               activeId === '1'
-                ? 'bg-[#c9f14a] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
-                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#c9f14a]'
+                ? 'bg-[#B6D63A] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
+                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#B6D63A]'
             }`}
           >
             1
             {/* Connector line to device */}
             <span
               className={`absolute left-full top-1/2 -translate-y-1/2 w-[22px] sm:w-[32px] h-[1px] transition-colors duration-250 ${
-                activeId === '1' ? 'bg-[#c9f14a]' : 'bg-[#b9b9b9]'
+                activeId === '1' ? 'bg-[#B6D63A]' : 'bg-[#b9b9b9]'
               }`}
             />
           </button>
@@ -157,17 +157,17 @@ export const MoniVisualizingLayout: React.FC = () => {
             onFocus={() => setHoveredId('2')}
             onBlur={() => setHoveredId(null)}
             onClick={(e) => handleMarkerClick('2', e)}
-            className={`absolute -left-[54px] sm:-left-[74px] top-[214px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-hanken text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
+            className={`absolute -left-[54px] sm:-left-[74px] top-[214px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-sans text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
               activeId === '2'
-                ? 'bg-[#c9f14a] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
-                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#c9f14a]'
+                ? 'bg-[#B6D63A] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
+                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#B6D63A]'
             }`}
           >
             2
             {/* Connector line */}
             <span
               className={`absolute left-full top-1/2 -translate-y-1/2 w-[22px] sm:w-[32px] h-[1px] transition-colors duration-250 ${
-                activeId === '2' ? 'bg-[#c9f14a]' : 'bg-[#b9b9b9]'
+                activeId === '2' ? 'bg-[#B6D63A]' : 'bg-[#b9b9b9]'
               }`}
             />
           </button>
@@ -182,17 +182,17 @@ export const MoniVisualizingLayout: React.FC = () => {
             onFocus={() => setHoveredId('3')}
             onBlur={() => setHoveredId(null)}
             onClick={(e) => handleMarkerClick('3', e)}
-            className={`absolute -left-[54px] sm:-left-[74px] bottom-[118px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-hanken text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
+            className={`absolute -left-[54px] sm:-left-[74px] bottom-[118px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-sans text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
               activeId === '3'
-                ? 'bg-[#c9f14a] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
-                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#c9f14a]'
+                ? 'bg-[#B6D63A] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
+                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#B6D63A]'
             }`}
           >
             3
             {/* Connector line */}
             <span
               className={`absolute left-full top-1/2 -translate-y-1/2 w-[22px] sm:w-[32px] h-[1px] transition-colors duration-250 ${
-                activeId === '3' ? 'bg-[#c9f14a]' : 'bg-[#b9b9b9]'
+                activeId === '3' ? 'bg-[#B6D63A]' : 'bg-[#b9b9b9]'
               }`}
             />
           </button>
@@ -207,17 +207,17 @@ export const MoniVisualizingLayout: React.FC = () => {
             onFocus={() => setHoveredId('4')}
             onBlur={() => setHoveredId(null)}
             onClick={(e) => handleMarkerClick('4', e)}
-            className={`absolute -left-[54px] sm:-left-[74px] bottom-[36px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-hanken text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
+            className={`absolute -left-[54px] sm:-left-[74px] bottom-[36px] w-[30px] h-[30px] sm:w-[34px] sm:h-[34px] rounded-full flex items-center justify-center font-sans text-[16px] sm:text-[19px] z-20 cursor-pointer transition-all duration-250 ease-out focus:outline-none ${
               activeId === '4'
-                ? 'bg-[#c9f14a] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
-                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#c9f14a]'
+                ? 'bg-[#B6D63A] text-black scale-115 shadow-[0_0_16px_rgba(201,241,74,0.6)] border-2 border-[#1f5c48]'
+                : 'bg-[#86dcb8] text-[#0f2a20] border-2 border-[#1f5c48] hover:scale-115 hover:bg-[#B6D63A]'
             }`}
           >
             4
             {/* Connector line */}
             <span
               className={`absolute left-full top-1/2 -translate-y-1/2 w-[22px] sm:w-[32px] h-[1px] transition-colors duration-250 ${
-                activeId === '4' ? 'bg-[#c9f14a]' : 'bg-[#b9b9b9]'
+                activeId === '4' ? 'bg-[#B6D63A]' : 'bg-[#b9b9b9]'
               }`}
             />
           </button>
@@ -232,9 +232,9 @@ export const MoniVisualizingLayout: React.FC = () => {
               onMouseEnter={() => setHoveredId('1')}
               onMouseLeave={() => setHoveredId(null)}
               onClick={(e) => handleMarkerClick('1', e)}
-              className={`absolute -top-[38px] left-1/2 -translate-x-1/2 bg-black rounded-full h-[44px] px-4 flex items-center gap-3 text-white text-[10px] font-hanken font-medium whitespace-nowrap z-30 shadow-md cursor-pointer transition-all duration-300 ease-out ${
+              className={`absolute -top-[38px] left-1/2 -translate-x-1/2 bg-black rounded-full h-[44px] px-4 flex items-center gap-3 text-white text-[10px] font-sans font-medium whitespace-nowrap z-30 shadow-md cursor-pointer transition-all duration-300 ease-out ${
                 activeId === '1'
-                  ? 'scale-[1.03] shadow-[0_0_0_3px_#c9f14a,0_0_24px_rgba(201,241,74,0.55)]'
+                  ? 'scale-[1.03] shadow-[0_0_0_3px_#B6D63A,0_0_24px_rgba(201,241,74,0.55)]'
                   : ''
               }`}
             >
@@ -264,14 +264,14 @@ export const MoniVisualizingLayout: React.FC = () => {
                 onClick={(e) => handleMarkerClick('2', e)}
                 className={`flex flex-col gap-3 cursor-pointer rounded-[24px] p-1 transition-all duration-300 ease-out ${
                   activeId === '2'
-                    ? 'scale-[1.015] shadow-[0_0_0_3px_#c9f14a,0_0_24px_rgba(201,241,74,0.55)]'
+                    ? 'scale-[1.015] shadow-[0_0_0_3px_#B6D63A,0_0_24px_rgba(201,241,74,0.55)]'
                     : ''
                 }`}
               >
                 {/* Black widget card */}
                 <div className="bg-black rounded-[22px] p-[14px_14px_16px] text-white shadow-sm">
                   {/* Top status */}
-                  <div className="flex items-center gap-2 text-[10px] text-[#ddd] font-hanken">
+                  <div className="flex items-center gap-2 text-[10px] text-[#ddd] font-sans">
                     <span className="flex">
                       <i className="w-[18px] h-[18px] rounded-full bg-[#555] -mr-[6px] border border-black inline-block" />
                       <i className="w-[18px] h-[18px] rounded-full bg-[#555] border border-black inline-block" />
@@ -280,18 +280,18 @@ export const MoniVisualizingLayout: React.FC = () => {
                   </div>
 
                   {/* Header */}
-                  <div className="text-[11px] font-semibold text-white font-hanken mt-[10px] mb-2 pb-[10px] border-b border-[#333]">
+                  <div className="text-[11px] font-semibold text-white font-sans mt-[10px] mb-2 pb-[10px] border-b border-[#333]">
                     Widget Header
                   </div>
 
                   {/* Grey body */}
-                  <div className="bg-[#494949] rounded-[14px] h-[132px] flex items-center justify-center text-[11px] font-semibold text-white font-hanken">
+                  <div className="bg-[#494949] rounded-[14px] h-[132px] flex items-center justify-center text-[11px] font-semibold text-white font-sans">
                     Dynamic Contextual Widget
                   </div>
                 </div>
 
                 {/* Suggestions pill */}
-                <div className="bg-[#3a3a3a] text-white rounded-full text-[10px] font-semibold font-hanken py-3 px-3.5 flex items-center gap-2.5 shadow-sm">
+                <div className="bg-[#3a3a3a] text-white rounded-full text-[10px] font-semibold font-sans py-3 px-3.5 flex items-center gap-2.5 shadow-sm">
                   <svg viewBox="0 0 200 200" fill="#ffffff" className="w-[18px] h-[18px] flex-shrink-0">
                     <rect x="88" y="128" width="64" height="38" />
                     <rect
@@ -322,9 +322,9 @@ export const MoniVisualizingLayout: React.FC = () => {
                 onMouseEnter={() => setHoveredId('3')}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={(e) => handleMarkerClick('3', e)}
-                className={`text-white rounded-[20px] h-[92px] flex items-center justify-center text-[11px] font-semibold font-hanken backdrop-blur-sm cursor-pointer transition-all duration-300 ease-out ${
+                className={`text-white rounded-[20px] h-[92px] flex items-center justify-center text-[11px] font-semibold font-sans backdrop-blur-sm cursor-pointer transition-all duration-300 ease-out ${
                   activeId === '3'
-                    ? 'scale-[1.015] shadow-[0_0_0_3px_#c9f14a,0_0_24px_rgba(201,241,74,0.55)]'
+                    ? 'scale-[1.015] shadow-[0_0_0_3px_#B6D63A,0_0_24px_rgba(201,241,74,0.55)]'
                     : ''
                 }`}
                 style={{ backgroundColor: 'rgba(70, 70, 70, 0.72)' }}
@@ -338,9 +338,9 @@ export const MoniVisualizingLayout: React.FC = () => {
                 onMouseEnter={() => setHoveredId('4')}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={(e) => handleMarkerClick('4', e)}
-                className={`bg-black text-white rounded-full h-[54px] flex items-center justify-center text-[11px] font-semibold font-hanken shadow-md relative z-[1] cursor-pointer transition-all duration-300 ease-out ${
+                className={`bg-black text-white rounded-full h-[54px] flex items-center justify-center text-[11px] font-semibold font-sans shadow-md relative z-[1] cursor-pointer transition-all duration-300 ease-out ${
                   activeId === '4'
-                    ? 'scale-[1.015] shadow-[0_0_0_3px_#c9f14a,0_0_24px_rgba(201,241,74,0.55)]'
+                    ? 'scale-[1.015] shadow-[0_0_0_3px_#B6D63A,0_0_24px_rgba(201,241,74,0.55)]'
                     : ''
                 }`}
               >
@@ -376,20 +376,20 @@ export const MoniVisualizingLayout: React.FC = () => {
                   }`}
                 >
                   {/* Connector line to the left pointing back to the layer */}
-                  <div className="absolute right-full top-[22px] w-[56px] h-[1px] bg-gradient-to-r from-transparent to-[#c9f14a]" />
+                  <div className="absolute right-full top-[22px] w-[56px] h-[1px] bg-gradient-to-r from-transparent to-[#B6D63A]" />
 
                   {/* Mint badge */}
-                  <span className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#86dcb8] text-[#0f2a20] font-hanken font-semibold text-[14px] mb-3">
+                  <span className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#86dcb8] text-[#0f2a20] font-sans font-semibold text-[14px] mb-3">
                     {layer.badge}
                   </span>
 
                   {/* Title */}
-                  <h4 className="font-hanken font-semibold text-[18px] text-white tracking-[-0.01em] mb-2 leading-[1.3]">
+                  <h4 className="font-sans font-semibold text-[18px] text-white tracking-[-0.01em] mb-2 leading-[1.3]">
                     {layer.title}
                   </h4>
 
                   {/* Full Description */}
-                  <p className="text-[#b9b8b2] font-hanken font-light text-[15px] leading-[1.5]">
+                  <p className="text-[#b9b8b2] font-sans font-light text-[15px] leading-[1.5]">
                     {layer.desc}
                   </p>
                 </div>
@@ -415,20 +415,20 @@ export const MoniVisualizingLayout: React.FC = () => {
                       transition={{ duration: 0.25, ease: 'easeOut' }}
                       className="bg-[#141414] border border-white/[0.08] rounded-[22px] p-6 shadow-xl text-left"
                     >
-                      <span className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#86dcb8] text-[#0f2a20] font-hanken font-semibold text-[14px] mb-3">
+                      <span className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#86dcb8] text-[#0f2a20] font-sans font-semibold text-[14px] mb-3">
                         {layer.badge}
                       </span>
-                      <h4 className="font-hanken font-semibold text-[18px] text-white tracking-[-0.01em] mb-2">
+                      <h4 className="font-sans font-semibold text-[18px] text-white tracking-[-0.01em] mb-2">
                         {layer.title}
                       </h4>
-                      <p className="text-[#b9b8b2] font-hanken font-light text-[15px] leading-[1.5]">
+                      <p className="text-[#b9b8b2] font-sans font-light text-[15px] leading-[1.5]">
                         {layer.desc}
                       </p>
                     </motion.div>
                   );
                 })()
               ) : (
-                <div className="bg-[#141414]/60 border border-white/[0.05] rounded-[22px] p-5 text-center text-[#8a8a86] font-hanken text-sm">
+                <div className="bg-[#141414]/60 border border-white/[0.05] rounded-[22px] p-5 text-center text-[#8a8a86] font-sans text-sm">
                   Tap any number (1–4) above to inspect each layer.
                 </div>
               )}
@@ -441,6 +441,3 @@ export const MoniVisualizingLayout: React.FC = () => {
     </section>
   );
 };
-
-
-

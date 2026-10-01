@@ -30,12 +30,26 @@ export const CuriosityPlaygroundSection: React.FC = () => {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
         <div>
-          <h2 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-white uppercase leading-[1.05]">
+          <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white uppercase leading-[1.05]">
             THINGS I EXPLORED
             <br />
-            <span className="text-white">BECAUSE I WAS CURIOUS.</span>
+            <span className="text-white">
+              BECAUSE I WAS{' '}
+              <span className="relative inline-block">
+                CURIOUS.
+                <svg
+                  viewBox="0 0 200 16"
+                  className="absolute -bottom-2 left-0 w-full h-auto drop-shadow-[0_0_8px_rgba(182,214,58,0.3)] pointer-events-none"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M2 9.5C30 5.2 90 3 198 7" stroke="#B6D63A" strokeWidth="2.8" strokeLinecap="round" />
+                  <path d="M8 14C45 10 110 8.5 190 12.5" stroke="#B6D63A" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </span>
+            </span>
           </h2>
-          <p className="mt-3 font-handwriting text-2xl sm:text-3xl text-[#D1F047]">
+          <p className="mt-3 font-caveat text-2xl sm:text-3xl text-[#B6D63A]">
             some worked. some needed a lot of redo
           </p>
         </div>
@@ -43,12 +57,12 @@ export const CuriosityPlaygroundSection: React.FC = () => {
         {/* Playful Handwritten Annotation with Arrow */}
         <div className="flex items-center gap-3 self-start md:self-end">
           <div className="text-right">
-            <p className="font-handwriting text-xl sm:text-2xl text-[#fef08a] leading-tight whitespace-nowrap">
+            <p className="font-caveat text-xl sm:text-2xl text-[#B6D63A] leading-tight whitespace-nowrap">
               click any card
             </p>
           </div>
           <svg
-            className="w-10 h-10 text-[#fef08a] animate-bounce"
+            className="w-10 h-10 text-[#B6D63A] animate-bounce"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -67,11 +81,11 @@ export const CuriosityPlaygroundSection: React.FC = () => {
         <motion.div
           whileHover={{ y: -4 }}
           onClick={() => openCardModal('01-tmm-video')}
-          className="group relative rounded-xl bg-[#131317] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
+          className="group relative rounded-xl bg-[#151417] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
         >
           {/* Top Bar with Centered Title */}
-          <div className="flex items-center justify-center font-mono-tech pb-2 border-b border-white/5 mb-2.5">
-            <span className="text-white font-medium text-xs sm:text-[13px] text-center truncate px-1" title="Semiotics and Semantics Game Design">
+          <div className="flex items-center justify-center font-syne pb-2 border-b border-white/5 mb-2.5">
+            <span className="text-[#F5F5F0] font-semibold text-xs sm:text-[13px] text-center truncate px-1 uppercase tracking-wider" title="Semiotics and Semantics Game Design">
               Semiotics & Semantics Game Design
             </span>
           </div>
@@ -108,11 +122,11 @@ export const CuriosityPlaygroundSection: React.FC = () => {
         <motion.div
           whileHover={{ y: -4 }}
           onClick={() => openCardModal('02-tangible-game')}
-          className="group relative rounded-xl bg-[#131317] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
+          className="group relative rounded-xl bg-[#151417] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
         >
           {/* Top Bar with Centered Title */}
-          <div className="flex items-center justify-center font-mono-tech pb-2 border-b border-white/5 mb-2.5">
-            <span className="text-white font-medium text-xs sm:text-[13px] text-center truncate px-1" title="Tangible Interaction Prototype">
+          <div className="flex items-center justify-center font-syne pb-2 border-b border-white/5 mb-2.5">
+            <span className="text-[#F5F5F0] font-semibold text-xs sm:text-[13px] text-center truncate px-1 uppercase tracking-wider" title="Tangible Interaction Prototype">
               Tangible Interaction Prototype
             </span>
           </div>
@@ -145,17 +159,15 @@ export const CuriosityPlaygroundSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* CARD 3: Solarify Website Coding (Direct External HTML Link) */}
-        <motion.a
+        {/* CARD 3: Solarify Website Coding */}
+        <motion.div
           whileHover={{ y: -4 }}
-          href="https://skumaa2930-blip.github.io/solarify-website/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative rounded-xl bg-[#131317] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
+          onClick={() => openCardModal('03-solarify')}
+          className="group relative rounded-xl bg-[#151417] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
         >
           {/* Top Bar with Centered Title */}
-          <div className="flex items-center justify-center font-mono-tech pb-2 border-b border-white/5 mb-2.5">
-            <span className="text-white font-medium text-xs sm:text-[13px] text-center truncate px-1" title="Solarify Website Coding">
+          <div className="flex items-center justify-center font-syne pb-2 border-b border-white/5 mb-2.5">
+            <span className="text-[#F5F5F0] font-semibold text-xs sm:text-[13px] text-center truncate px-1 uppercase tracking-wider" title="Solarify Website Coding">
               Solarify Website Coding
             </span>
           </div>
@@ -186,17 +198,17 @@ export const CuriosityPlaygroundSection: React.FC = () => {
               className="text-xs"
             />
           </div>
-        </motion.a>
+        </motion.div>
 
         {/* CARD 4: Vibe Coding */}
         <motion.div
           whileHover={{ y: -4 }}
           onClick={() => openCardModal('04-vibe-coding')}
-          className="group relative rounded-xl bg-[#131317] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
+          className="group relative rounded-xl bg-[#151417] border border-white/10 p-3.5 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer hover:border-white/25 transition-all"
         >
           {/* Top Bar with Centered Title */}
-          <div className="flex items-center justify-center font-mono-tech pb-2 border-b border-white/5 mb-2.5">
-            <span className="text-white font-medium text-xs sm:text-[13px] text-center truncate px-1" title="Vibe Coding">
+          <div className="flex items-center justify-center font-syne pb-2 border-b border-white/5 mb-2.5">
+            <span className="text-[#F5F5F0] font-semibold text-xs sm:text-[13px] text-center truncate px-1 uppercase tracking-wider" title="Vibe Coding">
               Vibe Coding
             </span>
           </div>
@@ -232,14 +244,11 @@ export const CuriosityPlaygroundSection: React.FC = () => {
 
       {/* Sub-caption: still curious??? */}
       <div className="py-20 sm:py-28 text-center">
-        <p className="font-handwriting text-3xl sm:text-4xl text-[#D1F047] tracking-wider">
+        <p className="font-caveat text-3xl sm:text-4xl text-[#B6D63A] tracking-wider">
           still curious???
         </p>
       </div>
     </section>
   );
 };
-
-
-
 

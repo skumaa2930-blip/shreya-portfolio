@@ -4,7 +4,7 @@ import { HeroVisual } from './HeroVisual';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative pt-20 pb-16 md:pt-24 md:pb-20 px-4 sm:px-8 md:px-12 max-w-[1280px] mx-auto flex flex-col items-center text-center">
+    <section id="hero" className="relative pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-20 px-4 sm:px-8 md:px-12 max-w-[1280px] mx-auto flex flex-col items-center text-center">
       {/* Exact Figma Visual Screen Component */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
@@ -17,7 +17,4 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
-
-
-
 

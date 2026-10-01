@@ -137,5 +137,3 @@ export const HABIT_LIST = [
     detail: 'MacGyvering code snippets, quick prototypes, and untangling design problems.',
   },
 ];
-
-

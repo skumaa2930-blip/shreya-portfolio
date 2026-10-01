@@ -13,7 +13,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
         <g clipPath="url(#clip0_hero)">
           {/* Ambient lime glow backdrop */}
           <g filter="url(#filter0_f_hero)">
-            <rect x="193" y="289" width="908" height="575" rx="12" fill="#D4F34A" fillOpacity="0.05" />
+            <rect x="193" y="289" width="908" height="575" rx="12" fill="#B6D63A" fillOpacity="0.05" />
           </g>
 
           {/* Central main photo: Ghats / Sunset river */}
@@ -63,7 +63,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="289.994"
                 rx="2"
                 transform="rotate(0.999999 409.636 302.225)"
-                fill="#0E0E0E"
+                fill="transparent"
               />
               <image
                 x="409.636"
@@ -77,7 +77,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                   const target = e.currentTarget as SVGImageElement;
                   if (!target.dataset.fallback) {
                     target.dataset.fallback = 'true';
-                    target.setAttribute('href', 'https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=900&auto=format&fit=crop');
+                    target.setAttribute('href', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop');
                   }
                 }}
               />
@@ -131,7 +131,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="230.005"
                 rx="1"
                 transform="rotate(-5.73884 207.234 481.233)"
-                fill="#0E0E0E"
+                fill="transparent"
               />
               <image
                 x="207.234"
@@ -183,7 +183,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 height="269.329"
                 rx="1"
                 transform="rotate(6.47288 851.912 465.17)"
-                fill="#0E0E0E"
+                fill="transparent"
               />
               <image
                 x="851.912"
@@ -250,33 +250,22 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
                 shapeRendering="crispEdges"
               />
             </g>
-            {/* Handwritten Quote Text */}
-            <g transform="translate(390, 620) rotate(1.24622 0 0)">
+            {/* Role Title Text - Center-aligned top, bottom, and horizontally */}
+            <g transform="translate(379.827, 616) rotate(1.24622 0 0)">
               <text
-                x="16"
-                y="34"
-                fill="#EDEDED"
-                className="font-handwriting"
+                x="192"
+                y="42"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fill="#F5F5F0"
                 style={{
-                  fontFamily: "'Caveat', cursive, sans-serif",
-                  fontSize: '24px',
-                  letterSpacing: '0.02em',
+                  fontFamily: "'Syne', system-ui, -apple-system, sans-serif",
+                  fontSize: '13px',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
                 }}
               >
-                &ldquo;I notice things. Then I can&rsquo;t stop
-              </text>
-              <text
-                x="16"
-                y="62"
-                fill="#EDEDED"
-                className="font-handwriting"
-                style={{
-                  fontFamily: "'Caveat', cursive, sans-serif",
-                  fontSize: '24px',
-                  letterSpacing: '0.02em',
-                }}
-              >
-                thinking about them.&rdquo;
+                UX DESIGNER / PRODUCT DESIGNER
               </text>
             </g>
           </g>
@@ -297,106 +286,96 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
             <g opacity="0.9">
               <path
                 d="M663.818 762.63C662.834 742.61 663.241 719.28 665.04 692.641"
-                stroke="#D4F34A"
+                stroke="#B6D63A"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M664.08 747.632C669.459 745.059 673.528 741.13 676.287 735.844C670.931 737.084 666.862 741.013 664.08 747.632V747.632"
-                fill="#D4F34A"
+                fill="#B6D63A"
                 fillOpacity="0.25"
-                stroke="#D4F34A"
+                stroke="#B6D63A"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M663.289 735.617C657.337 732.846 653.074 728.771 650.501 723.392C655.81 724.818 660.073 728.893 663.289 735.617V735.617"
-                fill="#D4F34A"
+                fill="#B6D63A"
                 fillOpacity="0.25"
-                stroke="#D4F34A"
+                stroke="#B6D63A"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M664.516 722.636C671.24 719.42 675.982 715.169 678.741 709.883C672.719 711.111 667.977 715.363 664.516 722.636V722.636"
-                fill="#D4F34A"
+                fill="#B6D63A"
                 fillOpacity="0.25"
-                stroke="#D4F34A"
+                stroke="#B6D63A"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
               <path
                 d="M663.743 709.621C657.124 706.839 652.528 702.758 649.955 697.379C655.931 698.817 660.527 702.897 663.743 709.621V709.621"
-                fill="#D4F34A"
+                fill="#B6D63A"
                 fillOpacity="0.25"
-                stroke="#D4F34A"
+                stroke="#B6D63A"
                 strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <circle cx="665.04" cy="692.641" r="2.5" fill="#D4F34A" />
+              <circle cx="665.04" cy="692.641" r="2.5" fill="#B6D63A" />
             </g>
 
-            {/* Memo #08 Title & text */}
+            {/* Memo Title & text */}
             <g transform="translate(692, 680) rotate(1 0 0)">
               <text
                 x="0"
-                y="14"
-                fill="#D4F34A"
+                y="16"
+                fill="#B6D63A"
                 style={{
-                  fontFamily: "'Syne', sans-serif",
+                  fontFamily: "'Syne', system-ui, -apple-system, sans-serif",
                   fontSize: '11px',
                   fontWeight: 700,
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.16em',
                 }}
               >
-                MEMO #08
+                B.Des
               </text>
               <text
                 x="0"
                 y="46"
-                fill="#E5E2E1"
+                fill="#F5F5F0"
                 style={{
-                  fontFamily: "'Caveat', cursive, sans-serif",
-                  fontSize: '22px',
-                  letterSpacing: '0.01em',
+                  fontFamily: "'Syne', system-ui, -apple-system, sans-serif",
+                  fontSize: '16.5px',
+                  fontWeight: 700,
+                  letterSpacing: '0.02em',
                 }}
               >
-                ideas from random
+                MIT Institute
               </text>
               <text
                 x="0"
-                y="74"
-                fill="#E5E2E1"
+                y="70"
+                fill="#F5F5F0"
                 style={{
-                  fontFamily: "'Caveat', cursive, sans-serif",
-                  fontSize: '22px',
-                  letterSpacing: '0.01em',
+                  fontFamily: "'Syne', system-ui, -apple-system, sans-serif",
+                  fontSize: '16.5px',
+                  fontWeight: 700,
+                  letterSpacing: '0.02em',
                 }}
               >
-                moments. i collect
-              </text>
-              <text
-                x="0"
-                y="102"
-                fill="#E5E2E1"
-                style={{
-                  fontFamily: "'Caveat', cursive, sans-serif",
-                  fontSize: '22px',
-                  letterSpacing: '0.01em',
-                }}
-              >
-                everything.
+                of Design
               </text>
             </g>
 
             {/* Neon lime pin/dot at top right of quote card overlapping memo */}
             <g filter="url(#filter11_d_hero)">
-              <circle cx="748.637" cy="666.96" r="8" fill="#D4F34A" />
+              <circle cx="748.637" cy="666.96" r="8" fill="#B6D63A" />
             </g>
           </g>
 
@@ -406,11 +385,11 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
               x="640"
               y="90"
               textAnchor="middle"
-              fill="#D4F34A"
+              fill="#B6D63A"
               style={{
-                fontFamily: "'DM Serif Display', Georgia, serif",
+                fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: '14px',
-                fontWeight: 400,
+                fontWeight: 600,
                 letterSpacing: '0.2em',
               }}
             >
@@ -423,12 +402,12 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
             x="640"
             y="178"
             textAnchor="middle"
-            fill="#FFFFFF"
+            fill="#F5F5F0"
             style={{
-              fontFamily: "'DM Serif Display', Georgia, serif",
+              fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: '84px',
-              fontWeight: 400,
-              letterSpacing: '0.06em',
+              fontWeight: 700,
+              letterSpacing: '0.04em',
             }}
           >
             SHREYA
@@ -439,7 +418,7 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
             x="640"
             y="222"
             textAnchor="middle"
-            fill="#B5B2AF"
+            fill="#A3A3A3"
             style={{
               fontFamily: "'General Sans', system-ui, -apple-system, sans-serif",
               fontSize: '18px',
@@ -457,46 +436,25 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
             <feGaussianBlur stdDeviation="60" />
           </filter>
           <filter id="filter1_d_hero" x="359" y="263.6" width="560" height="418" filterUnits="userSpaceOnUse">
-            <feOffset dy="16" />
-            <feGaussianBlur stdDeviation="16" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="16" stdDeviation="16" floodColor="#000000" floodOpacity="0.5" />
           </filter>
           <filter id="filter2_d_hero" x="589.5" y="267.6" width="104" height="53" filterUnits="userSpaceOnUse">
-            <feOffset dy="1" />
-            <feGaussianBlur stdDeviation="2" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#000000" floodOpacity="0.2" />
           </filter>
           <filter id="filter3_d_hero" x="161" y="424.2" width="346" height="368" filterUnits="userSpaceOnUse">
-            <feOffset dy="16" />
-            <feGaussianBlur stdDeviation="16" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="16" stdDeviation="16" floodColor="#000000" floodOpacity="0.5" />
           </filter>
           <filter id="filter4_d_hero" x="275" y="428" width="90" height="55" filterUnits="userSpaceOnUse">
-            <feOffset dy="1" />
-            <feGaussianBlur stdDeviation="2" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#000000" floodOpacity="0.2" />
           </filter>
           <filter id="filter5_d_hero" x="780" y="437" width="313" height="383" filterUnits="userSpaceOnUse">
-            <feOffset dy="12" />
-            <feGaussianBlur stdDeviation="14" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="12" stdDeviation="14" floodColor="#000000" floodOpacity="0.5" />
           </filter>
           <filter id="filter6_d_hero" x="962" y="442" width="84" height="60" filterUnits="userSpaceOnUse">
-            <feOffset dy="1" />
-            <feGaussianBlur stdDeviation="2" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#000000" floodOpacity="0.2" />
           </filter>
           <filter id="filter9_d_hero" x="392" y="593" width="72" height="41" filterUnits="userSpaceOnUse">
-            <feOffset dy="1" />
-            <feGaussianBlur stdDeviation="2" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-            <feBlend mode="normal" in2="SourceGraphic" />
+            <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#000000" floodOpacity="0.2" />
           </filter>
           <filter id="filter11_d_hero" x="732" y="651" width="32" height="32" filterUnits="userSpaceOnUse">
             <feGaussianBlur stdDeviation="4" />
@@ -544,6 +502,3 @@ export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' })
     </div>
   );
 };
-
-
-

@@ -77,7 +77,7 @@ export const BloodBankInterface: React.FC = () => {
             </div>
 
             {/* Filter Pills */}
-            <div className="flex items-center gap-1 font-mono-tech text-xs">
+            <div className="flex items-center gap-1 font-syne text-xs">
               {(['ALL', 'NEGATIVE', 'POSITIVE'] as const).map((r) => (
                 <button
                   key={r}
@@ -94,7 +94,7 @@ export const BloodBankInterface: React.FC = () => {
             </div>
           </div>
 
-          <div className="text-xs font-mono-tech text-neutral-400">
+          <div className="text-xs font-syne text-neutral-400">
             SHOWING <span className="text-white font-bold">{filtered.length}</span> AUDITED UNITS
           </div>
         </div>
@@ -121,16 +121,16 @@ export const BloodBankInterface: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono-tech text-xs font-bold text-white">{item.id}</span>
+                      <span className="font-syne text-xs font-bold text-white">{item.id}</span>
                       <span className="text-neutral-500">•</span>
-                      <span className="font-mono-tech text-[10px] text-neutral-400">{item.bay}</span>
+                      <span className="font-syne text-[10px] text-neutral-400">{item.bay}</span>
                     </div>
                     <div className="text-xs text-neutral-400 font-sans mt-0.5">{item.donor}</div>
                   </div>
                 </div>
 
                 {/* Center: Expiry & Shelf Life */}
-                <div className="flex items-center gap-6 font-mono-tech text-xs">
+                <div className="flex items-center gap-6 font-syne text-xs">
                   <div>
                     <span className="text-neutral-500 block text-[10px]">VOLUME</span>
                     <span className="text-white font-bold">{item.volume}</span>
@@ -169,6 +169,3 @@ export const BloodBankInterface: React.FC = () => {
     </section>
   );
 };
-
-
-

@@ -32,6 +32,7 @@ export interface PlaygroundCardData {
   stickyText: string;
   stickyRotation?: string;
   tools: string[];
+  description?: string;
 }
 
 export const getDriveEmbedUrl = (url?: string): string | null => {
@@ -65,6 +66,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'the midnight mystery game. ☺',
     stickyRotation: '-rotate-2',
     tools: ['Figma', 'Runway AI', 'ChatGPT', 'Leonardo AI', 'ElevenLabs'],
+    description: "I really enjoyed making this RPG game, especially designing its flow and building the story around it. It was fun figuring out how the narrative, interactions, and gameplay could come together into one experience.",
   },
   {
     id: '02-tangible-game',
@@ -76,6 +78,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'tangible interaction gameplay test.',
     stickyRotation: 'rotate-2',
     tools: ['Figma', 'Android Studio', 'Arduino IDE', 'Tinkercad'],
+    description: "This was a challenge for me because it was my first time working so closely with hardware and its coding. But somewhere along the way, I started really enjoying the process—especially adding the logic and interactions that turned the idea into a more seamless working prototype.",
   },
   {
     id: '03-solarify',
@@ -83,10 +86,12 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     title: 'Solarify Website Coding',
     type: 'solarify',
     externalUrl: 'https://skumaa2930-blip.github.io/solarify-website/',
+    mediaSrc: '/assets/solarify.png',
     fallbackImage: '/assets/card3.png',
     stickyText: 'solar physics in pure html & css ↗',
     stickyRotation: '-rotate-1',
     tools: ['HTML, CSS', 'VS Code', 'Framer', 'XAMPP'],
+    description: "This was the second time I worked with coding tools after school. I designed three pages for this website—the About, Contact, and Blog pages—while the rest were designed by my teammates. I’m glad I got to learn the basics through making it, because those fundamentals helped me with my later projects and even with building this portfolio website. :)",
   },
   {
     id: '04-vibe-coding',
@@ -99,6 +104,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'vibe coding exploration. ☺',
     stickyRotation: 'rotate-2',
     tools: ['Google AI Studio', 'ChatGPT'],
+    description: "This was my 2 AM project—a challenge I took up as part of a design submission. I experimented with vibe coding and got to understand much better how it actually works, from turning an idea into something functional to figuring things out as I went. Definitely one of those late-night projects that taught me a lot.",
   },
   {
     id: '05-motion-study',
@@ -108,6 +114,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'playing with timing & easing.\nnever gets old. ♡',
     stickyRotation: '-rotate-3',
     tools: ['Motion / Framer', 'CSS Cubic-Bezier Curves', 'Spring Physics', 'SVG Geometry', '60 FPS Motion'],
+    description: "Exploring physics-based motion dynamics, responsive spring dampening, and procedural timing.",
   },
   {
     id: '06-photography',
@@ -118,6 +125,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'clicked this without thinking much.\nturned out okay.',
     stickyRotation: 'rotate-1',
     tools: ['35mm SLR Camera', 'Kodak Tri-X 400 Film', 'Manual Darkroom Development', 'Silver Halide Print'],
+    description: "Documenting candid geometry, shadow contrast, and light leaks through a manual analog workflow.",
   },
   {
     id: '07-interface-exp',
@@ -127,6 +135,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'just exploring visual feels.\nno big logic.',
     stickyRotation: '-rotate-2',
     tools: ['React State Engine', 'SVG Arc Trigonometry', 'Continuous Radial Gestures', 'Tailwind CSS'],
+    description: "Investigating radial input mechanics and continuous tactile feedback loops on digital screens.",
   },
   {
     id: '08-3d-blender',
@@ -137,6 +146,7 @@ export const PLAYGROUND_CARDS: PlaygroundCardData[] = [
     stickyText: 'wanted to learn 3d. started somewhere. ☺\nokay this one got weird. ☺',
     stickyRotation: 'rotate-2',
     tools: ['Blender 4.x', 'Cycles Ray-Tracing Engine', 'Procedural Shaders', 'Denoised OptiX Pass'],
+    description: "Spatial volumetrics, procedural emissive shaders, and complex lighting studies rendered in Cycles.",
   },
 ];
 
@@ -216,7 +226,7 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
           {/* Top Header Bar */}
           <div className="px-5 sm:px-7 py-4 border-b border-white/10 flex items-center justify-between bg-[#18181C] shrink-0">
             <div className="flex items-center gap-3">
-              <span className="font-mono-tech text-xs sm:text-sm text-[#ccff00] font-bold tracking-wider px-2 py-0.5 rounded bg-[#ccff00]/10 border border-[#ccff00]/20 uppercase">
+              <span className="font-syne text-xs sm:text-sm text-[#B6D63A] font-bold tracking-wider px-2 py-0.5 rounded bg-[#B6D63A]/10 border border-[#B6D63A]/20 uppercase">
                 {card.title}
               </span>
             </div>
@@ -293,70 +303,31 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
 
               {/* SOLARIFY CARD */}
               {card.type === 'solarify' && (
-                <div className="relative aspect-video w-full bg-neutral-950 flex flex-col items-center justify-center p-6 overflow-hidden">
-                  {/* Orbit Animation */}
-                  <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full border border-amber-400/30 flex items-center justify-center">
-                    {/* Sun */}
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-amber-400 via-orange-500 to-amber-300 shadow-[0_0_40px_rgba(251,191,36,0.8)] animate-pulse" />
-
-                    {/* Orbit 1 */}
-                    <motion.div
-                      animate={{ rotate: isPlayingSolar ? 360 : 0 }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 6 / activeSpeed,
-                        ease: 'linear',
-                      }}
-                      className="absolute inset-0"
-                    >
-                      <div className="w-4 h-4 rounded-full bg-[#ccff00] absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_14px_#ccff00]" />
-                    </motion.div>
-
-                    {/* Orbit 2 */}
-                    <motion.div
-                      animate={{ rotate: isPlayingSolar ? -360 : 0 }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 10 / activeSpeed,
-                        ease: 'linear',
-                      }}
-                      className="absolute -inset-6 rounded-full border border-dashed border-cyan-400/30"
-                    >
-                      <div className="w-3 h-3 rounded-full bg-cyan-400 absolute bottom-0 left-1/2 -translate-x-1/2 shadow-[0_0_12px_#38bdf8]" />
-                    </motion.div>
-                  </div>
-
-                  {/* Solarify Controls Overlay */}
-                  <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 bg-black/75 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10">
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => setIsPlayingSolar(!isPlayingSolar)}
-                        className="px-3 py-1 text-xs font-mono-tech rounded bg-white/10 hover:bg-white/20 text-white flex items-center gap-1.5 cursor-pointer"
-                      >
-                        {isPlayingSolar ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                        {isPlayingSolar ? 'PAUSE ORBIT' : 'RESUME ORBIT'}
-                      </button>
-
-                      <button
-                        onClick={() => setActiveSpeed(activeSpeed === 1 ? 2 : activeSpeed === 2 ? 0.5 : 1)}
-                        className="px-2.5 py-1 text-xs font-mono-tech rounded bg-white/10 hover:bg-white/20 text-[#ccff00] cursor-pointer"
-                      >
-                        {activeSpeed}x SPEED
-                      </button>
-                    </div>
-
-                    {card.externalUrl && (
+                <div className="relative aspect-video w-full bg-[#0d0d10] flex items-center justify-center overflow-hidden p-2 sm:p-4">
+                  <img
+                    src="/assets/solarify.png"
+                    alt={card.title}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      if (!target.src.includes('card3.png')) {
+                        target.src = '/assets/card3.png';
+                      }
+                    }}
+                  />
+                  {card.externalUrl && (
+                    <div className="absolute bottom-4 right-4 flex items-center gap-3">
                       <a
                         href={card.externalUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-1.5 rounded-lg bg-[#D1F047] text-black font-syne font-bold text-xs flex items-center gap-1.5 hover:bg-[#bce034] transition-all shadow-md"
+                        className="px-4 py-2 rounded-lg bg-[#B6D63A] text-black font-syne font-bold text-xs flex items-center gap-2 hover:brightness-110 transition-all shadow-xl"
                       >
                         OPEN LIVE SOLARIFY WEBSITE
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -372,9 +343,9 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                         duration: motionSpeed === 'slow' ? 14 : motionSpeed === 'fast' ? 4 : 8,
                         ease: 'linear',
                       }}
-                      className="w-44 h-44 sm:w-52 sm:h-52 rounded-full border border-dashed border-[#ccff00]/60 flex items-center justify-center relative"
+                      className="w-44 h-44 sm:w-52 sm:h-52 rounded-full border border-dashed border-[#B6D63A]/60 flex items-center justify-center relative"
                     >
-                      <div className="w-3.5 h-3.5 rounded-full bg-[#ccff00] absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_12px_#ccff00]" />
+                      <div className="w-3.5 h-3.5 rounded-full bg-[#B6D63A] absolute top-0 left-1/2 -translate-x-1/2 shadow-[0_0_12px_#B6D63A]" />
                     </motion.div>
 
                     {/* Ring 2 */}
@@ -391,13 +362,13 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                     </motion.div>
 
                     {/* Center Point */}
-                    <div className="w-4 h-4 rounded-full bg-[#ccff00]/80 animate-ping absolute" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ccff00] absolute" />
+                    <div className="w-4 h-4 rounded-full bg-[#B6D63A]/80 animate-ping absolute" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#B6D63A] absolute" />
                   </div>
 
                   {/* Motion Study Controls */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-black/75 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10">
-                    <span className="font-mono-tech text-xs text-neutral-400">
+                    <span className="font-syne text-xs text-neutral-400">
                       CURVE: CUBIC_BEZIER(0.16, 1, 0.3, 1)
                     </span>
                     <div className="flex items-center gap-1.5">
@@ -405,9 +376,9 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                         <button
                           key={spd}
                           onClick={() => setMotionSpeed(spd)}
-                          className={`px-2.5 py-1 text-xs font-mono-tech uppercase rounded transition-colors cursor-pointer ${
+                          className={`px-2.5 py-1 text-xs font-syne uppercase rounded transition-colors cursor-pointer ${
                             motionSpeed === spd
-                              ? 'bg-[#ccff00] text-black font-bold'
+                              ? 'bg-[#B6D63A] text-black font-bold'
                               : 'bg-white/10 text-neutral-300 hover:bg-white/20'
                           }`}
                         >
@@ -428,7 +399,7 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                     className="w-full h-full object-cover grayscale contrast-150"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10 font-mono-tech text-xs text-white/90">
+                  <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10 font-syne text-xs text-white/90">
                     KODAK TRI-X 400 • 35MM PRIME LENS • DARKROOM SILVER PRINT
                   </div>
                 </div>
@@ -453,7 +424,7 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                         cy="50%"
                         r="42%"
                         fill="none"
-                        stroke="#ccff00"
+                        stroke="#B6D63A"
                         strokeWidth="8"
                         strokeDasharray="500"
                         strokeDashoffset={500 - (500 * modalDialValue) / 100}
@@ -461,11 +432,11 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                         className="transition-all duration-150"
                       />
                     </svg>
-                    <div className="text-center font-mono-tech">
+                    <div className="text-center font-syne">
                       <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                         {modalDialValue}%
                       </div>
-                      <div className="text-[10px] sm:text-xs text-[#ccff00] uppercase tracking-widest mt-1">
+                      <div className="text-[10px] sm:text-xs text-[#B6D63A] uppercase tracking-widest mt-1">
                         FOCUS VELOCITY
                       </div>
                     </div>
@@ -479,9 +450,9 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                       max="100"
                       value={modalDialValue}
                       onChange={(e) => setModalDialValue(Number(e.target.value))}
-                      className="w-full h-2 bg-neutral-800 rounded-lg accent-[#ccff00] cursor-pointer"
+                      className="w-full h-2 bg-neutral-800 rounded-lg accent-[#B6D63A] cursor-pointer"
                     />
-                    <div className="flex justify-between w-full font-mono-tech text-[10px] text-neutral-500">
+                    <div className="flex justify-between w-full font-syne text-[10px] text-neutral-500">
                       <span>0% IDLE</span>
                       <span>50% FLOW</span>
                       <span>100% MAXIMUM</span>
@@ -499,12 +470,44 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                     className="w-full h-full object-cover contrast-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10 font-mono-tech text-xs text-[#ccff00]">
+                  <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10 font-syne text-xs text-[#B6D63A]">
                     CYCLES GPU • 512 SAMPLES • DENOISED OPTIX
                   </div>
                 </div>
               )}
             </div>
+
+            {/* Description & Reflection Card */}
+            {card.description && (
+              <div className="relative rounded-xl bg-[#19191D] border border-white/10 p-5 sm:p-6 shadow-xl">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#B6D63A]" />
+                  <span className="font-syne text-[11px] font-bold uppercase tracking-wider text-[#B6D63A]">
+                    Behind The Experiment
+                  </span>
+                </div>
+                <p className="font-general text-[#F5F5F0] text-sm sm:text-[15px] leading-relaxed">
+                  "{card.description}"
+                </p>
+
+                {/* Tools used tag list */}
+                {card.tools && card.tools.length > 0 && (
+                  <div className="mt-4 pt-3.5 border-t border-white/10 flex flex-wrap items-center gap-2">
+                    <span className="font-syne text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mr-1">
+                      Tools:
+                    </span>
+                    {card.tools.map((tool, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 font-syne text-[11px] text-neutral-300 font-medium"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* External Action Button if Available */}
             {(card.externalUrl || card.driveUrl) && (
@@ -514,7 +517,7 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                     href={card.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#D1F047] text-black font-syne font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#bce034] transition-all shadow-lg hover:shadow-[#D1F047]/20 cursor-pointer"
+                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#B6D63A] text-black font-syne font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg hover:shadow-[#B6D63A]/20 cursor-pointer"
                   >
                     Open Live Website
                     <ExternalLink className="w-4 h-4" />
@@ -525,7 +528,7 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
                     href={card.driveUrl.replace('/preview', '/view?usp=sharing')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-syne font-semibold text-xs flex items-center justify-center gap-2 hover:bg-[#D1F047] hover:text-black hover:border-[#D1F047] transition-all shadow-md cursor-pointer"
+                    className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-syne font-semibold text-xs flex items-center justify-center gap-2 hover:bg-[#B6D63A] hover:text-black hover:border-[#B6D63A] transition-all shadow-md cursor-pointer"
                   >
                     Watch Original HD in Google Drive
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -541,6 +544,3 @@ export const PlaygroundCardModal: React.FC<PlaygroundCardModalProps> = ({
 
   return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 };
-
-
-

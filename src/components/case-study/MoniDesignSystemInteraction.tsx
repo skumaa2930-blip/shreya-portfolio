@@ -18,7 +18,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="font-playfair font-bold text-[#c9f14a] text-4xl sm:text-5xl md:text-[64px] leading-[1.02] tracking-[-0.01em]"
+            className="font-playfair font-bold text-[#B6D63A] text-4xl sm:text-5xl md:text-[64px] leading-[1.02] tracking-[-0.01em]"
             style={{
               textShadow: '0 0 24px rgba(201, 241, 74, 0.15)',
             }}
@@ -33,7 +33,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-5 sm:mt-6 text-[#8a8a86] font-hanken font-light text-base sm:text-lg md:text-[20px] leading-[1.5] tracking-[-0.01em] max-w-[920px] mx-auto"
+            className="mt-5 sm:mt-6 text-[#8a8a86] font-sans font-light text-base sm:text-lg md:text-[20px] leading-[1.5] tracking-[-0.01em] max-w-[920px] mx-auto"
           >
             The design system creates calm, ambient financial interactions through consistent visual language, subtle motion, and contextual UI patterns. Elements like Moni’s adaptive logo, intelligent thinking layer, and ambient gradients communicate system awareness and proactive assistance without overwhelming the user.
           </motion.p>
@@ -74,7 +74,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
                         <rect x="30" y="72" width="36" height="72" rx="2" transform="rotate(32 48 108)" />
                         <rect x="70" y="14" width="36" height="76" rx="2" transform="rotate(-28 88 52)" />
                       </svg>
-                      <span class="text-[10px] font-mono text-neutral-500 mt-2">moni-logo.mp4</span>
+                      <span class="text-[10px] font-syne text-neutral-500 mt-2">moni-logo.mp4</span>
                     `;
                     parent.appendChild(fallback);
                   }
@@ -84,10 +84,10 @@ export const MoniDesignSystemInteraction: React.FC = () => {
 
             {/* Bottom-left Caption & Bold Label */}
             <div className="relative z-10">
-              <p className="text-[#b9b8b2] font-hanken font-light text-[16px] sm:text-[18px] leading-[1.25] tracking-[-0.01em] max-w-[340px]">
+              <p className="text-[#b9b8b2] font-sans font-light text-[16px] sm:text-[18px] leading-[1.25] tracking-[-0.01em] max-w-[340px]">
                 The logo is 3 notes coming together to form an upward arrow, routinely morphing into coins as they rotate.
               </p>
-              <div className="mt-4 font-hanken font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
+              <div className="mt-4 font-sans font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
                 MONI
               </div>
             </div>
@@ -114,12 +114,12 @@ export const MoniDesignSystemInteraction: React.FC = () => {
 
             {/* Bottom-left Caption & Bold Label */}
             <div className="relative z-10 p-7 sm:p-9">
-              <p className="text-[#b9b8b2] font-hanken font-light text-[18px] sm:text-[20px] leading-[1.2] tracking-[-0.01em]">
+              <p className="text-[#b9b8b2] font-sans font-light text-[18px] sm:text-[20px] leading-[1.2] tracking-[-0.01em]">
                 Moni’s Active
                 <br />
                 Thinking Layer
               </p>
-              <div className="mt-4 font-hanken font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
+              <div className="mt-4 font-sans font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
                 INTELLIGENT THINKING
               </div>
             </div>
@@ -150,9 +150,9 @@ export const MoniDesignSystemInteraction: React.FC = () => {
                     const fallback = document.createElement('div');
                     fallback.className = 'moni-icons-fallback w-full h-full flex flex-col items-center justify-center p-4 text-center';
                     fallback.innerHTML = `
-                      <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#c9f14a] mb-2">▶</div>
-                      <div class="font-mono text-xs text-white">moni-icons.mp4</div>
-                      <div class="font-mono text-[9px] text-neutral-500 mt-1 uppercase">Dynamic Icon Motion Video</div>
+                      <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-[#B6D63A] mb-2">▶</div>
+                      <div class="font-syne text-xs text-white">moni-icons.mp4</div>
+                      <div class="font-syne text-[9px] text-neutral-500 mt-1 uppercase">Dynamic Icon Motion Video</div>
                     `;
                     parent.appendChild(fallback);
                   }
@@ -161,7 +161,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             </div>
 
             <div className="relative z-10">
-              <div className="font-hanken font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
+              <div className="font-sans font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
                 DESIGN CONSISTENCY &amp; ICONS
               </div>
             </div>
@@ -193,8 +193,8 @@ export const MoniDesignSystemInteraction: React.FC = () => {
                     fallback.className = 'moni-active-vid-fallback w-full h-full flex flex-col items-center justify-center p-4 text-center';
                     fallback.innerHTML = `
                       <div class="w-10 h-10 rounded-full bg-[#8a86e8]/20 border border-[#8a86e8]/40 flex items-center justify-center text-[#8a86e8] mb-2 animate-pulse">✦</div>
-                      <div class="font-mono text-xs text-white">moni-active.mp4</div>
-                      <div class="font-mono text-[9px] text-neutral-500 mt-1 uppercase">Thinking Interaction Video</div>
+                      <div class="font-syne text-xs text-white">moni-active.mp4</div>
+                      <div class="font-syne text-[9px] text-neutral-500 mt-1 uppercase">Thinking Interaction Video</div>
                     `;
                     parent.appendChild(fallback);
                   }
@@ -203,7 +203,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             </div>
 
             <div className="relative z-10">
-              <div className="font-hanken font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
+              <div className="font-sans font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
                 THINKING INTERACTION
               </div>
             </div>
@@ -253,7 +253,7 @@ export const MoniDesignSystemInteraction: React.FC = () => {
             </div>
 
             <div className="relative z-10">
-              <div className="font-hanken font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
+              <div className="font-sans font-semibold text-white text-[15px] sm:text-[17px] tracking-[0.01em] uppercase">
                 COLOUR GRADIENT
               </div>
             </div>
@@ -265,6 +265,3 @@ export const MoniDesignSystemInteraction: React.FC = () => {
     </section>
   );
 };
-
-
-

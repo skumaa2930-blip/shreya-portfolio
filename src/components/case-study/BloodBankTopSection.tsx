@@ -7,7 +7,7 @@ interface BloodBankTopSectionProps {
 
 export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack }) => {
   return (
-    <div className="w-full bg-[#0c0c0e] text-[#ededed] font-sans antialiased selection:bg-[#c9f14a] selection:text-black">
+    <div className="w-full bg-[#0c0c0e] text-[#ededed] font-sans antialiased selection:bg-[#B6D63A] selection:text-black">
       {/* ========================================================================= */}
       {/* SECTION 1 – HERO (matching Moni hero layout, font sizes, colors, and padding) */}
       {/* ========================================================================= */}
@@ -24,7 +24,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
             {/* Tag Pill: SYSTEM · UX · OOUX in lime tint matching Moni pill */}
-            <div className="inline-flex items-center px-3 py-1 rounded bg-[#c9f14a]/10 border border-[#c9f14a]/20 text-[#c9f14a] text-[11px] font-mono tracking-widest uppercase mb-6 sm:mb-8">
+            <div className="inline-flex items-center px-3 py-1 rounded bg-[#B6D63A]/10 border border-[#B6D63A]/20 text-[#B6D63A] text-[11px] font-syne tracking-widest uppercase mb-6 sm:mb-8">
               SYSTEM · UX · OOUX
             </div>
 
@@ -33,7 +33,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               <span className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold text-[#F5F5F0] tracking-tight">
                 BLOOD BANK{' '}
               </span>
-              <span className="font-playfair italic text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal text-[#c9f14a] tracking-tight block sm:inline">
+              <span className="font-playfair italic text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-normal text-[#B6D63A] tracking-tight block sm:inline">
                 Management Software
               </span>
             </h1>
@@ -45,7 +45,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
 
             {/* Handwritten Quote matching Moni font, size, and lime color */}
             <div className="mt-8 sm:mt-10">
-              <span className="font-caveat text-2xl sm:text-[28px] text-[#c9f14a] tracking-wide inline-block">
+              <span className="font-caveat text-2xl sm:text-[28px] text-[#B6D63A] tracking-wide inline-block">
                 &ldquo;a lot of objects.&rdquo;
               </span>
             </div>
@@ -56,7 +56,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
             {/* 4 Metadata Columns matching Moni typography & palette */}
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
               <div>
-                <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+                <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                   MY ROLE
                 </div>
                 <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -65,7 +65,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               </div>
 
               <div>
-                <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+                <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                   TIMELINE
                 </div>
                 <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -74,7 +74,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               </div>
 
               <div>
-                <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+                <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                   TEAM
                 </div>
                 <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -83,7 +83,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               </div>
 
               <div>
-                <div className="text-[11px] font-mono font-medium uppercase tracking-widest text-[#8E8E8A]">
+                <div className="text-[11px] font-syne font-medium uppercase tracking-widest text-[#8E8E8A]">
                   TOOLS
                 </div>
                 <div className="text-xs sm:text-[13px] font-sans text-[#F5F5F0] mt-1.5 font-normal">
@@ -136,7 +136,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
           >
             {/* Tag */}
             <div className="mb-4">
-              <span className="text-[11px] font-mono font-semibold tracking-[0.24em] uppercase text-[#c9f14a]">
+              <span className="text-[11px] font-syne font-semibold tracking-[0.24em] uppercase text-[#B6D63A]">
                 PROJECT OVERVIEW
               </span>
             </div>
@@ -164,7 +164,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               className="bg-[#121212] rounded-2xl border border-white/5 p-6 sm:p-7 flex flex-col justify-between min-h-[220px] sm:min-h-[240px] hover:border-white/10 transition-colors shadow-lg"
             >
               <div>
-                <div className="font-playfair text-4xl sm:text-5xl lg:text-[52px] font-bold text-[#c9f14a] leading-none tracking-tight">
+                <div className="font-playfair text-4xl sm:text-5xl lg:text-[52px] font-bold text-[#B6D63A] leading-none tracking-tight">
                   2,760+
                 </div>
                 <p className="text-[#F5F5F0] font-sans text-sm sm:text-[14.5px] leading-relaxed mt-4 font-normal">
@@ -174,7 +174,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
 
               <div>
                 <div className="w-full h-[1px] bg-white/5 my-3.5" />
-                <div className="text-[10px] font-mono tracking-widest text-[#949490] uppercase">
+                <div className="text-[10px] font-syne tracking-widest text-[#949490] uppercase">
                   SOURCE: National Health Portal Registry
                 </div>
               </div>
@@ -188,7 +188,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               className="bg-[#121212] rounded-2xl border border-white/5 p-6 sm:p-7 flex flex-col justify-between min-h-[220px] sm:min-h-[240px] hover:border-white/10 transition-colors shadow-lg"
             >
               <div>
-                <div className="font-playfair text-4xl sm:text-5xl lg:text-[52px] font-bold text-[#c9f14a] leading-none tracking-tight">
+                <div className="font-playfair text-4xl sm:text-5xl lg:text-[52px] font-bold text-[#B6D63A] leading-none tracking-tight">
                   14.6M
                 </div>
                 <p className="text-[#F5F5F0] font-sans text-sm sm:text-[14.5px] leading-relaxed mt-4 font-normal">
@@ -198,7 +198,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
 
               <div>
                 <div className="w-full h-[1px] bg-white/5 my-3.5" />
-                <div className="text-[10px] font-mono tracking-widest text-[#949490] uppercase">
+                <div className="text-[10px] font-syne tracking-widest text-[#949490] uppercase">
                   HIGH VOLATILITY IN PERISHABLES
                 </div>
               </div>
@@ -224,7 +224,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
             className="lg:col-span-6 bg-[#131313] rounded-2xl border border-white/5 p-7 sm:p-8 shadow-[0_16px_40px_rgba(0,0,0,0.5)]"
           >
             <div className="mb-4">
-              <span className="text-[11px] font-mono font-medium tracking-[0.24em] uppercase text-[#8E8E8A]">
+              <span className="text-[11px] font-syne font-medium tracking-[0.24em] uppercase text-[#8E8E8A]">
                 PRIMARY RESEARCH
               </span>
             </div>
@@ -235,7 +235,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
 
             <div className="space-y-4 pt-2 border-t border-white/5">
               <div className="flex justify-between items-baseline gap-4 py-2">
-                <span className="text-xs sm:text-[13px] font-mono uppercase tracking-widest text-[#8E8E8A]">
+                <span className="text-xs sm:text-[13px] font-syne uppercase tracking-widest text-[#8E8E8A]">
                   Participants
                 </span>
                 <span className="font-sans text-sm sm:text-[15px] text-[#F5F5F0] text-right font-normal">
@@ -246,10 +246,10 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
               <div className="w-full h-[1px] bg-white/5" />
 
               <div className="flex justify-between items-baseline gap-4 py-2">
-                <span className="text-xs sm:text-[13px] font-mono uppercase tracking-widest text-[#8E8E8A]">
+                <span className="text-xs sm:text-[13px] font-syne uppercase tracking-widest text-[#8E8E8A]">
                   Duration
                 </span>
-                <span className="font-sans text-sm sm:text-[15px] text-[#c9f14a] text-right font-mono font-medium">
+                <span className="font-sans text-sm sm:text-[15px] text-[#B6D63A] text-right font-syne font-medium">
                   30–45 minutes
                 </span>
               </div>
@@ -265,7 +265,7 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
             className="lg:col-span-6 flex flex-col justify-start"
           >
             <div className="mb-4">
-              <span className="text-[11px] font-mono font-semibold tracking-[0.24em] uppercase text-[#c9f14a]">
+              <span className="text-[11px] font-syne font-semibold tracking-[0.24em] uppercase text-[#B6D63A]">
                 METHODOLOGY
               </span>
             </div>
@@ -283,6 +283,3 @@ export const BloodBankTopSection: React.FC<BloodBankTopSectionProps> = ({ onBack
     </div>
   );
 };
-
-
-

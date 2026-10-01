@@ -9,7 +9,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
       <div id="moni-ui" />
       {/* Section Header */}
       <div className="mb-16">
-        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A] mb-3">
+        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A] mb-3">
           <span>05 / VISUAL LANGUAGE & UI RIGOR</span>
           <span className="text-neutral-500">•</span>
           <span>CRAFTING OPTICAL CALM</span>
@@ -18,7 +18,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white font-normal uppercase tracking-tight leading-tight max-w-4xl">
           Designed for Clarity.
           <br />
-          <span className="text-[#D4F34A]">Engineered with Mathematical Restraint.</span>
+          <span className="text-[#B6D63A]">Engineered with Mathematical Restraint.</span>
         </h2>
 
         <p className="mt-5 text-neutral-300 font-sans text-base sm:text-lg max-w-2xl leading-relaxed">
@@ -34,7 +34,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           onClick={() => setActiveScreen('cockpit')}
           className={`px-4 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
             activeScreen === 'cockpit'
-              ? 'bg-[#D4F34A] text-black shadow-[0_0_15px_rgba(212,243,74,0.3)]'
+              ? 'bg-[#B6D63A] text-black shadow-[0_0_15px_rgba(182,214,58,0.3)]'
               : 'bg-[#15151A] text-neutral-400 hover:text-white border border-white/10'
           }`}
         >
@@ -44,7 +44,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           onClick={() => setActiveScreen('chat')}
           className={`px-4 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
             activeScreen === 'chat'
-              ? 'bg-[#D4F34A] text-black shadow-[0_0_15px_rgba(212,243,74,0.3)]'
+              ? 'bg-[#B6D63A] text-black shadow-[0_0_15px_rgba(182,214,58,0.3)]'
               : 'bg-[#15151A] text-neutral-400 hover:text-white border border-white/10'
           }`}
         >
@@ -54,7 +54,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           onClick={() => setActiveScreen('goals')}
           className={`px-4 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
             activeScreen === 'goals'
-              ? 'bg-[#D4F34A] text-black shadow-[0_0_15px_rgba(212,243,74,0.3)]'
+              ? 'bg-[#B6D63A] text-black shadow-[0_0_15px_rgba(182,214,58,0.3)]'
               : 'bg-[#15151A] text-neutral-400 hover:text-white border border-white/10'
           }`}
         >
@@ -68,7 +68,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           <div className="space-y-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
               <div>
-                <span className="text-[10px] font-syne font-bold uppercase text-[#D4F34A]">
+                <span className="text-[10px] font-syne font-bold uppercase text-[#B6D63A]">
                   SCREEN ARCHITECTURE
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl text-white mt-1">
@@ -91,14 +91,14 @@ export const MoniInterfaceShowcase: React.FC = () => {
                   <div>
                     <div className="flex items-center justify-between text-xs font-syne text-neutral-400">
                       <span className="font-bold uppercase">TODAY'S LIQUIDITY</span>
-                      <span className="text-[#D4F34A] font-bold">ACTIVE ENVELOPE</span>
+                      <span className="text-[#B6D63A] font-bold">ACTIVE ENVELOPE</span>
                     </div>
 
                     <div className="my-8 text-center">
                       <div className="text-6xl sm:text-7xl font-display text-white tracking-tight">
                         ₹2,840
                       </div>
-                      <div className="text-xs font-syne uppercase tracking-wider text-[#D4F34A] mt-2 font-bold">
+                      <div className="text-xs font-syne uppercase tracking-wider text-[#B6D63A] mt-2 font-bold">
                         SAFE TO SPEND TODAY WITHOUT COMPROMISE
                       </div>
                     </div>
@@ -127,7 +127,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
 
                   <div className="p-4 rounded-xl bg-[#121216] border border-white/10 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-[#D4F34A]/10 text-[#D4F34A] flex items-center justify-center font-bold text-xs">
+                      <div className="w-9 h-9 rounded-lg bg-[#B6D63A]/10 text-[#B6D63A] flex items-center justify-center font-bold text-xs">
                         RENT
                       </div>
                       <div>
@@ -135,7 +135,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
                         <div className="text-[11px] text-neutral-400">Pre-funded & locked in escrow</div>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-[#D4F34A]">₹28,000 Secured</span>
+                    <span className="text-xs font-bold text-[#B6D63A]">₹28,000 Secured</span>
                   </div>
 
                   <div className="p-4 rounded-xl bg-[#121216] border border-white/10 flex items-center justify-between">
@@ -160,7 +160,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
               <div>
-                <span className="text-[10px] font-syne font-bold uppercase text-[#D4F34A]">
+                <span className="text-[10px] font-syne font-bold uppercase text-[#B6D63A]">
                   SCREEN ARCHITECTURE
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl text-white mt-1">
@@ -178,13 +178,13 @@ export const MoniInterfaceShowcase: React.FC = () => {
             <div className="rounded-2xl bg-[#181820] border border-white/10 p-6 sm:p-8">
               <div className="max-w-2xl mx-auto space-y-4 font-sans text-xs">
                 {/* User Prompt */}
-                <div className="p-4 rounded-2xl rounded-tr-none bg-[#D4F34A] text-black font-semibold ml-auto max-w-[80%] leading-relaxed">
+                <div className="p-4 rounded-2xl rounded-tr-none bg-[#B6D63A] text-black font-semibold ml-auto max-w-[80%] leading-relaxed">
                   "If I spend ₹14,000 on flight tickets to Mumbai this weekend, does it affect my rent payment next Tuesday?"
                 </div>
 
                 {/* Moni Agent Response with structured mini-widget */}
                 <div className="p-5 rounded-2xl rounded-tl-none bg-[#101014] border border-white/15 text-neutral-200 space-y-3 leading-relaxed">
-                  <div className="flex items-center gap-2 text-[10px] font-syne font-bold uppercase text-[#D4F34A]">
+                  <div className="flex items-center gap-2 text-[10px] font-syne font-bold uppercase text-[#B6D63A]">
                     <Shield className="w-3.5 h-3.5" />
                     <span>DETERMINISTIC LIQUIDITY CHECK: PASSED</span>
                   </div>
@@ -205,12 +205,12 @@ export const MoniInterfaceShowcase: React.FC = () => {
                     </div>
                     <div className="flex justify-between text-neutral-400">
                       <span>Rent Escrow Status:</span>
-                      <span className="text-[#D4F34A] font-bold">Fully Protected</span>
+                      <span className="text-[#B6D63A] font-bold">Fully Protected</span>
                     </div>
                   </div>
 
                   <div className="pt-2 flex items-center gap-2">
-                    <button className="px-3 py-1.5 rounded-lg bg-[#D4F34A] text-black font-syne text-[11px] font-bold uppercase tracking-wider cursor-pointer">
+                    <button className="px-3 py-1.5 rounded-lg bg-[#B6D63A] text-black font-syne text-[11px] font-bold uppercase tracking-wider cursor-pointer">
                       Log Flight Booking
                     </button>
                     <button className="px-3 py-1.5 rounded-lg bg-white/5 text-neutral-300 font-syne text-[11px] font-bold uppercase tracking-wider hover:bg-white/15 cursor-pointer">
@@ -227,7 +227,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
               <div>
-                <span className="text-[10px] font-syne font-bold uppercase text-[#D4F34A]">
+                <span className="text-[10px] font-syne font-bold uppercase text-[#B6D63A]">
                   SCREEN ARCHITECTURE
                 </span>
                 <h3 className="font-display text-2xl sm:text-3xl text-white mt-1">
@@ -246,12 +246,12 @@ export const MoniInterfaceShowcase: React.FC = () => {
               <div className="p-5 rounded-2xl bg-[#14141A] border border-white/10">
                 <div className="flex items-center justify-between text-xs text-neutral-400 mb-2 font-syne uppercase">
                   <span>JAR 01 // TRAVEL</span>
-                  <span className="text-[#D4F34A] font-bold">92%</span>
+                  <span className="text-[#B6D63A] font-bold">92%</span>
                 </div>
                 <div className="text-2xl font-black text-white font-sans">₹46,000</div>
                 <div className="text-xs text-neutral-400 font-sans mt-0.5">Goal: Japan Trip (₹50,000)</div>
                 <div className="w-full h-2 rounded-full bg-white/10 mt-4 overflow-hidden">
-                  <div className="w-[92%] h-full bg-[#D4F34A] rounded-full" />
+                  <div className="w-[92%] h-full bg-[#B6D63A] rounded-full" />
                 </div>
                 <div className="mt-3 text-[10px] font-syne uppercase text-neutral-500">
                   Target Date: 15 Nov 2026
@@ -296,7 +296,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Color Palette Tokens */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[#131317] border border-white/10">
-          <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A] mb-3">
+          <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A] mb-3">
             <Palette className="w-4 h-4" />
             <span>OPTICAL COLOR TOKENS</span>
           </div>
@@ -311,7 +311,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
                 <div className="w-6 h-6 rounded-md bg-[#0C0C0E] border border-white/20" />
                 <span className="font-bold text-white">Obsidian Canvas</span>
               </div>
-              <span className="font-mono text-neutral-400">#0C0C0E</span>
+              <span className="font-syne text-neutral-400">#0C0C0E</span>
             </div>
 
             <div className="flex items-center justify-between p-3 rounded-xl bg-[#141418] border border-white/10">
@@ -319,15 +319,15 @@ export const MoniInterfaceShowcase: React.FC = () => {
                 <div className="w-6 h-6 rounded-md bg-[#141418] border border-white/20" />
                 <span className="font-bold text-white">Titanium Card Surface</span>
               </div>
-              <span className="font-mono text-neutral-400">#141418</span>
+              <span className="font-syne text-neutral-400">#141418</span>
             </div>
 
             <div className="flex items-center justify-between p-3 rounded-xl bg-black/30 border border-white/10">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-md bg-[#D4F34A]" />
+                <div className="w-6 h-6 rounded-md bg-[#B6D63A]" />
                 <span className="font-bold text-white">Moni Ambient Lime</span>
               </div>
-              <span className="font-mono text-[#D4F34A]">#D4F34A</span>
+              <span className="font-syne text-[#B6D63A]">#B6D63A</span>
             </div>
 
             <div className="flex items-center justify-between p-3 rounded-xl bg-black/30 border border-white/10">
@@ -335,14 +335,14 @@ export const MoniInterfaceShowcase: React.FC = () => {
                 <div className="w-6 h-6 rounded-md bg-[#2DD4BF]" />
                 <span className="font-bold text-white">Teal Horizon Pulse</span>
               </div>
-              <span className="font-mono text-[#2DD4BF]">#2DD4BF</span>
+              <span className="font-syne text-[#2DD4BF]">#2DD4BF</span>
             </div>
           </div>
         </div>
 
         {/* Typography Specs */}
         <div className="p-6 sm:p-8 rounded-2xl bg-[#131317] border border-white/10">
-          <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A] mb-3">
+          <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A] mb-3">
             <Type className="w-4 h-4" />
             <span>TYPOGRAPHY PAIRING</span>
           </div>
@@ -356,9 +356,9 @@ export const MoniInterfaceShowcase: React.FC = () => {
               <div className="text-[10px] font-syne uppercase text-neutral-400 font-bold">
                 DISPLAY & EDITORIAL HEADINGS
               </div>
-              <div className="font-display text-xl text-white mt-1">DM Serif Display</div>
+              <div className="font-display text-xl text-white mt-1">Playfair Display</div>
               <div className="text-[11px] text-neutral-400 mt-0.5 font-sans">
-                Generates warm, literary gravitas and breaks the cold fintech mold.
+                Generates warm, literary gravitas and editorial sophistication.
               </div>
             </div>
 
@@ -366,7 +366,7 @@ export const MoniInterfaceShowcase: React.FC = () => {
               <div className="text-[10px] font-syne uppercase text-neutral-400 font-bold">
                 TELEMETRY & LABELS
               </div>
-              <div className="font-syne text-sm font-bold text-[#D4F34A] mt-1 tracking-wider uppercase">
+              <div className="font-syne text-sm font-bold text-[#B6D63A] mt-1 tracking-wider uppercase">
                 SYNE 700 / MONOSPACE REGISTER
               </div>
               <div className="text-[11px] text-neutral-400 mt-0.5 font-sans">
@@ -391,6 +391,3 @@ export const MoniInterfaceShowcase: React.FC = () => {
     </section>
   );
 };
-
-
-

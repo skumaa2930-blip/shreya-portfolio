@@ -64,19 +64,19 @@ const PROJECTS_DATA: Project[] = [
   {
     id: 'rafugari',
     number: '03',
-    title: 'RAFOOGHAR',
-    subtitle: 'Craft & Textile Archive',
-    categoryTag: 'HERITAGE · CRAFT · ARCHIVE',
-    tags: ['CRAFT', 'TEXTILE', 'ARCHIVE'],
+    title: 'RAFUGARI',
+    subtitle: 'The Art of Invisible Mending',
+    categoryTag: 'INDIGENOUS CRAFT · TEXTILE RESTORATION · HERITAGE UX',
+    tags: ['INDIGENOUS CRAFT', 'TEXTILE RESTORATION', 'HERITAGE UX'],
     description:
-      'An archival research and interactive narrative platform documenting the living heritage, memory, and traditional restoration craft of Rafugari.',
-    stickyText: 'mending threads,\npreserving memories.',
+      'India’s centuries-old indigenous craft of invisible textile restoration—where master artisans re-weave fractured threads with microscopic precision. A digital archive, diagnostic condition mapper, and connection platform ensuring this endangered craft knowledge thrives.',
+    stickyText: 'mending threads,\npreserving living memories.',
     keyFacts: [
-      { label: 'FIELDWORK', value: 'Najibabad Artisan Guild' },
-      { label: 'MEDIUM', value: 'Living Interactive Archive' },
+      { label: 'FOCUS', value: 'Indigenous Craft & Diagnostics' },
+      { label: 'PURPOSE', value: 'Circular Heritage Conservation' },
     ],
     imageSrc: '/assets/project-rafu.png',
-    imageAlt: 'Rafooghar - Traditional Textile Craft Preservation',
+    imageAlt: 'Rafugari - Traditional Textile Craft Preservation',
     caption: 'the quiet art of invisible mending and living memory ↗',
     route: '/rafugari',
     caseStudyIndex: 2,
@@ -202,6 +202,28 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     return '0%';
   };
 
+  const getLeafZIndex = (leafIndex: number) => {
+    if (leafIndex === 0) {
+      if (currentStep === 0 || currentStep === 1) return 20;
+      return 1;
+    }
+    if (leafIndex === 1) {
+      if (currentStep === 1 || currentStep === 2) return 20;
+      if (currentStep > 2) return 5;
+      return 10;
+    }
+    if (leafIndex === 2) {
+      if (currentStep === 2 || currentStep === 3) return 20;
+      if (currentStep > 3) return 10;
+      return 5;
+    }
+    if (leafIndex === 3) {
+      if (currentStep === 3 || currentStep === 4) return 20;
+      return 2;
+    }
+    return 1;
+  };
+
   const transitionDuration = prefersReducedMotion ? '0.001s' : '1.1s';
   const transitionEase = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
 
@@ -225,14 +247,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           }}
         >
           <h2
-            className="font-dm-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-white leading-[1.08] uppercase select-none text-left"
+            className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.08] uppercase select-none text-left"
           >
             SOME OF
             <br />
             MY BEST
             <br />
             <span>
-              PROJECTS<span className="text-[#D1F047]">.</span>
+              PROJECTS<span className="text-[#B6D63A]">.</span>
             </span>
           </h2>
 
@@ -240,13 +262,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           <div className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] mt-2.5 mb-7 flex justify-start">
             <svg
               viewBox="0 0 280 20"
-              className="w-full h-auto drop-shadow-[0_0_8px_rgba(209,240,71,0.3)]"
+              className="w-full h-auto drop-shadow-[0_0_8px_rgba(182,214,58,0.3)]"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M6 14C54 5 144 16 274 6M19 16C84 10 184 15 264 11"
-                stroke="#D1F047"
+                stroke="#B6D63A"
                 strokeWidth="2.5"
                 strokeLinecap="round"
               />
@@ -333,28 +355,26 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* LEAF 0: Front Cover <---> Left Page 1 (MONI Info)                      */}
             {/* --------------------------------------------------------------------- */}
             <div
-              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left cursor-pointer"
+              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left"
               style={{
                 transformStyle: 'preserve-3d',
+                WebkitTransformStyle: 'preserve-3d',
                 transform: `rotateY(${currentStep >= 1 ? -180 : 0}deg)`,
-                zIndex: currentStep === 0 ? 10 : currentStep === 1 ? 12 : 1,
+                zIndex: getLeafZIndex(0),
                 transition: `transform ${transitionDuration} ${transitionEase}`,
-              }}
-              onClick={(e) => {
-                // Click cover to open
-                if (currentStep === 0) {
-                  setCurrentStep(1);
-                } else if (currentStep === 1) {
-                  // Click left page to close to cover
-                  setCurrentStep(0);
-                }
               }}
             >
               {/* FRONT OF LEAF 0: COVER (Muted Yellow Ochre) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-r-[6px] bg-[#C89D3C] text-[#1E1810] p-8 lg:p-10 flex flex-col justify-between border-y border-r border-[#A87C26] shadow-[inset_16px_0_24px_rgba(0,0,0,0.16),0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 0) setCurrentStep(1);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-r-[6px] bg-[#C89D3C] text-[#1E1810] p-8 lg:p-10 flex flex-col justify-between border-y border-r border-[#A87C26] shadow-[inset_16px_0_24px_rgba(0,0,0,0.16),0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden ${
+                  currentStep === 0 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   backgroundImage:
                     'linear-gradient(145deg, #DCB154 0%, #C89D3C 52%, #B3862D 100%)',
                 }}
@@ -372,8 +392,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 {/* Cover Main Title (Big, commanding, single consistent color throughout) */}
                 <div className="my-auto py-2 flex-1 flex flex-col justify-center">
                   <h3
-                    className="font-dm-serif text-5xl sm:text-6xl lg:text-7xl xl:text-[74px] text-[#1E1810] font-normal leading-[0.94] tracking-tight"
-                    style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                    className="font-playfair text-5xl sm:text-6xl lg:text-7xl xl:text-[74px] text-[#1E1810] font-normal leading-[0.94] tracking-tight"
+                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     A Life
                     <br />
@@ -396,9 +416,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
               {/* BACK OF LEAF 0: SPREAD 1 - LEFT PAGE (01 MONI Reference Cream Dotted Page) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 1) setCurrentStep(0);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 1 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
@@ -412,8 +438,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <span
-                      className="font-dm-serif text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[0].number}
                     </span>
@@ -434,8 +460,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {/* Title */}
                   <div className="mt-4">
                     <h3
-                      className="font-dm-serif text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[0].title}
                     </h3>
@@ -448,17 +474,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
 
                 {/* Bottom Section: Dark GO TO PROJECT CTA */}
-                <div className="mt-auto pt-3">
+                <div className="mt-auto pt-3 relative z-30">
                   {/* GO TO PROJECT CTA Pill Button */}
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleProjectClick(PROJECTS_DATA[0]);
                     }}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#D1F047] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#B6D63A] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group pointer-events-auto"
                   >
                     <span>GO TO PROJECT</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#D1F047] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[#B6D63A] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </div>
               </div>
@@ -468,26 +495,26 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* LEAF 1: Right Page 1 (MONI Image) <---> Left Page 2 (Blood Bank Info)  */}
             {/* --------------------------------------------------------------------- */}
             <div
-              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left cursor-pointer"
+              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left"
               style={{
                 transformStyle: 'preserve-3d',
+                WebkitTransformStyle: 'preserve-3d',
                 transform: `rotateY(${currentStep >= 2 ? -180 : 0}deg)`,
-                zIndex: currentStep === 1 ? 9 : currentStep === 2 ? 11 : 2,
+                zIndex: getLeafZIndex(1),
                 transition: `transform ${transitionDuration} ${transitionEase}`,
-              }}
-              onClick={() => {
-                if (currentStep === 1) {
-                  setCurrentStep(2);
-                } else if (currentStep === 2) {
-                  setCurrentStep(1);
-                }
               }}
             >
               {/* FRONT OF LEAF 1: SPREAD 1 - RIGHT PAGE (01 MONI Cream Dotted Frame) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 1) setCurrentStep(2);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 1 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
                   backgroundSize: '18px 18px',
@@ -528,7 +555,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </div>
                 </div>
 
-                {/* Page Footer (Divider line with turn prompt, no spread numbering) */}
+                {/* Page Footer */}
                 <div className="flex justify-end items-center text-[10px] font-syne text-black/40 pt-2 border-t border-black/10">
                   <span className="uppercase tracking-wider">CLICK TO TURN →</span>
                 </div>
@@ -536,9 +563,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
               {/* BACK OF LEAF 1: SPREAD 2 - LEFT PAGE (02 BLOOD BANK Cream Dotted Page) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 2) setCurrentStep(1);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 2 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
@@ -552,8 +585,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <span
-                      className="font-dm-serif text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[1].number}
                     </span>
@@ -574,8 +607,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {/* Title */}
                   <div className="mt-4">
                     <h3
-                      className="font-dm-serif text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[1].title}
                     </h3>
@@ -588,17 +621,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
 
                 {/* Bottom Section: Dark GO TO PROJECT CTA */}
-                <div className="mt-auto pt-3">
+                <div className="mt-auto pt-3 relative z-30">
                   {/* GO TO PROJECT CTA Pill Button */}
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleProjectClick(PROJECTS_DATA[1]);
                     }}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#D1F047] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#B6D63A] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group pointer-events-auto"
                   >
                     <span>GO TO PROJECT</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#D1F047] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[#B6D63A] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </div>
               </div>
@@ -608,26 +642,26 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* LEAF 2: Right Page 2 (Blood Bank Img) <---> Left Page 3 (Croma Info)   */}
             {/* --------------------------------------------------------------------- */}
             <div
-              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left cursor-pointer"
+              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left"
               style={{
                 transformStyle: 'preserve-3d',
+                WebkitTransformStyle: 'preserve-3d',
                 transform: `rotateY(${currentStep >= 3 ? -180 : 0}deg)`,
-                zIndex: currentStep === 2 ? 8 : currentStep === 3 ? 10 : 3,
+                zIndex: getLeafZIndex(2),
                 transition: `transform ${transitionDuration} ${transitionEase}`,
-              }}
-              onClick={() => {
-                if (currentStep === 2) {
-                  setCurrentStep(3);
-                } else if (currentStep === 3) {
-                  setCurrentStep(2);
-                }
               }}
             >
               {/* FRONT OF LEAF 2: SPREAD 2 - RIGHT PAGE (02 Blood Bank Cream Dotted Frame) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 2) setCurrentStep(3);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 2 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
                   backgroundSize: '18px 18px',
@@ -681,9 +715,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
               {/* BACK OF LEAF 2: SPREAD 3 - LEFT PAGE (03 CROMA Cream Dotted Page) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 3) setCurrentStep(2);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-l-[6px] bg-[#ECE7D8] text-[#181716] p-6 lg:p-7 flex flex-col justify-between border-y border-l border-black/15 shadow-[inset_-20px_0_30px_rgba(0,0,0,0.12),-12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 3 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
@@ -697,8 +737,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <span
-                      className="font-dm-serif text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-5xl sm:text-6xl text-[#9E988A] font-normal leading-none select-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[2].number}
                     </span>
@@ -719,8 +759,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {/* Title */}
                   <div className="mt-4">
                     <h3
-                      className="font-dm-serif text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
-                      style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                      className="font-playfair text-3xl sm:text-4xl lg:text-[42px] text-[#181716] font-bold uppercase tracking-tight leading-none"
+                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                     >
                       {PROJECTS_DATA[2].title}
                     </h3>
@@ -733,17 +773,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
 
                 {/* Bottom Section: Dark GO TO PROJECT CTA */}
-                <div className="mt-auto pt-3">
+                <div className="mt-auto pt-3 relative z-30">
                   {/* GO TO PROJECT CTA Pill Button */}
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleProjectClick(PROJECTS_DATA[2]);
                     }}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#D1F047] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#B6D63A] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group pointer-events-auto"
                   >
                     <span>GO TO PROJECT</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#D1F047] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[#B6D63A] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </button>
                 </div>
               </div>
@@ -753,26 +794,26 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* LEAF 3: Right Page 3 (Croma Img) <---> Last Page (Back Cover)         */}
             {/* --------------------------------------------------------------------- */}
             <div
-              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left cursor-pointer"
+              className="book-leaf absolute top-0 left-1/2 w-1/2 h-full origin-left"
               style={{
                 transformStyle: 'preserve-3d',
+                WebkitTransformStyle: 'preserve-3d',
                 transform: `rotateY(${currentStep >= 4 ? -180 : 0}deg)`,
-                zIndex: currentStep === 3 ? 7 : currentStep === 4 ? 9 : 4,
+                zIndex: getLeafZIndex(3),
                 transition: `transform ${transitionDuration} ${transitionEase}`,
-              }}
-              onClick={() => {
-                if (currentStep === 3) {
-                  setCurrentStep(4);
-                } else if (currentStep === 4) {
-                  setCurrentStep(3);
-                }
               }}
             >
               {/* FRONT OF LEAF 3: SPREAD 3 - RIGHT PAGE (03 Croma Cream Dotted Frame) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 3) setCurrentStep(4);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-r-[6px] bg-[#ECE7D8] text-[#181716] p-7 lg:p-8 flex flex-col justify-between border-y border-r border-black/15 shadow-[inset_20px_0_30px_rgba(0,0,0,0.12),12px_15px_30px_rgba(0,0,0,0.25)] overflow-hidden ${
+                  currentStep === 3 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   backgroundImage:
                     'radial-gradient(rgba(45, 40, 35, 0.18) 1.2px, transparent 1.2px)',
                   backgroundSize: '18px 18px',
@@ -826,9 +867,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
               {/* BACK OF LEAF 3: LAST PAGE (Muted Yellow Ochre Theme) */}
               <div
-                className="absolute inset-0 w-full h-full rounded-l-[6px] bg-[#C89D3C] text-[#1E1810] p-8 lg:p-10 flex flex-col justify-between border-y border-l border-[#A87C26] shadow-[inset_-16px_0_24px_rgba(0,0,0,0.16),0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden"
+                onClick={() => {
+                  if (currentStep === 4) setCurrentStep(3);
+                }}
+                className={`absolute inset-0 w-full h-full rounded-l-[6px] bg-[#C89D3C] text-[#1E1810] p-8 lg:p-10 flex flex-col justify-between border-y border-l border-[#A87C26] shadow-[inset_-16px_0_24px_rgba(0,0,0,0.16),0_20px_40px_rgba(0,0,0,0.45)] overflow-hidden ${
+                  currentStep === 4 ? 'cursor-pointer pointer-events-auto' : 'pointer-events-none'
+                }`}
                 style={{
                   backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)',
                   backgroundImage:
                     'linear-gradient(215deg, #DCB154 0%, #C89D3C 52%, #B3862D 100%)',
@@ -849,7 +896,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                 {/* Middle Content */}
                 <div className="my-auto py-4">
-                  <h3 className="font-dm-serif text-4xl lg:text-5xl text-[#1E1810] font-normal leading-tight tracking-tight">
+                  <h3 className="font-playfair text-4xl lg:text-5xl text-[#1E1810] font-normal leading-tight tracking-tight">
                     More on <br />
                     the way.
                   </h3>
@@ -864,16 +911,27 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </p>
                 </div>
 
-                {/* Bottom: Reset Button */}
-                <div className="pt-4 border-t border-[#3D2E12]/20">
+                {/* Bottom: Behance Button styled as others & Reset */}
+                <div className="pt-4 border-t border-[#3D2E12]/20 flex flex-col gap-2.5">
+                  <a
+                    href="https://www.behance.net/shreyak27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#B6D63A] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer group pointer-events-auto"
+                  >
+                    <span>GO TO BEHANCE</span>
+                    <ArrowUpRight className="w-4 h-4 text-[#B6D63A] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
                   <button
+                    type="button"
                     onClick={(e) => {
                       e.stopPropagation();
                       setCurrentStep(0);
                     }}
-                    className="w-full flex items-center justify-center gap-2 bg-[#2B1F0A] text-[#FAF5EC] hover:bg-[#1A1205] font-syne text-xs font-bold uppercase tracking-wider py-3 rounded-full border border-[#473412] shadow-md transition-colors cursor-pointer"
+                    className="w-full text-center text-[#3D2E12]/70 hover:text-[#1E1810] font-syne text-[10px] font-bold uppercase tracking-widest py-1 transition-colors cursor-pointer pointer-events-auto"
                   >
-                    <span>← BACK TO COVER</span>
+                    ← BACK TO COVER
                   </button>
                 </div>
               </div>
@@ -890,7 +948,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             className={`w-11 h-11 rounded-full flex items-center justify-center border transition-all ${
               currentStep === 0
                 ? 'border-white/5 text-neutral-600 cursor-not-allowed opacity-40'
-                : 'border-white/20 text-white hover:border-[#c9f14a] hover:text-[#c9f14a] hover:bg-white/5 cursor-pointer'
+                : 'border-white/20 text-white hover:border-[#b6d63a] hover:text-[#b6d63a] hover:bg-white/5 cursor-pointer'
             }`}
           >
             <ChevronLeft className="w-5 h-5" />
@@ -903,7 +961,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             className={`w-11 h-11 rounded-full flex items-center justify-center border transition-all ${
               currentStep === totalSteps
                 ? 'border-white/5 text-neutral-600 cursor-not-allowed opacity-40'
-                : 'border-white/20 text-white hover:border-[#c9f14a] hover:text-[#c9f14a] hover:bg-white/5 cursor-pointer'
+                : 'border-white/20 text-white hover:border-[#b6d63a] hover:text-[#b6d63a] hover:bg-white/5 cursor-pointer'
             }`}
           >
             <ChevronRight className="w-5 h-5" />
@@ -928,8 +986,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* Top Row: Large Number (Left) & Filled Tag Pills (Right) */}
             <div className="flex items-center justify-between mb-4">
               <span
-                className="font-dm-serif text-5xl font-normal text-[#9E988A] select-none leading-none"
-                style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                className="font-playfair text-5xl font-normal text-[#9E988A] select-none leading-none"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 {project.number}
               </span>
@@ -947,8 +1005,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
             {/* Title */}
             <h3
-              className="font-dm-serif text-3xl sm:text-4xl font-bold text-[#181716] tracking-tight uppercase"
-              style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+              className="font-playfair text-3xl sm:text-4xl font-bold text-[#181716] tracking-tight uppercase"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
               {project.title}
             </h3>
@@ -968,7 +1026,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   <span className="text-[9.5px] uppercase font-syne font-bold tracking-widest text-[#736C5F] block">
                     {fact.label}
                   </span>
-                  <p className="text-xs font-bold text-[#181716] leading-snug mt-0.5">
+                  <p className="text-xs font-bold text-[#181716] leading-snug mt-0.5 font-sans">
                     {fact.value}
                   </p>
                 </div>
@@ -978,10 +1036,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {/* GO TO PROJECT Button */}
             <button
               onClick={() => handleProjectClick(project)}
-              className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#D1F047] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md mb-6 transition-all group cursor-pointer"
+              className="w-full py-3.5 px-6 rounded-full bg-[#181816] hover:bg-black text-[#B6D63A] font-syne font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md mb-6 transition-all group cursor-pointer"
             >
               <span>GO TO PROJECT</span>
-              <ArrowUpRight className="w-4 h-4 text-[#D1F047] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 text-[#B6D63A] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
             {/* Image Card with Tape */}
@@ -1036,6 +1094,3 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     </section>
   );
 };
-
-
-

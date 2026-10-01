@@ -17,7 +17,7 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
           className="shrink-0 flex items-center pr-3 sm:pr-6 md:pr-8"
         >
           <span 
-            className="text-[#CBC6BB] text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.22em] uppercase whitespace-nowrap font-syne"
+            className="text-[#A3A3A3] text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-[0.22em] uppercase whitespace-nowrap font-syne"
           >
             CURRENTLY FIGURING OUT
           </span>
@@ -33,7 +33,7 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
         >
           {/* Slanted Lime Banner Container Touching Right Screen Border */}
           <div 
-            className="w-full relative py-2.5 sm:py-3.5 pl-6 sm:pl-10 pr-6 sm:pr-10 bg-[#D4F34A] shadow-[0_0_25px_rgba(212,243,74,0.45)] transition-all flex items-center"
+            className="w-full relative py-2.5 sm:py-3.5 pl-6 sm:pl-10 pr-6 sm:pr-10 bg-[#B6D63A] shadow-[0_0_25px_rgba(182,214,58,0.35)] transition-all flex items-center"
             style={{
               clipPath: 'polygon(24px 0%, 100% 0%, 100% 100%, 0% 100%)',
             }}
@@ -44,7 +44,7 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[#2B3500] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide select-none inline-block pl-2 font-caveat"
+              className="text-[#1A2000] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide select-none inline-block pl-2 font-caveat"
             >
               portfolio
             </motion.span>
@@ -54,7 +54,4 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
     </section>
   );
 };
-
-
-
 

@@ -61,7 +61,7 @@ export const BloodBankHero: React.FC = () => {
           </h1>
 
           <div className="mt-4 flex items-center gap-3">
-            <span className="font-mono-tech text-xs sm:text-sm tracking-widest text-neutral-400 uppercase">
+            <span className="font-syne text-xs sm:text-sm tracking-widest text-neutral-400 uppercase">
               OBJECT-ORIENTED UX ARCHITECTURE //
             </span>
             <span className="font-caveat font-handwriting text-2xl sm:text-3xl text-[#F43F5E]">
@@ -91,7 +91,7 @@ export const BloodBankHero: React.FC = () => {
       <div className="rounded-2xl bg-[#111318] border border-white/10 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
         {/* Cockpit Window Bar */}
         <div className="px-5 py-3.5 bg-[#171a22] border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 font-mono-tech text-xs text-neutral-400">
+          <div className="flex items-center gap-2 font-syne text-xs text-neutral-400">
             <span className="w-2.5 h-2.5 rounded-full bg-[#F43F5E]" />
             <span className="text-white font-bold tracking-wider">LIVE INVENTORY & EMERGENCY DISPATCH CONSOLE</span>
             <span className="text-neutral-500">|</span>
@@ -130,7 +130,7 @@ export const BloodBankHero: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Left 8 Cols: Blood Type Grid */}
               <div className="lg:col-span-8 flex flex-col gap-4">
-                <div className="flex items-center justify-between text-xs font-mono-tech text-neutral-400 pb-2 border-b border-white/10">
+                <div className="flex items-center justify-between text-xs font-syne text-neutral-400 pb-2 border-b border-white/10">
                   <span>SELECT BLOOD GROUP TO AUDIT BUFFER</span>
                   <span className="text-neutral-500">CLICK TO INSPECT COMPATIBILITY</span>
                 </div>
@@ -154,7 +154,7 @@ export const BloodBankHero: React.FC = () => {
                         <div className="flex items-center justify-between">
                           <span className="font-display text-2xl font-bold text-white">{item.type}</span>
                           <span
-                            className={`text-[9px] font-mono-tech px-1.5 py-0.5 rounded font-bold uppercase ${
+                            className={`text-[9px] font-syne px-1.5 py-0.5 rounded font-bold uppercase ${
                               isCritical
                                 ? 'bg-red-500/20 text-red-400 border border-red-500/40'
                                 : isWarn
@@ -167,10 +167,10 @@ export const BloodBankHero: React.FC = () => {
                         </div>
 
                         <div className="mt-3">
-                          <div className="font-mono-tech text-xl font-bold text-neutral-100">
+                          <div className="font-syne text-xl font-bold text-neutral-100">
                             {item.units} <span className="text-xs font-normal text-neutral-400">units</span>
                           </div>
-                          <div className="text-[11px] font-mono-tech text-neutral-400 mt-1">
+                          <div className="text-[11px] font-syne text-neutral-400 mt-1">
                             {item.days} days reserve
                           </div>
                         </div>
@@ -193,7 +193,7 @@ export const BloodBankHero: React.FC = () => {
                 <div className="p-4 rounded-xl bg-[#151922] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono-tech text-xs text-[#F43F5E] uppercase font-bold">
+                      <span className="font-syne text-xs text-[#F43F5E] uppercase font-bold">
                         AUDITING GROUP: {currentItem.type}
                       </span>
                       <span className="text-neutral-500">•</span>
@@ -216,34 +216,34 @@ export const BloodBankHero: React.FC = () => {
               {/* Right 4 Cols: Triage Live Statistics */}
               <div className="lg:col-span-4 flex flex-col gap-3.5">
                 <div className="p-4 rounded-xl bg-[#141822] border border-white/5">
-                  <div className="flex items-center justify-between text-neutral-400 text-xs font-mono-tech">
+                  <div className="flex items-center justify-between text-neutral-400 text-xs font-syne">
                     <span className="uppercase">Trauma Units Connected</span>
                     <Building2 className="w-4 h-4 text-neutral-400" />
                   </div>
                   <div className="font-display text-3xl font-bold text-white mt-1">14 Hospitals</div>
-                  <div className="text-[11px] text-emerald-400 font-mono-tech mt-1">
+                  <div className="text-[11px] text-emerald-400 font-syne mt-1">
                     ● Real-time stock telemetry synced
                   </div>
                 </div>
 
                 <div className="p-4 rounded-xl bg-[#141822] border border-white/5">
-                  <div className="flex items-center justify-between text-neutral-400 text-xs font-mono-tech">
+                  <div className="flex items-center justify-between text-neutral-400 text-xs font-syne">
                     <span className="uppercase">Donation Camps Active</span>
-                    <Calendar className="w-4 h-4 text-[#ccff00]" />
+                    <Calendar className="w-4 h-4 text-[#B6D63A]" />
                   </div>
-                  <div className="font-display text-3xl font-bold text-[#ccff00] mt-1">04 Drives</div>
-                  <div className="text-[11px] text-neutral-400 font-mono-tech mt-1">
+                  <div className="font-display text-3xl font-bold text-[#B6D63A] mt-1">04 Drives</div>
+                  <div className="text-[11px] text-neutral-400 font-syne mt-1">
                     Est. 280 units projected intake today
                   </div>
                 </div>
 
                 <div className="p-4 rounded-xl bg-[#141822] border border-white/5">
-                  <div className="flex items-center justify-between text-neutral-400 text-xs font-mono-tech">
+                  <div className="flex items-center justify-between text-neutral-400 text-xs font-syne">
                     <span className="uppercase">Average Fulfillment Latency</span>
                     <Clock className="w-4 h-4 text-[#F43F5E]" />
                   </div>
                   <div className="font-display text-3xl font-bold text-neutral-100 mt-1">18.4 Mins</div>
-                  <div className="text-[11px] text-emerald-400 font-mono-tech mt-1">
+                  <div className="text-[11px] text-emerald-400 font-syne mt-1">
                     ▼ 42% reduction from manual phone calls
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export const BloodBankHero: React.FC = () => {
           ) : (
             /* Emergency Requests Queue view */
             <div className="flex flex-col gap-3">
-              <div className="text-xs font-mono-tech text-neutral-400 pb-2 border-b border-white/10 flex items-center justify-between">
+              <div className="text-xs font-syne text-neutral-400 pb-2 border-b border-white/10 flex items-center justify-between">
                 <span>PRIORITY DISPATCH PIPELINE</span>
                 <span className="text-[#F43F5E]">3 URGENT REQUISITIONS</span>
               </div>
@@ -299,9 +299,9 @@ export const BloodBankHero: React.FC = () => {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-mono-tech text-xs font-bold text-white">{req.id}</span>
+                        <span className="font-syne text-xs font-bold text-white">{req.id}</span>
                         <span className="text-neutral-500">•</span>
-                        <span className="font-mono-tech text-[10px] text-red-400 bg-red-500/10 px-2 py-0.5 rounded">
+                        <span className="font-syne text-[10px] text-red-400 bg-red-500/10 px-2 py-0.5 rounded">
                           {req.urgency}
                         </span>
                       </div>
@@ -309,14 +309,14 @@ export const BloodBankHero: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs font-mono-tech">
+                  <div className="flex items-center gap-4 text-xs font-syne">
                     <div>
                       <div className="text-neutral-400 text-[10px]">QUANTITY</div>
                       <div className="text-white font-bold">{req.units}</div>
                     </div>
                     <div>
                       <div className="text-neutral-400 text-[10px]">TRANSIT ETA</div>
-                      <div className="text-[#ccff00] font-bold">{req.eta}</div>
+                      <div className="text-[#B6D63A] font-bold">{req.eta}</div>
                     </div>
                     <span className={`px-2.5 py-1 rounded text-[11px] font-bold ${req.statusColor}`}>
                       {req.status}
@@ -331,6 +331,3 @@ export const BloodBankHero: React.FC = () => {
     </section>
   );
 };
-
-
-

@@ -31,16 +31,16 @@ export const RafugariCraftTradition: React.FC = () => {
   ];
 
   return (
-    <section id="rafugari-tradition" className="py-24 px-3.5 sm:px-6 md:px-8 max-w-[1340px] mx-auto border-t border-white/10">
+    <section id="rafugari-tradition" className="py-24 px-3.5 sm:px-6 md:px-8 max-w-[1340px] mx-auto border-t border-[rgba(239,233,219,0.14)]">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
         <div>
-          <div className="font-syne text-xs font-bold tracking-widest text-[#E5C17C] uppercase mb-2">
-            INDIGENOUS KNOWLEDGE & CULTURAL DIAGNOSIS
+          <div className="font-syne text-[11px] font-semibold tracking-[0.14em] text-[#c9f14a] uppercase mb-2">
+            INDIGENOUS KNOWLEDGE &amp; CULTURAL DIAGNOSIS
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal text-white uppercase tracking-tight">
+          <h2 className="font-dm-serif text-[clamp(30px,4.6vw,64px)] leading-[1.05] tracking-[-0.01em] font-normal text-[#efe9db] uppercase">
             DECONSTRUCTING THE RESTORATION DIVIDE.
           </h2>
-          <p className="font-sans text-neutral-300 text-sm sm:text-base max-w-2xl mt-3 leading-relaxed">
+          <p className="font-sans font-light text-[clamp(15px,1.25vw,19px)] max-w-[56ch] text-[#efe9db]/85 mt-3 leading-relaxed">
             We conducted field research and contextual interviews with 14 master rafugars in Uttar Pradesh and Kashmir, alongside 26 textile conservators and heirloom collectors. The central hurdle was connecting dispersed generational artisans with conscious patrons.
           </p>
         </div>
@@ -60,45 +60,55 @@ export const RafugariCraftTradition: React.FC = () => {
         {coreChallenges.map((c, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-2xl bg-[#131217] border border-[#3d3326]/50 flex flex-col justify-between"
+            className="p-6 rounded-2xl bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] flex flex-col justify-between"
           >
             <div>
-              <div className="font-mono-tech text-xs text-[#E5C17C] uppercase tracking-wider mb-4">
+              <h4 className="font-dm-serif text-[clamp(19px,1.8vw,24px)] leading-[1.2] font-normal text-[#efe9db] mb-4">
                 {c.title}
-              </div>
+              </h4>
 
               {/* Status Quo Friction */}
               <div className="p-3.5 rounded-xl bg-red-500/5 border border-red-500/20 mb-4">
-                <div className="flex items-center gap-2 text-red-400 font-syne text-xs font-bold uppercase mb-1">
+                <div className="flex items-center gap-2 text-red-400 font-syne text-[11px] font-semibold uppercase tracking-[0.14em] mb-1">
                   <XCircle className="w-4 h-4" />
                   <span>CURRENT SYSTEMIC GAP</span>
                 </div>
-                <p className="text-xs text-neutral-300 font-sans leading-relaxed">
+                <p className="text-[14px] text-[#a29d90] font-sans leading-relaxed">
                   {c.traditional}
                 </p>
               </div>
 
               {/* Rafugari Digital Solution */}
-              <div className="p-3.5 rounded-xl bg-[#E5C17C]/10 border border-[#E5C17C]/30">
-                <div className="flex items-center gap-2 text-[#E5C17C] font-syne text-xs font-bold uppercase mb-1">
+              <div className="p-3.5 rounded-xl bg-[#c9f14a]/10 border border-[#c9f14a]/25">
+                <div className="flex items-center gap-2 text-[#c9f14a] font-syne text-[11px] font-semibold uppercase tracking-[0.14em] mb-1">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>RAFUGARI ARCHIVE PARADIGM</span>
                 </div>
-                <p className="text-xs text-neutral-300 font-sans leading-relaxed">
+                <p className="text-[14px] text-[#efe9db]/90 font-sans leading-relaxed">
                   {c.rafugariSolution}
                 </p>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10 text-[11px] font-mono-tech text-neutral-500">
+            <div className="mt-6 pt-4 border-t border-[rgba(239,233,219,0.14)] text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#a29d90]">
               CIRCULAR HERITAGE FRAMEWORK
             </div>
           </div>
         ))}
       </div>
+
+      {/* Thought Process Callout in Olive-Green Flagged Style */}
+      <div className="mt-8 callout-thought-process">
+        <div className="text-[11px] font-syne font-bold uppercase tracking-[0.14em] text-[#c9f14a] mb-1">
+          ＋ Added — thought process
+        </div>
+        <h4 className="font-dm-serif text-[clamp(19px,1.8vw,24px)] leading-[1.2] font-normal text-[#efe9db] mb-1.5">
+          Contextual Field Inquiry &amp; Ethical Stewardship
+        </h4>
+        <p className="font-sans text-[14px] leading-relaxed text-[#a29d90]">
+          Initial assumptions focused solely on consumer-facing e-commerce. Through master artisan interviews in Najibabad, we recognized that trust and verifiable guild provenance—not transaction speed—were the existential prerequisites for preserving living heritage.
+        </p>
+      </div>
     </section>
   );
 };
-
-
-

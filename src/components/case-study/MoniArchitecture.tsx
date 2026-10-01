@@ -86,7 +86,7 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
       <div id="moni-architecture" />
       {/* Section Header */}
       <div className="mb-16">
-        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A] mb-3">
+        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A] mb-3">
           <span>03 / SYSTEM ARCHITECTURE</span>
           <span className="text-neutral-500">•</span>
           <span>THE AUTONOMOUS AGENT LOOP</span>
@@ -95,7 +95,7 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white font-normal uppercase tracking-tight leading-tight max-w-4xl">
           How Moni Thinks:
           <br />
-          <span className="text-[#D4F34A]">Deterministic Core, Empathetic Surface.</span>
+          <span className="text-[#B6D63A]">Deterministic Core, Empathetic Surface.</span>
         </h2>
 
         <p className="mt-5 text-neutral-300 font-sans text-base sm:text-lg max-w-2xl leading-relaxed">
@@ -116,13 +116,13 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
               onClick={() => setSelectedStep(idx)}
               className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between min-h-[110px] ${
                 isActive
-                  ? 'bg-[#1C1B22] border-[#D4F34A] text-white shadow-[0_0_20px_rgba(212,243,74,0.15)]'
+                  ? 'bg-[#1C1B22] border-[#B6D63A] text-white shadow-[0_0_20px_rgba(182,214,58,0.15)]'
                   : 'bg-[#121215] border-white/10 text-neutral-400 hover:text-white hover:bg-white/5'
               }`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-syne text-xs font-bold">{s.id}</span>
-                <Icon className={`w-4 h-4 ${isActive ? 'text-[#D4F34A]' : 'text-neutral-500'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-[#B6D63A]' : 'text-neutral-500'}`} />
               </div>
               <div>
                 <div className="font-syne text-xs font-bold uppercase tracking-tight line-clamp-2 mt-2">
@@ -138,7 +138,7 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
       <div className="rounded-2xl bg-[#141418] border border-white/15 p-6 sm:p-8 md:p-10 shadow-2xl">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
           <div>
-            <div className="text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A]">
+            <div className="text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A]">
               STAGE {current.id} DEEP DIVE
             </div>
             <h3 className="font-display text-2xl sm:text-3xl text-white font-normal uppercase tracking-tight mt-1">
@@ -163,13 +163,13 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
               <div className="text-[10px] font-syne uppercase text-neutral-400 font-bold tracking-wider mb-1.5">
                 STEP INPUT:
               </div>
-              <div className="text-xs sm:text-sm font-mono text-neutral-300 bg-white/5 p-3 rounded-lg border border-white/5">
+              <div className="text-xs sm:text-sm font-syne text-neutral-300 bg-white/5 p-3 rounded-lg border border-white/5">
                 {current.input}
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-black/40 border border-white/10">
-              <div className="text-[10px] font-syne uppercase text-[#D4F34A] font-bold tracking-wider mb-1.5">
+              <div className="text-[10px] font-syne uppercase text-[#B6D63A] font-bold tracking-wider mb-1.5">
                 EXECUTION LOGIC:
               </div>
               <p className="text-xs sm:text-sm font-sans text-neutral-300 leading-relaxed">
@@ -177,8 +177,8 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#D4F34A]/5 border border-[#D4F34A]/25">
-              <div className="text-[10px] font-syne uppercase text-[#D4F34A] font-bold tracking-wider mb-1.5">
+            <div className="p-4 rounded-xl bg-[#B6D63A]/5 border border-[#B6D63A]/25">
+              <div className="text-[10px] font-syne uppercase text-[#B6D63A] font-bold tracking-wider mb-1.5">
                 VERIFIED OUTCOME:
               </div>
               <p className="text-xs sm:text-sm font-sans text-white font-semibold leading-relaxed">
@@ -191,9 +191,9 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
           <div className="lg:col-span-5 flex flex-col">
             <div className="flex items-center justify-between px-4 py-2.5 rounded-t-xl bg-[#1A1A22] border-t border-x border-white/10 text-[10px] font-syne uppercase text-neutral-400 font-bold tracking-wider">
               <span>SYSTEM SCHEMA // PAYLOAD</span>
-              <span className="text-[#D4F34A]">JSON FACT</span>
+              <span className="text-[#B6D63A]">JSON FACT</span>
             </div>
-            <pre className="flex-1 p-4 rounded-b-xl bg-[#0C0C0E] border border-white/10 font-mono text-xs text-emerald-300/90 overflow-x-auto whitespace-pre leading-relaxed shadow-inner">
+            <pre className="flex-1 p-4 rounded-b-xl bg-[#0C0C0E] border border-white/10 font-syne text-xs text-emerald-300/90 overflow-x-auto whitespace-pre leading-relaxed shadow-inner">
               {current.codeHighlight}
             </pre>
           </div>
@@ -202,6 +202,3 @@ assert(calculated_safe_spend === (liquid_cash - committed - goal_reserve) / days
     </section>
   );
 };
-
-
-

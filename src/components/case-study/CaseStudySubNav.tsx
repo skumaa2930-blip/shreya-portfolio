@@ -10,7 +10,7 @@ interface CaseStudySubNavProps {
   sections: CaseStudySectionItem[];
   activeSection: string;
   onSelectSection: (id: string) => void;
-  accentColor?: string; // defaults to #D1F047
+  accentColor?: string; // defaults to #B6D63A
   showScrollPrompt?: boolean;
 }
 
@@ -18,7 +18,7 @@ export const CaseStudySubNav: React.FC<CaseStudySubNavProps> = ({
   sections,
   activeSection,
   onSelectSection,
-  accentColor = '#D1F047',
+  accentColor = '#B6D63A',
   showScrollPrompt = true,
 }) => {
   const [isSticky, setIsSticky] = useState(false);
@@ -69,7 +69,7 @@ export const CaseStudySubNav: React.FC<CaseStudySubNavProps> = ({
                   onClick={() => onSelectSection(section.id)}
                   className={`relative px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs md:text-[13px] font-syne font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${
                     isActive
-                      ? 'text-black shadow-[0_0_24px_rgba(209,240,71,0.4)]'
+                      ? 'text-black shadow-[0_0_24px_rgba(182,214,58,0.4)]'
                       : 'text-neutral-400 hover:text-white hover:bg-white/[0.05]'
                   }`}
                   style={{
@@ -92,7 +92,7 @@ export const CaseStudySubNav: React.FC<CaseStudySubNavProps> = ({
               title="Scroll to next section"
             >
               <span>Scroll to explore</span>
-              <ArrowDown className="w-3.5 h-3.5 text-neutral-400 group-hover:text-[#D1F047] group-hover:translate-y-0.5 transition-all" />
+              <ArrowDown className="w-3.5 h-3.5 text-neutral-400 group-hover:text-[#B6D63A] group-hover:translate-y-0.5 transition-all" />
             </button>
           </div>
         )}
@@ -100,6 +100,3 @@ export const CaseStudySubNav: React.FC<CaseStudySubNavProps> = ({
     </div>
   );
 };
-
-
-

@@ -56,18 +56,18 @@ export const RafugariHero: React.FC = () => {
     <section id="rafugari-context" className="pt-28 sm:pt-36 pb-20 px-3.5 sm:px-6 md:px-8 max-w-[1340px] mx-auto">
       {/* Top Meta Breadcrumbs */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] font-syne font-bold uppercase tracking-widest text-[#E5C17C]">
-          <span className="px-2.5 py-1 rounded-md bg-[#E5C17C]/10 border border-[#E5C17C]/25 text-[#E5C17C]">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#c9f14a]">
+          <span className="px-2.5 py-1 rounded bg-[#c9f14a]/10 border border-[#c9f14a]/20 text-[#c9f14a]">
             PROJECT 03
           </span>
-          <span className="text-neutral-500">•</span>
-          <span className="text-neutral-300">INDIGENOUS CRAFT ARCHIVE · TEXTILE RESTORATION</span>
-          <span className="text-neutral-500">•</span>
-          <span className="text-neutral-400">HERITAGE UX & CIRCULAR CONSERVATION</span>
+          <span className="text-[#a29d90]">•</span>
+          <span className="text-[#efe9db]">INDIGENOUS CRAFT ARCHIVE · TEXTILE RESTORATION</span>
+          <span className="text-[#a29d90]">•</span>
+          <span className="text-[#a29d90]">HERITAGE UX & CIRCULAR CONSERVATION</span>
         </div>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/10 text-[11px] font-syne font-bold text-neutral-300">
-          <span className="w-2 h-2 rounded-full bg-[#E5C17C]" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#efe9db]">
+          <span className="w-2 h-2 rounded-full bg-[#c9f14a]" />
           <span>रफ़ूगारी // LIVING ARCHIVE</span>
         </div>
       </div>
@@ -75,20 +75,20 @@ export const RafugariHero: React.FC = () => {
       {/* Main Title & Handwritten Subhead */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-16">
         <div className="lg:col-span-8">
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-white uppercase tracking-tight leading-[0.88] select-none">
-            RAFUGARI<span className="text-[#E5C17C]">.</span>
+          <h1 className="font-dm-serif text-[clamp(30px,4.6vw,64px)] font-normal text-[#efe9db] uppercase tracking-[-0.01em] leading-[1.05] select-none">
+            RAFUGARI<span className="text-[#c9f14a]">.</span>
           </h1>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <span className="font-mono-tech text-xs sm:text-sm tracking-widest text-neutral-400 uppercase">
+            <span className="font-syne text-[11px] tracking-[0.14em] text-[#a29d90] uppercase font-semibold">
               THE ART OF INVISIBLE MENDING //
             </span>
-            <span className="font-caveat font-handwriting text-2xl sm:text-3xl text-[#E5C17C]">
+            <span className="font-caveat font-medium text-2xl sm:text-[28px] text-[#c9f14a]">
               mending threads, preserving living memories.
             </span>
           </div>
 
-          <p className="mt-6 text-neutral-300 font-sans text-base sm:text-lg leading-relaxed max-w-3xl">
+          <p className="mt-6 text-[#efe9db]/85 font-sans font-light text-[clamp(15px,1.25vw,19px)] leading-relaxed max-w-[56ch]">
             Rafugari is India’s centuries-old indigenous craft of invisible textile restoration—where master artisans re-weave fractured threads with microscopic precision to heal historical heirlooms. This case study designs a digital archive, diagnostic condition mapper, and direct artisan-to-custodian connection system, ensuring this endangered knowledge system thrives in our modern circular economy.
           </p>
         </div>
@@ -106,31 +106,31 @@ export const RafugariHero: React.FC = () => {
       </div>
 
       {/* Interactive Craft Diagnostics Cockpit */}
-      <div className="rounded-2xl bg-[#131217] border border-[#3d3326]/60 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+      <div className="rounded-2xl bg-[#1d1d1a] border border-[rgba(239,233,219,0.14)] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
         {/* Browser Top Bar */}
-        <div className="px-5 py-3.5 bg-[#1a171d] border-b border-white/10 flex flex-wrap items-center justify-between gap-3 font-mono-tech text-xs text-neutral-400">
+        <div className="px-5 py-3.5 bg-[#161614] border-b border-[rgba(239,233,219,0.14)] flex flex-wrap items-center justify-between gap-3 text-[11px] font-syne text-[#a29d90]">
           <div className="flex items-center gap-2">
             <div className="flex gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-              <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-              <span className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#a29d90]/40" />
             </div>
-            <span className="text-white font-bold ml-2">rafugari.heritage</span>
-            <span className="text-neutral-500">|</span>
-            <span className="text-[#E5C17C]">CRAFT PRESERVATION & DIAGNOSTICS</span>
+            <span className="text-[#efe9db] font-semibold ml-2">rafugari.heritage</span>
+            <span className="text-[#a29d90]">•</span>
+            <span className="text-[#c9f14a] uppercase tracking-[0.14em]">CRAFT PRESERVATION & DIAGNOSTICS</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-neutral-400 text-[11px]">TECHNIQUE:</span>
-            <div className="flex items-center gap-1 bg-black/40 p-1 rounded-lg border border-white/10">
+            <span className="text-[#a29d90] text-[11px] uppercase tracking-[0.14em]">TECHNIQUE:</span>
+            <div className="flex items-center gap-1 bg-[#161614] p-1 rounded-lg border border-[rgba(239,233,219,0.14)]">
               {(['pashmina', 'sozni', 'zari'] as const).map((t) => (
                 <button
                   key={t}
                   onClick={() => setSelectedTechnique(t)}
-                  className={`px-2.5 py-1 rounded text-[10px] font-syne font-bold uppercase transition-colors cursor-pointer ${
+                  className={`px-2.5 py-1 rounded text-[11px] font-syne font-semibold uppercase tracking-[0.14em] transition-colors cursor-pointer ${
                     selectedTechnique === t
-                      ? 'bg-[#E5C17C] text-black shadow-sm'
-                      : 'text-neutral-400 hover:text-white'
+                      ? 'bg-[#c9f14a] text-black shadow-sm'
+                      : 'text-[#a29d90] hover:text-[#efe9db]'
                   }`}
                 >
                   {t}
@@ -144,42 +144,46 @@ export const RafugariHero: React.FC = () => {
         <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left 7 Cols: Curated Technique Showcase */}
           <div className="lg:col-span-7 flex flex-col gap-4">
-            <div className="flex items-center gap-2 font-mono-tech text-xs text-[#E5C17C]">
+            <div className="flex items-center gap-2 text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#c9f14a]">
               <Sparkles className="w-4 h-4" />
-              <span className="font-bold tracking-wider uppercase">
+              <span className="tracking-[0.14em] uppercase">
                 {currentTechnique.title}
               </span>
             </div>
 
-            <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h3 className="font-dm-serif text-[clamp(22px,2.6vw,36px)] leading-[1.05] tracking-[-0.01em] font-normal text-[#efe9db]">
               {currentTechnique.subtitle}
             </h3>
 
-            <p className="font-sans text-sm sm:text-base text-neutral-300 leading-relaxed">
+            <p className="font-sans text-[14px] text-[#a29d90] leading-relaxed">
               {currentTechnique.summary}
             </p>
 
-            <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#18151c] border border-white/5 mt-2">
+            <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-[#161614] border border-[rgba(239,233,219,0.14)] mt-2">
               <div>
-                <div className="font-mono-tech text-xs text-neutral-400">MASTER GUILD</div>
-                <div className="font-syne text-sm font-bold text-white mt-0.5">
+                <div className="font-syne text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a29d90]">
+                  MASTER GUILD
+                </div>
+                <div className="font-sans text-[14px] text-[#efe9db] mt-1 font-normal">
                   {currentTechnique.masterGuild}
                 </div>
               </div>
               <div>
-                <div className="font-mono-tech text-xs text-neutral-400">DENSITY & YARN</div>
-                <div className="font-syne text-sm font-bold text-[#E5C17C] mt-0.5">
+                <div className="font-syne text-[11px] font-semibold uppercase tracking-[0.14em] text-[#a29d90]">
+                  DENSITY & YARN
+                </div>
+                <div className="font-sans text-[14px] text-[#c9f14a] mt-1 font-normal">
                   {currentTechnique.density}
                 </div>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button className="px-5 py-2.5 rounded-xl bg-[#E5C17C] hover:bg-[#ebd097] text-black font-syne text-xs font-bold uppercase transition-all shadow-[0_0_20px_rgba(229,193,124,0.3)] cursor-pointer flex items-center gap-2">
+              <button className="px-5 py-2.5 rounded-full bg-[#c9f14a] hover:bg-[#d8f56e] text-black font-syne text-[11px] font-semibold uppercase tracking-[0.14em] transition-all shadow-[0_0_20px_rgba(201,241,74,0.3)] cursor-pointer flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
                 <span>EXPLORE LIVING ARCHIVE</span>
               </button>
-              <button className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-syne text-xs font-bold uppercase transition-colors cursor-pointer border border-white/10">
+              <button className="px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-[#efe9db] font-syne text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors cursor-pointer border border-[rgba(239,233,219,0.14)]">
                 DIAGNOSTIC WEAVE MAPPER
               </button>
             </div>
@@ -187,15 +191,15 @@ export const RafugariHero: React.FC = () => {
 
           {/* Right 5 Cols: Product Image Presentation with Ambient Glow */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-[#E5C17C]/10 blur-3xl rounded-full" />
-            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border border-[#4a3e2a]/60 shadow-2xl bg-black/50 group">
+            <div className="absolute inset-0 bg-[#c9f14a]/10 blur-3xl rounded-full" />
+            <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden border border-[rgba(239,233,219,0.14)] shadow-2xl bg-black/50 group">
               <img
                 src={currentTechnique.image}
                 alt={currentTechnique.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-mono-tech text-neutral-300">
+              <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-[rgba(239,233,219,0.14)] text-[11px] font-syne font-semibold uppercase tracking-[0.14em] text-[#efe9db]">
                 ● 100% HAND-MENDED IN NAJIBABAD
               </div>
             </div>
@@ -205,6 +209,3 @@ export const RafugariHero: React.FC = () => {
     </section>
   );
 };
-
-
-

@@ -40,6 +40,3 @@ export const BloodBankSlideStream: React.FC = () => {
     </section>
   );
 };
-
-
-

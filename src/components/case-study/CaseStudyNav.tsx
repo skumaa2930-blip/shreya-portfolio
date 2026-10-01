@@ -13,7 +13,7 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
   onBack,
   title,
   badgeLabel,
-  badgeIconColor = '#D4F34A',
+  badgeIconColor = '#B6D63A',
   sections,
 }) => {
   const scrollTo = (id: string) => {
@@ -32,7 +32,7 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
       {/* Back button pill */}
       <button
         onClick={onBack}
-        className="pointer-events-auto group inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-[#151417]/92 border border-white/[0.14] text-white hover:text-[#D4F34A] hover:border-[#D4F34A]/50 backdrop-blur-md shadow-[0_12px_28px_rgba(0,0,0,0.7)] transition-all duration-200 cursor-pointer text-xs font-syne font-bold uppercase tracking-wider"
+        className="pointer-events-auto group inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-[#151417]/92 border border-white/[0.14] text-white hover:text-[#B6D63A] hover:border-[#B6D63A]/50 backdrop-blur-md shadow-[0_12px_28px_rgba(0,0,0,0.7)] transition-all duration-200 cursor-pointer text-xs font-syne font-bold uppercase tracking-wider"
         title="Back to portfolio"
       >
         <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
@@ -64,10 +64,10 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
         </div>
 
         <a
-          href={`${import.meta.env.BASE_URL}resume/shreya-resume.pdf`}
+          href="/resume/shreya-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full font-syne font-bold text-[10px] sm:text-xs uppercase tracking-wider bg-[#262529] hover:bg-[#D4F34A] text-white hover:text-black border border-white/20 hover:border-[#D4F34A] shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-200 cursor-pointer"
+          className="inline-flex items-center justify-center px-3 sm:px-4 py-2 rounded-full font-syne font-bold text-[10px] sm:text-xs uppercase tracking-wider bg-[#262529] hover:bg-[#B6D63A] text-white hover:text-black border border-white/20 hover:border-[#B6D63A] shadow-[0_2px_12px_rgba(0,0,0,0.35)] transition-all duration-200 cursor-pointer"
         >
           RESUME
         </a>
@@ -75,6 +75,3 @@ export const CaseStudyNav: React.FC<CaseStudyNavProps> = ({
     </header>
   );
 };
-
-
-

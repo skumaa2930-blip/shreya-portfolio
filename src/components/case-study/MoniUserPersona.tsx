@@ -147,6 +147,3 @@ export const MoniUserPersona: React.FC = () => {
     </motion.section>
   );
 };
-
-
-

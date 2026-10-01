@@ -53,14 +53,14 @@ export const MoniCaseStudyNav: React.FC<MoniCaseStudyNavProps> = ({ onBack, onNa
             title="Back to portfolio"
           >
             <span
-              className={`font-display font-medium text-white group-hover:text-[#D1F047] tracking-tight transition-all duration-300 ${
+              className={`font-display font-medium text-white group-hover:text-[#B6D63A] tracking-tight transition-all duration-300 ${
                 isScrolled ? 'text-xs sm:text-sm font-semibold' : 'text-sm sm:text-base tracking-wide font-semibold'
               }`}
             >
               SHREYA
             </span>
             <span
-              className={`rounded-full bg-[#D1F047] inline-block transition-all duration-300 ${
+              className={`rounded-full bg-[#B6D63A] inline-block transition-all duration-300 ${
                 isScrolled ? 'w-1.5 h-1.5 mb-0.5' : 'w-1.5 h-1.5 mb-1'
               } group-hover:scale-125`}
             />
@@ -92,7 +92,7 @@ export const MoniCaseStudyNav: React.FC<MoniCaseStudyNavProps> = ({ onBack, onNa
                 isScrolled
                   ? 'px-2.5 sm:px-3 py-1 sm:py-1.5'
                   : 'px-3 sm:px-3.5 py-1.5'
-              } bg-[#D1F047] text-black shadow-[0_0_16px_rgba(209,240,71,0.35)]`}
+              } bg-[#B6D63A] text-black shadow-[0_0_16px_rgba(182,214,58,0.35)]`}
             >
               MADE
             </button>
@@ -123,10 +123,10 @@ export const MoniCaseStudyNav: React.FC<MoniCaseStudyNavProps> = ({ onBack, onNa
           {/* Right: Crisp White Resume button */}
           <div className="flex items-center">
             <a
-              href={`${import.meta.env.BASE_URL}resume/shreya-resume.pdf`}
+              href="/resume/shreya-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center justify-center rounded-full font-syne font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer select-none whitespace-nowrap bg-white hover:bg-[#D1F047] text-black shadow-[0_4px_16px_rgba(0,0,0,0.4)] ${
+              className={`inline-flex items-center justify-center rounded-full font-syne font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer select-none whitespace-nowrap bg-white hover:bg-[#B6D63A] text-black shadow-[0_4px_16px_rgba(0,0,0,0.4)] ${
                 isScrolled
                   ? 'px-3 sm:px-3.5 py-1 sm:py-1.5 text-[10px] sm:text-xs'
                   : 'px-3.5 sm:px-4 py-1.5 text-[10px] sm:text-xs'
@@ -140,8 +140,5 @@ export const MoniCaseStudyNav: React.FC<MoniCaseStudyNavProps> = ({ onBack, onNa
     </>
   );
 };
-
-
-
 
 

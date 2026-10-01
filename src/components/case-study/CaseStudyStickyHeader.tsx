@@ -7,7 +7,7 @@ interface CaseStudyStickyHeaderProps {
 
 export const CaseStudyStickyHeader: React.FC<CaseStudyStickyHeaderProps> = ({
   onBack,
-  accentColor = '#c9f14a',
+  accentColor = '#B6D63A',
 }) => {
   return (
     <>
@@ -25,7 +25,7 @@ export const CaseStudyStickyHeader: React.FC<CaseStudyStickyHeaderProps> = ({
         <div className="max-w-[1280px] mx-auto flex items-center justify-between pointer-events-auto">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2.5 text-xs font-mono tracking-[0.2em] uppercase text-[#a5a5a0] hover:text-white transition-all cursor-pointer group bg-[#151417]/90 hover:bg-[#1f1e24] px-4 py-2 sm:py-2.5 rounded-full border border-white/10 hover:border-white/25 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
+            className="inline-flex items-center gap-2.5 text-[11px] font-syne font-semibold tracking-[0.14em] uppercase text-[#a29d90] hover:text-[#efe9db] transition-all cursor-pointer group bg-[#161614]/90 hover:bg-[#1d1d1a] px-4 py-2 sm:py-2.5 rounded-full border border-[rgba(239,233,219,0.14)] hover:border-[rgba(239,233,219,0.25)] backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
             id="case-study-back-btn"
           >
             <svg
@@ -51,6 +51,3 @@ export const CaseStudyStickyHeader: React.FC<CaseStudyStickyHeaderProps> = ({
     </>
   );
 };
-
-
-

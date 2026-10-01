@@ -48,7 +48,7 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
       {/* 4 Quantitative Impact Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
         <div className="p-6 rounded-2xl bg-[#12141c] border border-white/10">
-          <div className="text-xs font-mono-tech text-neutral-400 uppercase">
+          <div className="text-xs font-syne text-neutral-400 uppercase">
             TRIAGE DISPATCH VELOCITY
           </div>
           <div className="font-display text-4xl sm:text-5xl font-bold text-white mt-2">
@@ -60,7 +60,7 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
         </div>
 
         <div className="p-6 rounded-2xl bg-[#12141c] border border-white/10">
-          <div className="text-xs font-mono-tech text-neutral-400 uppercase">
+          <div className="text-xs font-syne text-neutral-400 uppercase">
             DATA ENTRY ERROR RATE
           </div>
           <div className="font-display text-4xl sm:text-5xl font-bold text-[#F43F5E] mt-2">
@@ -72,7 +72,7 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
         </div>
 
         <div className="p-6 rounded-2xl bg-[#12141c] border border-white/10">
-          <div className="text-xs font-mono-tech text-neutral-400 uppercase">
+          <div className="text-xs font-syne text-neutral-400 uppercase">
             EXPIRED UNIT SPOILAGE
           </div>
           <div className="font-display text-4xl sm:text-5xl font-bold text-emerald-400 mt-2">
@@ -84,10 +84,10 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
         </div>
 
         <div className="p-6 rounded-2xl bg-[#12141c] border border-white/10">
-          <div className="text-xs font-mono-tech text-neutral-400 uppercase">
+          <div className="text-xs font-syne text-neutral-400 uppercase">
             RECALL RESPONSE CONVERSION
           </div>
-          <div className="font-display text-4xl sm:text-5xl font-bold text-[#ccff00] mt-2">
+          <div className="font-display text-4xl sm:text-5xl font-bold text-[#B6D63A] mt-2">
             3.8x
           </div>
           <div className="text-xs text-neutral-400 font-sans mt-2 leading-relaxed">
@@ -99,7 +99,7 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
       {/* Navigation Footer Card */}
       <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-[#161a24] to-[#0d0e13] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8">
         <div>
-          <div className="font-mono-tech text-xs text-[#F43F5E] uppercase tracking-wider mb-1">
+          <div className="font-syne text-xs text-[#F43F5E] uppercase tracking-wider mb-1">
             EXPLORE NEXT CASE STUDY
           </div>
           <h3 className="font-display text-3xl sm:text-4xl text-white uppercase">
@@ -119,7 +119,7 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
           </button>
           <button
             onClick={onNextProject}
-            className="px-6 py-3 rounded-full bg-[#D4F34A] hover:bg-[#e0ff54] text-black font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-[0_0_25px_rgba(212,243,74,0.4)] cursor-pointer flex items-center gap-2"
+            className="px-6 py-3 rounded-full bg-[#B6D63A] hover:brightness-110 text-black font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-[0_0_25px_rgba(182,214,58,0.4)] cursor-pointer flex items-center gap-2"
           >
             <span>VIEW CROMA</span>
             <ArrowRight className="w-4 h-4" />
@@ -129,6 +129,3 @@ export const BloodBankImpact: React.FC<BloodBankImpactProps> = ({
     </section>
   );
 };
-
-
-

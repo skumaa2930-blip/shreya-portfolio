@@ -129,7 +129,7 @@ export const MoniClosingSection: React.FC = () => {
             <h2 className="font-playfair font-bold text-3xl sm:text-5xl min-[900px]:text-[56px] lg:text-[60px] leading-[1.05] tracking-tight text-[#f5f5ef]">
               Trust &amp;<br />Transparency
             </h2>
-            <p className="mt-5 sm:mt-7 font-hanken font-light text-[#8a8a86] text-base sm:text-xl min-[900px]:text-[22px] leading-[1.45] tracking-[-0.01em] max-w-xl">
+            <p className="mt-5 sm:mt-7 font-sans font-light text-[#8a8a86] text-base sm:text-xl min-[900px]:text-[22px] leading-[1.45] tracking-[-0.01em] max-w-xl">
               Trust is the most critical part of a financial agent. It is built gradually through consistent, transparent behaviour not assumed upfront. If an agent can't say no, it wouldn't be an effective one.
             </p>
           </motion.div>
@@ -150,14 +150,14 @@ export const MoniClosingSection: React.FC = () => {
                 className="bg-[#141414] rounded-[22px] p-6 sm:p-7 min-h-[140px] sm:min-h-[170px] border border-white/5 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 shadow-md"
               >
                 <div>
-                  <div className="font-mono font-medium text-xs sm:text-[13px] tracking-wider uppercase text-[#c9f14a] mb-2.5 sm:mb-3">
+                  <div className="font-syne font-medium text-xs sm:text-[13px] tracking-wider uppercase text-[#B6D63A] mb-2.5 sm:mb-3">
                     {principle.num}
                   </div>
                   <h3 className="font-syne font-medium text-white text-base sm:text-lg min-[900px]:text-[21px] tracking-[0.005em] mb-2 leading-snug">
                     {principle.title}
                   </h3>
                 </div>
-                <p className="font-hanken font-light text-[#a3a29b] text-xs sm:text-[13.5px] min-[900px]:text-[14.5px] leading-relaxed">
+                <p className="font-sans font-light text-[#a3a29b] text-xs sm:text-[13.5px] min-[900px]:text-[14.5px] leading-relaxed">
                   {principle.desc}
                 </p>
               </motion.article>
@@ -196,12 +196,12 @@ export const MoniClosingSection: React.FC = () => {
                       : 'bg-[#0a0a0a] border border-transparent hover:border-[#4a5226]'
                   }`}
                 >
-                  <span className="font-mono font-medium text-xs sm:text-[13px] text-[#c9f14a]">
+                  <span className="font-syne font-medium text-xs sm:text-[13px] text-[#B6D63A]">
                     {step.num}
                   </span>
                   <span
                     className={`font-syne font-medium text-sm sm:text-base min-[900px]:text-[18px] ${
-                      step.highlight ? 'text-[#c9f14a]' : 'text-white'
+                      step.highlight ? 'text-[#B6D63A]' : 'text-white'
                     }`}
                   >
                     {step.name}
@@ -210,7 +210,7 @@ export const MoniClosingSection: React.FC = () => {
 
                 {/* Arrow divider */}
                 {idx < CYCLE_STEPS.length - 1 && (
-                  <span className="text-[#c9f14a] font-mono text-sm sm:text-base min-[900px]:text-[18px] flex-none text-center transform min-[900px]:transform-none rotate-90 min-[900px]:rotate-0 py-1 min-[900px]:py-0 min-[900px]:px-1">
+                  <span className="text-[#B6D63A] font-syne text-sm sm:text-base min-[900px]:text-[18px] flex-none text-center transform min-[900px]:transform-none rotate-90 min-[900px]:rotate-0 py-1 min-[900px]:py-0 min-[900px]:px-1">
                     →
                   </span>
                 )}
@@ -230,7 +230,7 @@ export const MoniClosingSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="font-mono text-xs sm:text-[13px] tracking-[0.24em] uppercase text-[#8f8f8a]"
+            className="font-syne text-xs sm:text-[13px] tracking-[0.24em] uppercase text-[#8f8f8a]"
           >
             OUR GOAL
           </motion.p>
@@ -252,7 +252,7 @@ export const MoniClosingSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="font-playfair font-bold text-[#c9f14a] text-5xl sm:text-7xl min-[900px]:text-[86px] tracking-[0.005em] mt-12 sm:mt-20 min-[900px]:mt-28 leading-none"
+            className="font-playfair font-bold text-[#B6D63A] text-5xl sm:text-7xl min-[900px]:text-[86px] tracking-[0.005em] mt-12 sm:mt-20 min-[900px]:mt-28 leading-none"
           >
             THANK YOU.
           </motion.p>
@@ -261,6 +261,3 @@ export const MoniClosingSection: React.FC = () => {
     </div>
   );
 };
-
-
-

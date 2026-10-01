@@ -10,6 +10,7 @@ import { MoniVisualizingLayout } from './MoniVisualizingLayout';
 import { MoniScenarioCarousel } from './MoniScenarioCarousel';
 import { MoniAdaptiveFramework } from './MoniAdaptiveFramework';
 import { MoniClosingSection } from './MoniClosingSection';
+import { CaseStudyFooterSection } from './CaseStudyFooterSection';
 
 interface MoniCaseStudyPageProps {
   onBack: () => void;
@@ -37,7 +38,7 @@ export const MoniCaseStudyPage: React.FC<MoniCaseStudyPageProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      className="min-h-screen bg-[#0c0c0e] text-[#ededed] relative selection:bg-[#D1F047] selection:text-black overflow-x-hidden"
+      className="min-h-screen bg-[#0c0c0e] text-[#ededed] relative selection:bg-[#B6D63A] selection:text-black overflow-x-hidden"
     >
       {/* Background subtle grid pattern */}
       <div
@@ -49,7 +50,7 @@ export const MoniCaseStudyPage: React.FC<MoniCaseStudyPageProps> = ({
       />
 
       {/* Sticky Back Navigation Bar with Black Gradient Header Scrim */}
-      <CaseStudyStickyHeader onBack={onBack} accentColor="#D1F047" />
+      <CaseStudyStickyHeader onBack={onBack} accentColor="#B6D63A" />
 
       {/* Main Case Study Flow */}
       <main className="relative z-10">
@@ -78,59 +79,17 @@ export const MoniCaseStudyPage: React.FC<MoniCaseStudyPageProps> = ({
 
         {/* 7. Closing Sections: Hero Image Slot, Trust & Transparency, Learning Cycle, Goal & Thank You */}
         <MoniClosingSection />
-        {/* Next Project Exploration Card (Blood Bank Footer Style) */}
-        <section className="py-16 px-4 sm:px-8 md:px-12 max-w-[1280px] mx-auto border-t border-white/5">
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#121212] border border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
-            <div>
-              <div className="font-mono text-xs text-[#c9f14a] uppercase tracking-wider mb-2">
-                EXPLORE NEXT CASE STUDY
-              </div>
-              <h3 className="font-playfair text-3xl sm:text-4xl text-white">
-                BLOOD BANK MANAGEMENT SYSTEM — OOUX
-              </h3>
-              <p className="font-sans text-neutral-400 text-sm mt-2 max-w-xl">
-                Object-Oriented UX architecture, multi-stakeholder hospital logistics, and life-critical inventory supply chain management.
-              </p>
-            </div>
 
-            <div className="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                onClick={onBack}
-                className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-syne text-xs font-bold uppercase transition-all cursor-pointer"
-              >
-                ← ALL WORK
-              </button>
-              {onOpenNextProject && (
-                <button
-                  onClick={onOpenNextProject}
-                  className="px-6 py-3 rounded-full bg-[#c9f14a] hover:bg-[#d8ff5e] text-black font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-[0_0_25px_rgba(201,241,74,0.35)] cursor-pointer flex items-center gap-2"
-                >
-                  <span>VIEW BLOOD BANK</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* Case Study Clean Footer Bar */}
-          <footer className="mt-16 sm:mt-20 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs select-none">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-[#9E9B82] uppercase tracking-widest text-[11px]">
-                EST. 2024 / PROTO-LAB —
-              </span>
-              <span className="font-handwriting text-sm sm:text-base text-[#D4CFB4]">
-                imperfect iterations, continuous craft
-              </span>
-            </div>
-            <div className="font-mono text-[#9E9B82] uppercase tracking-widest text-[11px] text-center sm:text-right">
-              SHREYA STUDIO © ALL RIGHTS RESERVED
-            </div>
-          </footer>
-        </section>
+        {/* Consistent Next Project Exploration Card & Footer */}
+        <CaseStudyFooterSection
+          nextProjectTitle="BLOOD BANK MANAGEMENT SYSTEM — OOUX"
+          nextProjectDescription="Object-Oriented UX architecture, multi-stakeholder hospital logistics, and life-critical inventory supply chain management."
+          nextProjectButtonLabel="VIEW BLOOD BANK"
+          accentColor="#B6D63A"
+          onBack={onBack}
+          onOpenNextProject={onOpenNextProject}
+        />
       </main>
     </motion.div>
   );
 };
-
-
-

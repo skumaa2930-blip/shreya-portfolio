@@ -182,16 +182,7 @@ export default function App() {
   // 3. GSAP Master Intro Timeline
   // ============================================================================
   const runIntroAnimation = () => {
-    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-if (
-  currentPath !== '/' &&
-  currentPath !== '' &&
-  currentPath !== basePath &&
-  currentPath !== `${basePath}/`
-) {
-  return;
-}
+    if (currentPath !== '/' && currentPath !== '') return;
 
     // Lock page scrolling while intro plays
     document.body.style.overflow = "hidden";
@@ -337,7 +328,13 @@ if (
         },
       }, "+=0.04");
 
-      tl.to(cursor, { scale: 1, duration: 0.12 });
+      // Cursor vanishes right as it clicks so it does not linger in the center when "HMM." appears
+      tl.to(cursor, {
+        autoAlpha: 0,
+        scale: 0.8,
+        duration: 0.18,
+        ease: "power2.out",
+      });
     }
 
     // 04 — PORTFOLIO fragment 3D flip (rotateY: 0deg → 180deg)
@@ -345,7 +342,7 @@ if (
       tl.to(
         portfolioFlipRef.current,
         { rotateY: 180, duration: 0.75, ease: "power3.inOut", force3D: true },
-        "+=0.04"
+        "-=0.08"
       );
     }
 
@@ -452,14 +449,7 @@ if (
 
   // Mount intro timeline on initial page load
   useEffect(() => {
-    const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
-
-if (
-  currentPath === '/' ||
-  currentPath === '' ||
-  currentPath === basePath ||
-  currentPath === `${basePath}/`
-) {
+    if (currentPath === '/' || currentPath === '') {
       if (!isIntroFinished) {
         runIntroAnimation();
       } else {
@@ -625,7 +615,15 @@ if (
               >
                 {fragment.type === "portfolio" ? (
                   /* 3D Flip Card Container */
-                  <div ref={portfolioFlipRef} className="portfolio-flip-card">
+                  <div
+                    ref={portfolioFlipRef}
+                    className="portfolio-flip-card cursor-pointer"
+                    onClick={() => {
+                      if (cursorRef.current) {
+                        gsap.to(cursorRef.current, { autoAlpha: 0, duration: 0.15 });
+                      }
+                    }}
+                  >
                     {/* Front: B&W Cover Photo */}
                     <div className="portfolio-photo-face portfolio-flip-face">
                       <img
@@ -700,7 +698,7 @@ if (
           <button
             onClick={skipIntro}
             id="intro-skip-btn"
-            className="text-[11px] font-syne font-bold uppercase tracking-wider text-neutral-300 hover:text-white bg-black/60 hover:bg-black/80 px-3.5 py-1.5 rounded-full border border-white/15 hover:border-white/30 transition-all backdrop-blur-md cursor-pointer shadow-lg"
+            className="text-xs font-syne font-bold uppercase tracking-wider text-neutral-300 hover:text-white bg-black/70 hover:bg-black px-5 py-2.5 rounded-full border border-white/15 hover:border-[#b6d63a] transition-all backdrop-blur-md cursor-pointer shadow-lg"
           >
             Skip intro ↗
           </button>
@@ -710,10 +708,14 @@ if (
       {/* Main Unified Navigation Bar - Fixed to viewport */}
       <Navbar />
 
-      {/* Main Portfolio Studio Container */}
+      {/* Main Portfolio Studio Container - GPU Hardware Accelerated Layer */}
       <div
         ref={portfolioRef}
-        className="min-h-screen bg-[#0c0c0e] text-[#ededed] relative overflow-x-hidden selection:bg-[#ccff00] selection:text-black"
+        className="min-h-screen bg-[#0c0c0e] text-[#f5f5f0] relative overflow-x-hidden selection:bg-[#b6d63a] selection:text-black"
+        style={{
+          transform: 'translateZ(0)',
+          WebkitTransform: 'translateZ(0)',
+        }}
       >
         {/* Subtle background grid pattern */}
         <div
@@ -721,11 +723,19 @@ if (
           style={{
             backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
             backgroundSize: '48px 48px',
+            transform: 'translateZ(0)',
+            WebkitTransform: 'translateZ(0)',
           }}
         />
 
         {/* Main Content Sections */}
-        <main className="relative z-10 pb-20 sm:pb-28">
+        <main
+          className="relative z-10 pb-20 sm:pb-28"
+          style={{
+            transform: 'translate3d(0, 0, 0)',
+            WebkitTransform: 'translate3d(0, 0, 0)',
+          }}
+        >
           {/* Section 1: Hero & Polaroid Collage */}
           <HeroSection />
 
@@ -766,9 +776,4 @@ if (
     </>
   );
 }
-
-
-
-
-
 

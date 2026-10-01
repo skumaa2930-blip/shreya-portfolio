@@ -74,7 +74,7 @@ export const CASE_STUDIES: CaseStudyData[] = [
       searchPlaceholder: 'Ask Moni anything...',
       glowColor: '#2DD4BF',
     },
-    projectUrl: 'https://www.behance.net/shreyakumavat',
+    projectUrl: 'https://www.behance.net/shreyak27',
   },
   {
     id: 'blood-bank',
@@ -104,7 +104,7 @@ export const CASE_STUDIES: CaseStudyData[] = [
       searchPlaceholder: 'Search donor, camp, blood group...',
       glowColor: '#F43F5E',
     },
-    projectUrl: 'https://www.behance.net/shreyakumavat',
+    projectUrl: 'https://www.behance.net/shreyak27',
   },
   {
     id: 'rafugari',
@@ -134,7 +134,7 @@ export const CASE_STUDIES: CaseStudyData[] = [
       searchPlaceholder: 'Search weave, master artisan, fabric type...',
       glowColor: '#E5C17C',
     },
-    projectUrl: 'https://www.behance.net/shreyakumavat',
+    projectUrl: 'https://www.behance.net/shreyak27',
   },
 ];
 
@@ -280,7 +280,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-white uppercase leading-none">
                   {currentStudy.name}
                 </h1>
-                <div className="mt-2 font-syne text-xs tracking-[0.2em] text-[#D1F047] font-bold uppercase">
+                <div className="mt-2 font-syne text-xs tracking-[0.2em] text-[#B6D63A] font-bold uppercase">
                   {currentStudy.categories}
                 </div>
               </div>
@@ -295,11 +295,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                     viewBox="0 0 120 12"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute -bottom-1.5 right-0 w-24 sm:w-28 h-auto pointer-events-none drop-shadow-[0_0_6px_rgba(212,243,74,0.4)]"
+                    className="absolute -bottom-1.5 right-0 w-24 sm:w-28 h-auto pointer-events-none drop-shadow-[0_0_6px_rgba(182,214,58,0.4)]"
                   >
                     <path
                       d="M3 8C35 2 75 1 115 6"
-                      stroke="#D4F34A"
+                      stroke="#B6D63A"
                       strokeWidth="2.2"
                       strokeLinecap="round"
                     />
@@ -325,7 +325,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 <div className="relative w-full max-w-[310px] bg-[#1A1C1E]/95 backdrop-blur-md rounded-[26px] border border-[#404040]/60 p-4 sm:p-5 shadow-2xl transition-transform duration-300">
                   {/* Top nav bar */}
                   <div className="flex items-center justify-between text-neutral-400 text-xs mb-3">
-                    <span className="font-mono text-sm">←</span>
+                    <span className="font-syne text-sm">←</span>
                     <span className="text-xs">✕</span>
                   </div>
 
@@ -391,7 +391,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   }}
                 >
                   <div
-                    className="h-full bg-[#D4F34A] rounded-full transition-all duration-150"
+                    className="h-full bg-[#B6D63A] rounded-full transition-all duration-150"
                     style={{ width: `${playbackProgress}%` }}
                   />
                 </div>
@@ -434,7 +434,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               {/* Right Column: Tags & Tilted Recognition Kraft Note */}
               <div className="md:col-span-5 flex flex-col items-start md:items-end">
                 {/* Horizontal Attributes */}
-                <div className="relative pb-1.5 border-b border-[#D1F047] font-syne text-[11px] sm:text-xs text-[#D1F047] font-bold tracking-widest uppercase">
+                <div className="relative pb-1.5 border-b border-[#B6D63A] font-syne text-[11px] sm:text-xs text-[#B6D63A] font-bold tracking-widest uppercase">
                   {currentStudy.tags.join('  /  ')}
                 </div>
 
@@ -450,7 +450,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                     {currentStudy.recognition.title}
                   </div>
                   <div className="mt-2.5">
-                    <span className="inline-block bg-[#D4F34A] text-black font-syne text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-[2px] shadow-xs">
+                    <span className="inline-block bg-[#B6D63A] text-black font-syne text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-[2px] shadow-xs">
                       {currentStudy.recognition.badge}
                     </span>
                   </div>
@@ -470,8 +470,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   <div className="w-9 h-1 rounded bg-[#404040]" />
                 </div>
                 <div className="w-14 h-10 bg-[#262626]/90 rounded border border-[#404040]/50 flex items-center justify-center">
-                  <div className="w-5 h-5 rounded-full border border-[#D4F34A]/60 flex items-center justify-center">
-                    <Check className="w-3 h-3 text-[#D4F34A]" />
+                  <div className="w-5 h-5 rounded-full border border-[#B6D63A]/60 flex items-center justify-center">
+                    <Check className="w-3 h-3 text-[#B6D63A]" />
                   </div>
                 </div>
                 <div className="w-14 h-10 bg-[#262626]/90 rounded border border-[#404040]/50 flex flex-col justify-center items-center gap-1">
@@ -486,10 +486,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 className="flex items-center gap-4 sm:gap-6 group cursor-pointer"
               >
                 <div className="text-right">
-                  <div className="font-handwriting text-base sm:text-lg text-[#D4CFB4] group-hover:text-[#D4F34A] tracking-wide lowercase transition-colors">
+                  <div className="font-handwriting text-base sm:text-lg text-[#D4CFB4] group-hover:text-[#B6D63A] tracking-wide lowercase transition-colors">
                     dive into the full story →
                   </div>
-                  <div className="font-sans text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-[#D4F34A] uppercase mt-0.5 transition-colors">
+                  <div className="font-sans text-xl sm:text-2xl font-bold tracking-wider text-white group-hover:text-[#B6D63A] uppercase mt-0.5 transition-colors">
                     GO TO PROJECT
                   </div>
                 </div>
@@ -500,7 +500,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   target={internalRoute ? undefined : '_blank'}
                   rel={internalRoute ? undefined : 'noopener noreferrer'}
                   onClick={handleGoToProject}
-                  className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#D4F34A] hover:bg-[#e0ff54] text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(212,243,74,0.3)] shrink-0 cursor-pointer ${
+                  className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#B6D63A] hover:brightness-110 text-black flex items-center justify-center group-hover:scale-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(182,214,58,0.3)] shrink-0 cursor-pointer ${
                     isNavigatingAway ? 'scale-125 bg-white' : ''
                   }`}
                   aria-label="Go to project"
@@ -538,7 +538,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                     }}
                     className={`cursor-pointer transition-colors uppercase font-syne ${
                       currentIndex === idx
-                        ? 'text-white font-bold underline decoration-[#D4F34A] decoration-2 underline-offset-4'
+                        ? 'text-white font-bold underline decoration-[#B6D63A] decoration-2 underline-offset-4'
                         : 'text-neutral-500 hover:text-neutral-300'
                     }`}
                   >
@@ -564,6 +564,3 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
     document.body
   );
 };
-
-
-

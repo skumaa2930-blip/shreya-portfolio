@@ -41,7 +41,7 @@ export const MoniIntelligenceLayer: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="font-playfair font-normal text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.08] tracking-tight uppercase text-[#C9F24A]"
+          className="font-playfair font-normal text-4xl sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.08] tracking-tight uppercase text-[#B6D63A]"
         >
           A FINANCIAL <br className="hidden sm:inline" />
           INTELLIGENCE LAYER
@@ -77,7 +77,7 @@ export const MoniIntelligenceLayer: React.FC = () => {
             className="group relative bg-[#131315] hover:bg-[#171719] rounded-[20px] border border-white/[0.08] hover:border-white/20 p-6 sm:p-7 transition-all duration-300 shadow-[0_12px_28px_rgba(0,0,0,0.4)] flex flex-col justify-start h-auto"
           >
             {/* Top Accent Line Highlight on hover */}
-            <div className="absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-[#C9F24A]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-[#B6D63A]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Pillar Title */}
             <h3 className="font-sans font-bold text-base sm:text-lg tracking-wider text-[#F5F5F0] uppercase mb-2.5">
@@ -94,6 +94,3 @@ export const MoniIntelligenceLayer: React.FC = () => {
     </motion.section>
   );
 };
-
-
-

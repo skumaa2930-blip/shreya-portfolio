@@ -156,7 +156,7 @@ export const MoniScenarioCarousel: React.FC = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="font-playfair font-bold text-xl sm:text-2xl md:text-[34px] lg:text-[40px] leading-[1.08] tracking-tight"
               >
-                <span className="block text-[#c9f14a] text-xl sm:text-2xl md:text-[34px] lg:text-[40px]">{scenario.l1}</span>
+                <span className="block text-[#B6D63A] text-xl sm:text-2xl md:text-[34px] lg:text-[40px]">{scenario.l1}</span>
                 <span className="block text-[#f4f2ea] text-xl sm:text-2xl md:text-[34px] lg:text-[40px]">{scenario.l2}</span>
               </motion.h2>
             </AnimatePresence>
@@ -171,7 +171,7 @@ export const MoniScenarioCarousel: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="font-hanken font-light text-[#a3a29b] text-sm sm:text-base lg:text-[17px] leading-[1.5] tracking-[-0.005em]"
+                className="font-sans font-light text-[#a3a29b] text-sm sm:text-base lg:text-[17px] leading-[1.5] tracking-[-0.005em]"
               >
                 {scenario.text}
               </motion.p>
@@ -230,34 +230,34 @@ export const MoniScenarioCarousel: React.FC = () => {
                   <div className="absolute top-[2%] left-1/2 -translate-x-1/2 w-[28%] h-[3%] bg-black rounded-full z-10" />
 
                   {/* Top Status Bar */}
-                  <div className="flex justify-between items-center font-mono text-[8.5px] sm:text-[10px] text-[#8a8a86] px-1 mt-0.5">
+                  <div className="flex justify-between items-center font-syne text-[8.5px] sm:text-[10px] text-[#8a8a86] px-1 mt-0.5">
                     <span>09:41</span>
                     <span>5G · 100%</span>
                   </div>
 
                   {/* Scenario Screen Content */}
                   <div className="flex-1 flex flex-col justify-center gap-2.5 my-2">
-                    <div className="self-start font-mono text-[8.5px] sm:text-[9.5px] font-semibold text-[#c9f14a] bg-[#192112] border border-[#303e1e] px-2 py-0.5 rounded tracking-wider uppercase">
+                    <div className="self-start font-syne text-[8.5px] sm:text-[9.5px] font-semibold text-[#B6D63A] bg-[#192112] border border-[#303e1e] px-2 py-0.5 rounded tracking-wider uppercase">
                       {scenario.badge}
                     </div>
                     <div className="bg-[#16161a] border border-white/10 rounded-xl p-2.5 sm:p-3.5">
                       <div className="font-syne text-xs sm:text-[14px] font-semibold text-white mb-1">
                         {scenario.title}
                       </div>
-                      <div className="font-hanken font-light text-[10px] sm:text-[11.5px] text-[#a3a29b] leading-snug">
+                      <div className="font-sans font-light text-[10px] sm:text-[11.5px] text-[#a3a29b] leading-snug">
                         {scenario.desc}
                       </div>
-                      <div className="inline-flex items-center gap-1.5 font-mono text-[9px] sm:text-[10.5px] text-[#c9f14a] mt-1.5 font-medium">
-                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#c9f14a] animate-pulse" />
+                      <div className="inline-flex items-center gap-1.5 font-syne text-[9px] sm:text-[10.5px] text-[#B6D63A] mt-1.5 font-medium">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#B6D63A] animate-pulse" />
                         {scenario.val}
                       </div>
                     </div>
                   </div>
 
                   {/* Phone Bottom System Bar */}
-                  <div className="border-t border-white/10 pt-1.5 flex justify-between items-center font-mono text-[8px] sm:text-[9px] text-[#6e6e6b]">
+                  <div className="border-t border-white/10 pt-1.5 flex justify-between items-center font-syne text-[8px] sm:text-[9px] text-[#6e6e6b]">
                     <span>MONI SCENARIO {String(activeIdx + 1).padStart(2, '0')}</span>
-                    <span className="text-[#c9f14a] font-semibold">ACTIVE</span>
+                    <span className="text-[#B6D63A] font-semibold">ACTIVE</span>
                   </div>
                 </div>
               </motion.div>
@@ -268,7 +268,7 @@ export const MoniScenarioCarousel: React.FC = () => {
         <button
           onClick={handlePrev}
           aria-label="Previous scenario"
-          className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-5 lg:-left-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/30 bg-[#141414]/80 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#c9f14a] hover:text-[#141414] hover:border-[#c9f14a] transition-all duration-200 z-10 shadow-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9f14a]"
+          className="absolute top-1/2 -translate-y-1/2 -left-3 sm:-left-5 lg:-left-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/30 bg-[#141414]/80 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#B6D63A] hover:text-[#141414] hover:border-[#B6D63A] transition-all duration-200 z-10 shadow-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B6D63A]"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
@@ -276,7 +276,7 @@ export const MoniScenarioCarousel: React.FC = () => {
         <button
           onClick={handleNext}
           aria-label="Next scenario"
-          className="absolute top-1/2 -translate-y-1/2 -right-3 sm:-right-5 lg:-right-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/30 bg-[#141414]/80 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#c9f14a] hover:text-[#141414] hover:border-[#c9f14a] transition-all duration-200 z-10 shadow-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9f14a]"
+          className="absolute top-1/2 -translate-y-1/2 -right-3 sm:-right-5 lg:-right-6 w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-white/30 bg-[#141414]/80 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#B6D63A] hover:text-[#141414] hover:border-[#B6D63A] transition-all duration-200 z-10 shadow-lg cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B6D63A]"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
@@ -284,8 +284,8 @@ export const MoniScenarioCarousel: React.FC = () => {
 
       {/* Under media footer: Counter & Pill dots */}
       <div className="flex items-center justify-between mt-3.5 sm:mt-4">
-        <div className="font-mono text-xs sm:text-[13px] tracking-wider text-[#a3a29b]">
-          <b className="text-[#c9f14a] font-bold">
+        <div className="font-syne text-xs sm:text-[13px] tracking-wider text-[#a3a29b]">
+          <b className="text-[#B6D63A] font-bold">
             {String(activeIdx + 1).padStart(2, '0')}
           </b>{' '}
           / <span>{String(SCENARIOS.length).padStart(2, '0')}</span>
@@ -299,7 +299,7 @@ export const MoniScenarioCarousel: React.FC = () => {
               onClick={() => setActiveIdx(i)}
               aria-label={`Go to scenario ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                i === activeIdx ? 'w-7 bg-[#c9f14a]' : 'w-2 bg-[#4a4a47] hover:bg-[#6e6e6b]'
+                i === activeIdx ? 'w-7 bg-[#B6D63A]' : 'w-2 bg-[#4a4a47] hover:bg-[#6e6e6b]'
               }`}
             />
           ))}
@@ -309,6 +309,3 @@ export const MoniScenarioCarousel: React.FC = () => {
     </div>
   );
 };
-
-
-

@@ -35,6 +35,3 @@ export const RafugariSlideStream: React.FC = () => {
     </section>
   );
 };
-
-
-

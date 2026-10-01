@@ -15,7 +15,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
       <div id="moni-impact" />
       {/* Section Header */}
       <div className="mb-16">
-        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A] mb-3">
+        <div className="flex items-center gap-2 text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A] mb-3">
           <span>06 / OUTCOMES & REFLECTIONS</span>
           <span className="text-neutral-500">•</span>
           <span>EVALUATION & BEYOND</span>
@@ -34,11 +34,11 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
       {/* Recognition Card & Metrics Row */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-20">
         {/* Left: Hackathon Award Feature Card */}
-        <div className="lg:col-span-6 p-8 rounded-3xl bg-[#141418] border border-[#D4F34A]/50 relative overflow-hidden flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4F34A]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:col-span-6 p-8 rounded-3xl bg-[#141418] border border-[#B6D63A]/50 relative overflow-hidden flex flex-col justify-between shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#B6D63A]/5 rounded-full blur-3xl pointer-events-none" />
 
           <div>
-            <div className="flex items-center gap-2 text-[#D4F34A] mb-4">
+            <div className="flex items-center gap-2 text-[#B6D63A] mb-4">
               <Award className="w-5 h-5" />
               <span className="font-syne text-xs font-extrabold uppercase tracking-widest">
                 NATIONAL HACKATHON RECOGNITION
@@ -58,7 +58,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
 
           <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between font-syne text-xs text-neutral-400">
             <span>TRACK: AI & FINTECH INNOVATION</span>
-            <span className="text-[#D4F34A] font-bold">RANK: #02 NATIONWIDE</span>
+            <span className="text-[#B6D63A] font-bold">RANK: #02 NATIONWIDE</span>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
             <div className="text-[10px] font-syne uppercase tracking-wider text-neutral-400 font-bold">
               ANXIETY REDUCTION
             </div>
-            <div className="text-4xl sm:text-5xl font-display text-[#D4F34A] my-2">
+            <div className="text-4xl sm:text-5xl font-display text-[#B6D63A] my-2">
               -91%
             </div>
             <p className="text-xs text-neutral-400 font-sans">
@@ -117,7 +117,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
       {/* What I Learned Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-24">
         <div className="lg:col-span-8 space-y-6">
-          <div className="text-xs font-syne font-bold uppercase tracking-widest text-[#D4F34A]">
+          <div className="text-xs font-syne font-bold uppercase tracking-widest text-[#B6D63A]">
             07 / PERSONAL LEARNINGS
           </div>
           <h3 className="font-display text-3xl text-white font-normal uppercase tracking-tight">
@@ -177,7 +177,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
       {/* Next Project & Return to Portfolio Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-[#17171E] via-[#141418] to-[#17171E] border border-white/15 p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <span className="text-[11px] font-syne font-bold uppercase tracking-widest text-[#D4F34A]">
+          <span className="text-[11px] font-syne font-bold uppercase tracking-widest text-[#B6D63A]">
             READY FOR MORE?
           </span>
           <h3 className="font-display text-2xl sm:text-3xl text-white font-normal uppercase tracking-tight mt-1">
@@ -200,7 +200,7 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
           {onNextProject && (
             <button
               onClick={onNextProject}
-              className="px-6 py-3 rounded-full bg-[#D4F34A] hover:bg-[#e2ff62] text-black font-syne text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 shadow-[0_0_20px_rgba(212,243,74,0.3)] hover:scale-105 active:scale-95"
+              className="px-6 py-3 rounded-full bg-[#B6D63A] hover:brightness-110 text-black font-syne text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2 shadow-[0_0_20px_rgba(182,214,58,0.3)] hover:scale-105 active:scale-95"
             >
               <span>Next: Blood Bank</span>
               <ArrowRight className="w-4 h-4 stroke-[2.5]" />
@@ -211,6 +211,3 @@ export const MoniOutcomesLearnings: React.FC<MoniOutcomesLearningsProps> = ({
     </section>
   );
 };
-
-
-
