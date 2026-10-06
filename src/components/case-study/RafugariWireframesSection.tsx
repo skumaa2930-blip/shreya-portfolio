@@ -85,7 +85,7 @@ export const RafugariWireframesSection: React.FC = () => {
             <img
               src={img.src}
               alt={img.alt}
-              loading="lazy"
+
               className="w-full h-auto object-contain block rounded-lg"
             />
           </div>
@@ -103,7 +103,7 @@ export const RafugariWireframesSection: React.FC = () => {
             <img
               src={img.src}
               alt={img.alt}
-              loading="lazy"
+
               className="w-full max-w-[220px] h-auto object-contain block"
             />
           </div>
@@ -121,7 +121,7 @@ export const RafugariWireframesSection: React.FC = () => {
             <img
               src={img.src}
               alt={img.alt}
-              loading="lazy"
+
               className="w-full max-w-[220px] h-auto object-contain block"
             />
           </div>

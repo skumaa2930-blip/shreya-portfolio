@@ -127,7 +127,7 @@ export const RafugariUsabilityTestingSection: React.FC = () => {
                 <img
                   src={item.imageSrc}
                   alt={item.imageAlt}
-                  loading="lazy"
+
                   className="w-full h-auto object-contain block"
                   onError={(e) => {
                     const target = e.currentTarget;

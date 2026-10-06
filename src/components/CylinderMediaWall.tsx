@@ -222,7 +222,7 @@ export const CylinderMediaWall: React.FC<CylinderMediaWallProps> = ({ isOpen, on
           // Center deadzone [-0.12, +0.12]
           const normX = cursorNormXRef.current;
           let edgeSpeedDelta = 0;
-          const deadzone = 0.12;
+          const deadzone = 0.20;
 
           if (isCursorActiveRef.current && Math.abs(normX) > deadzone) {
             // Right edge (normX > 0) -> move things to the right (+deg)
@@ -230,7 +230,7 @@ export const CylinderMediaWall: React.FC<CylinderMediaWallProps> = ({ isOpen, on
             const sign = normX > 0 ? 1 : -1;
             const intensity = (Math.abs(normX) - deadzone) / (1 - deadzone); // 0 to 1
             // Smooth non-linear acceleration curve for quick edge response
-            const maxEdgeSpeed = 0.75; // deg/frame
+            const maxEdgeSpeed = 0.35; // deg/frame
             edgeSpeedDelta = sign * Math.pow(intensity, 1.3) * maxEdgeSpeed;
           }
 
@@ -522,35 +522,35 @@ export const CylinderMediaWall: React.FC<CylinderMediaWallProps> = ({ isOpen, on
                                     target.src = `/assets/f${((asset.id - 1) % 15) + 1}.png`;
                                   }
                                 }}
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover/tile:scale-105 pointer-events-none"
-                                loading="lazy"
+                                className="w-full h-full object-cover pointer-events-none"
+
                               />
 
                               {/* Monitor Corner Tag */}
-                              <div className="absolute bottom-1.5 left-2 right-2 flex items-center justify-between opacity-0 group-hover/tile:opacity-100 transition-opacity pointer-events-none bg-black/80 px-2 py-1 rounded text-[9px] font-syne text-white/90">
+                              <div className="absolute bottom-1.5 left-2 right-2 flex items-center justify-between opacity-0 pointer-events-none bg-black/80 px-2 py-1 rounded text-[9px] font-syne text-white/90">
                                 <span className="truncate max-w-[90px]">{asset.title}</span>
                                 <Maximize2 className="w-2.5 h-2.5 text-[#B6D63A] shrink-0" />
                               </div>
 
                               {/* Subtle glass reflection highlight */}
-                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none opacity-40 group-hover/tile:opacity-0 transition-opacity" />
+                              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none opacity-40" />
                             </>
                           ) : (
                             <>
                               {/* Corner Frame Accents */}
-                              <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/20 group-hover/tile:border-[#B6D63A] transition-colors" />
-                              <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/20 group-hover/tile:border-[#B6D63A] transition-colors" />
-                              <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-white/20 group-hover/tile:border-[#B6D63A] transition-colors" />
-                              <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/20 group-hover/tile:border-[#B6D63A] transition-colors" />
+                              <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/20" />
+                              <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/20" />
+                              <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-white/20" />
+                              <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/20" />
 
                               {/* Center Minimalist Frame Wireframe */}
                               <div className="flex flex-col items-center justify-center p-4 text-center">
-                                <div className="w-11 h-11 rounded-lg border border-dashed border-white/15 group-hover/tile:border-[#B6D63A]/50 flex items-center justify-center mb-1.5 transition-colors">
-                                  <span className="font-syne text-[11px] text-white/40 group-hover/tile:text-[#B6D63A] font-bold">
+                                <div className="w-11 h-11 rounded-lg border border-dashed border-white/15 flex items-center justify-center mb-1.5 transition-colors">
+                                  <span className="font-syne text-[11px] text-white/40 font-bold">
                                     #{String(asset.id).padStart(2, '0')}
                                   </span>
                                 </div>
-                                <span className="font-syne text-[9px] tracking-wider uppercase text-white/40 group-hover/tile:text-white/70 transition-colors">
+                                <span className="font-syne text-[9px] tracking-wider uppercase text-white/40">
                                   Empty
                                 </span>
                                 <span className="font-sans text-[8px] text-white/25 mt-0.5">
