@@ -2,7 +2,7 @@ import React from 'react';
 
 export const HeroVisual: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
-    <div className={`w-full max-w-[1140px] mx-auto flex items-center justify-center -translate-y-20 ${className}`}>
+    <div className={`w-full max-w-[1140px] mx-auto flex items-center justify-center translate-y-0 sm:-translate-y-20 ${className}`}>
       <svg
         viewBox="0 0 1280 944"
         className="w-full h-auto drop-shadow-2xl"

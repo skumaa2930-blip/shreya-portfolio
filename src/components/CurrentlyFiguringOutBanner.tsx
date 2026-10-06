@@ -7,7 +7,7 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
       id="currently-figuring-out-section" 
       className="w-full relative overflow-hidden -mt-6 sm:-mt-10 md:-mt-14 pb-6 sm:pb-8 my-0 select-none"
     >
-      <div className="w-full pl-6 sm:pl-12 md:pl-16 lg:pl-20 pr-0 flex items-center justify-between">
+      <div className="w-full pl-6 sm:pl-12 md:pl-16 lg:pl-20 pr-0 flex flex-col items-start sm:flex-row sm:items-center sm:justify-between">
         {/* Left: CURRENTLY FIGURING OUT - Slides in from left with extra push to the right */}
         <motion.div
           initial={{ opacity: 0, x: -70 }}
@@ -29,7 +29,7 @@ export const CurrentlyFiguringOutBanner: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex-1 relative flex items-center justify-end min-w-[240px]"
+          className="w-full sm:flex-1 relative flex items-center justify-end min-w-0 mt-3 sm:mt-0"
         >
           {/* Slanted Lime Banner Container Touching Right Screen Border */}
           <div 

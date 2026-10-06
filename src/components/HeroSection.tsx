@@ -12,7 +12,7 @@ export const HeroSection: React.FC = () => {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="w-full relative"
       >
-        <HeroVisual className="w-full" />
+        <HeroVisual className="w-[115%] sm:w-full" />
       </motion.div>
     </section>
   );

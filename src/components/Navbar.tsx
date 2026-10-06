@@ -7,6 +7,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = () => {
   const [activeSection, setActiveSection] = useState<'explore' | 'make' | 'experiment' | 'me' | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -128,11 +129,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
             />
           </button>
 
-          {/* Center: Global Navigation Links (Order: PROCESS -> MADE -> EXPLORED -> ME) */}
+          {/* Mobile Menu Button */}
+<button
+  type="button"
+  onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+  className="md:hidden inline-flex items-center justify-center rounded-full bg-[#151417]/95 px-4 py-2.5 font-syne font-bold text-[11px] uppercase tracking-widest text-white shadow-[0_8px_24px_rgba(0,0,0,0.5)] backdrop-blur-md"
+  aria-label="Toggle navigation menu"
+  aria-expanded={isMobileMenuOpen}
+>
+  {isMobileMenuOpen ? "CLOSE" : "MENU"}
+</button>
+{/* Center: Global Navigation Links (Order: PROCESS -> MADE -> EXPLORED -> ME) */}
           <nav
             id="floating-pill-nav"
             aria-label="Global Navigation"
-            className={`flex items-center gap-1 text-xs sm:text-[13px] font-syne font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 border-none outline-none ${
+            className={`hidden md:flex items-center gap-1 text-xs sm:text-[13px] font-syne font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 border-none outline-none ${
               isScrolled
                 ? 'bg-transparent p-0'
                 : 'bg-[#151417]/92 p-1 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.6)] backdrop-blur-md'
@@ -204,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </nav>
 
           {/* Right: Crisp White Resume Pill Button (Standardized padding & typography) */}
-          <div className="flex items-center">
+          <div className="hidden md:flex items-center">
             <a
               id="nav-resume-btn"
               href="/resume/shreya-resume.pdf"

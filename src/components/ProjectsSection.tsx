@@ -300,7 +300,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
         {/* RIGHT COLUMN: 3D Interactive Book (Desktop & Tablet) */}
         <div className="w-full lg:w-auto flex flex-col items-center justify-center shrink-0">
-          <div className="hidden md:flex flex-col items-center justify-center relative w-fit min-h-[560px] lg:min-h-[600px]">
+          <div className="flex flex-col items-center justify-center relative w-fit min-h-0 md:min-h-[560px] lg:min-h-[600px] [zoom:0.38] md:[zoom:1]">
             {/* Soft Blurred Shadow Under The Book */}
             <div
               className="absolute -bottom-4 w-[75%] max-w-[660px] h-10 bg-black/75 blur-2xl rounded-full transition-transform pointer-events-none"
@@ -972,7 +972,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       {/* ========================================================================= */}
       {/* RESPONSIVE MOBILE STACKED LIST (< 760px)                                  */}
       {/* ========================================================================= */}
-      <div className="flex md:hidden flex-col gap-8 w-full mt-2">
+      <div className="hidden">
         {PROJECTS_DATA.map((project) => (
           <div
             key={project.id}
